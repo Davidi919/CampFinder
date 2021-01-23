@@ -65,6 +65,7 @@ html {
 #header {
   width: 100%;
   height: 70px;
+  position: fixed;
   background-color: #FF5500
 }
 #header svg {
@@ -75,6 +76,9 @@ html {
   display: inline-block;
   float: right;
   margin: 10px 20px;
+}
+.account_btn--con_mobile {
+  display: none;
 }
 .header_btn {
   display: inline-block;
@@ -100,3 +104,115 @@ html {
   width: 150px;
   font-weight: 700;
 }
+
+@media only screen and (max-width: 600px) {
+  .account_btn--con {
+    display: none;
+  }
+  .account_btn--con_mobile {
+    display: inline-block;
+    float: right;
+    margin: 15px;
+    margin-top: 10px;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+  }
+  .account_btn--con_mobile ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+  }
+  .account_btn--con_mobile li a {
+  display: block;
+  text-align: center;
+  font-size: 24px;
+  padding: 20px 20px;
+  border-bottom: 1px solid #FF5500;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #FF5500;
+    }
+
+  .account_btn--con_mobile .menu {
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+
+  }
+  .account_btn--con_mobile .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  margin: 22px 12px;
+  position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.account_btn--con_mobile .menu-icon .navicon {
+  background: #FF5500;
+  display: block;
+  height: 3px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 27px;
+}
+
+.account_btn--con_mobile .menu-icon .navicon:before,
+.account_btn--con_mobile .menu-icon .navicon:after {
+  background: #FF5500;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+
+}
+
+.account_btn--con_mobile .menu-icon .navicon:before {
+  top: 10px;
+}
+
+.account_btn--con_mobile .menu-icon .navicon:after {
+  top: -10px;
+}
+
+.account_btn--con_mobile .menu-btn {
+  display: none;
+}
+
+.account_btn--con_mobile .menu-btn:checked ~ .menu {
+  max-height: 300px;
+  width: 300px;
+  position: relative;
+  left: -238px;
+  top: 10px;
+  border: 2px solid #FF5500;
+  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.2);
+
+}
+
+.account_btn--con_mobile .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.account_btn--con_mobile .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.account_btn--con_mobile .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.account_btn--con_mobile .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.account_btn--con_mobile .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+  }
