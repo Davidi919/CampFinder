@@ -242,7 +242,9 @@ html {
 /*search results camp list styling*/
 .camp_list-con {
   display: inline-block;
-  width: 25%;
+  width: 30vw;
+  max-width: 375px;
+  min-width: 275px;
   height: 93vh;
   background-color: #FFEEE6;
   overflow-y: scroll;
@@ -254,9 +256,12 @@ html {
 .camp_list-con::-webkit-scrollbar {
   display: none;
 }
+.date_br {
+  display: none;
+}
 
 #feat_camp .feat_arrow {
-  margin: 10px 0 10px -15px;
+  margin: 12px 0 10px -.75em;
   float: left;
   position: inherit;
   z-index: 900;
@@ -329,6 +334,7 @@ li .camp_title-con {
   font-size: 16px;
   line-height: 1.25em;
   margin-left: 10px;
+  padding-right: 5px;
   width:  auto;
 }
 .camp_card-abt_con #avail_dates--card {
@@ -346,8 +352,8 @@ li .camp_title-con {
 
 /*search results map styling*/
 .search_map-con {
-  display: inline-block;
-  width: 75%;
+  /*display: inline-block;*/
+  width: calc(100% - 30vw);
   height: 93vh;
   float: right;
   background-color: #ECEAE4;
@@ -356,6 +362,47 @@ li .camp_title-con {
   width: 100%;
   height: 100%;
 }
+
+
+
+/*mobile/responsive search results map styling*/
+@media only screen and (min-width: 1250px) {
+  /*resizing search map container for large screens*/
+  .search_map-con {
+    width: calc(100% - 375px);
+  }
+  }
+/*adding small breakpoint for camp list cards dates*/
+@media only screen and (max-width: 1200px) {
+  .date_br {
+    display: block;
+  }
+}
+/*resizing map container for tablet/min-width for list breakpoint*/
+@media only screen and (max-width: 915px) {
+  .search_map-con {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: -webkit-fill-available;
+    z-index: -100;
+  }
+  .camp_list-con {
+    background-color: transparent;
+    max-width: none;
+    width: 100%;
+    height: 10em;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    border: 2px solid red;
+  }
+  .camp_results li {
+    float: left;
+    width: 100px;
+    margin-left: 20px;
+    }
+}
+
 
 /*footer styling*/
 #footer {
@@ -504,7 +551,7 @@ li .camp_title-con {
 /*footer responsive styling*/
 
 /*tablet/mobile phone styling*/
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 915px) {
   #footer {
     height: auto;
   }
