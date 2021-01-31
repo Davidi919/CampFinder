@@ -74,7 +74,7 @@ html {
 }
 #header_max_con {
   width: 100%;
-  max-width: 1440px;
+  max-width: 2000px;
   margin: 0 auto;
 }
 #header svg {
@@ -229,93 +229,105 @@ html {
 }
 
   }
-.splash_bg {
+
+/*main content styling*/
+
+
+/*splash styling*/
+.splash_con {
   display: block;
   padding-top: 70px;
   width: 100%;
-  height: auto;
+  height: 80vh;
   color: #FFFFFF;
-  z-index: 2000;
-}
-.splash_bg img {
-  width: 100%;
-  height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
-  z-index: 2000;
+  background-image: url('../Assets/graphics/splash_graphics/Placement Area.png');
+  background-size: cover;
 }
 .slogan {
   font-size:30px;
   color: 	#ffff;
   text-align: center;
-  position: absolute;
-  top: 25%;
- left: 50%;
- transform: translate(-50%, -50%);
+  padding-top: 2em;
 }
 
+
+/*find a program search card*/
+
 .find_a_program_user_input {
-position: absolute;
+color: black;
 width: 350px;
-height: 461px;
-right: 102px;
-top: 101px;
+height: 500px;
 background-color: white;
-border-style: solid;
-border-color: #FF5500;
-border-width: 1px;
+border: 1px solid #FF5500;
 border-radius: 10px;
 box-shadow: 4px 4px 6px rgba(0,0,0,0.302);
-overflow: visible;
-z-index: 50;
+float: right;
+margin-top: -65px;
+margin-right: 2em;
 }
 
 .find_a_program {
 position: relative;
 overflow: visible;
-width: 233px;
+width: 100%;
 margin: 23px auto 10px auto;
-white-space: nowrap;
 text-align: center;
-font-family: Roboto;
-font-style: normal;
-font-weight: normal;
 font-size: 26px;
 }
 
-.user_input {
-  width: 352px;
-  height: 424px;
-  padding: 0px;
+.find_a_program_user_input .user_input {
+  width: 100%;
+  height: auto;
 }
-
+/*
 .input_fields {
   display: block;
   border-radius: 4px;
-}
+}*/
 
 .input_fields label {
   width: 95%;
-  height: 18px;
   display: block;
   margin-top: 18px;
   margin-left: 12px;
+  margin-bottom: -3px;
   font-size: 20px;
+
 }
 
 .input_fields input {
-width: 325px;
-height: 43px;
+width: 320px;
+height: 45px;
 display: block;
 margin: 5px auto;
-font-family: "Roboto";
-font-style: italic;
-color: #707070;
+padding-left: 5px;
+/*font-style: italic;*/
+font-size: 16px;
+/*color: #707070;*/
+border-radius: 5px;
 }
 
+
+  .find_a_program_user_input ::-webkit-input-placeholder {
+
+    font-style:italic;
+  }
+  .find_a_program_user_input ::-moz-placeholder {
+    font-style:italic;
+
+    } /* firefox 19+ */
+  .find_a_program_user_input ::-moz-placeholder {
+    font-style: italic;
+
+  }
+  .find_a_program_user_input ::-ms-input-placeholder {
+    font-style: italic;
+
+    } /* ie */
+
 #submit_btn {
-  margin: 10px 41px 20px 41px;
-  width: 270px;
+  margin: 30px auto 5px auto;
+  width: 330px;
   height: 45px;
   background-color: #FF5500;
   color: white;
@@ -323,13 +335,30 @@ color: #707070;
   border-radius: 4px;
   cursor: pointer;
   font-size: 20px;
-  font-style: normal;
+  box-shadow: 3px 3px rgba(0, 0, 0, 0.2);
 }
 
-input[type=submit]:hover {
-  background-color: #FF5500;
+
+/*splash container responsive/mobile styling*/
+@media only screen and (min-width: 2000px) {
+  .find_a_program_user_input {
+    border: 5px solid pink;
+    margin-right: 21em;
+  }
 }
 
+@media only screen and (max-width: 1200px) {
+
+  .find_a_program_user_input {
+    margin: 60px auto;
+    float: none;
+  }
+}
+
+
+
+
+/*main featured camp container*/
 .featured_con {
   display:block;
   width: 100%;
@@ -365,13 +394,11 @@ input[type=submit]:hover {
 
 }
 
-
-
-
-/*search results camp list styling*/
+/*landing page featured camps container*/
 .camp_list-con {
   width: 100%;
   height: auto;
+  display: none;
 }
 
 .camp_results {
@@ -478,29 +505,21 @@ li .camp_title-con {
 
 
 
-
-
-
-
-
-
-
-
-
 /*footer styling*/
 #footer {
   display: flex;
   width: 100%;
-  height: 20em;
+  height: 22em;
   background-color: #FF5500;
   color: white;
 }
-#max_con {
+#footer_max_con {
   display: flex;
   align-self: center;
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
+  padding-top: 2em;
 }
 /*site map sytling*/
 .site_map-con {
@@ -623,7 +642,7 @@ li .camp_title-con {
   text-transform: uppercase;
 }
 
-.mail_cta-con input {
+#footer .mail_cta-con input {
   font-size: 18px;
   font-style: italic;
   width: 330px;
@@ -634,12 +653,11 @@ li .camp_title-con {
 /*footer responsive styling*/
 
 /*tablet/mobile phone styling*/
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 915px) {
   #footer {
     height: auto;
   }
-  #max_con {
-
+  #footer_max_con {
     display: block;
     align-self: unset;
     width: 98%;
@@ -654,13 +672,13 @@ li .camp_title-con {
 @media only screen and (max-width: 1024px) {
   #footer #max_con > div {
  }
-#max_con .site_map-con {
+#footer_max_con .site_map-con {
   margin-left: auto;
 }
-  #max_con .mail_cta-con input {
+  #footer_max_con .mail_cta-con input {
     width: 16em;
   }
-  #max_con .mail_title {
+  #footer_max_con .mail_title {
     font-size: 1.75em;
   }
 }

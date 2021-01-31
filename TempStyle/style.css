@@ -448,10 +448,11 @@ li .camp_title-con {
   background-color: #FF5500;
   color: white;
 }
-#max_con {
+#footer_max_con {
   display: flex;
   align-self: center;
   width: 100%;
+  height: inherit;
   max-width: 1440px;
   margin: 0 auto;
 }
@@ -591,8 +592,7 @@ li .camp_title-con {
   #footer {
     height: auto;
   }
-  #max_con {
-
+  #footer_max_con {
     display: block;
     align-self: unset;
     width: 98%;
@@ -605,15 +605,15 @@ li .camp_title-con {
 }
 /*tablet styling*/
 @media only screen and (max-width: 1024px) {
-  #footer #max_con > div {
+  #footer #footer_max_con > div {
  }
-#max_con .site_map-con {
+#footer_max_con .site_map-con {
   margin-left: auto;
 }
-  #max_con .mail_cta-con input {
+  #footer_max_con .mail_cta-con input {
     width: 16em;
   }
-  #max_con .mail_title {
+  #footer_max_con .mail_title {
     font-size: 1.75em;
   }
 }
