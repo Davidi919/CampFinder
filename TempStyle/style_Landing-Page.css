@@ -1,6 +1,6 @@
 /* type face import */
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;0,900;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,800;0,900;1,300&display=swap');
 
 
 /* Lemon reset */
@@ -33,7 +33,7 @@ footer, header, hgroup, menu, nav, section {
 
 body {
   line-height: 1;
-  background-color: grey;
+  background-color: white;
   position: relative;
   min-height: 100%;
 
@@ -74,7 +74,7 @@ html {
   position: fixed;
   background-color: #FF5500;
   box-shadow: 3px 0px 4px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
+  z-index: 5000;
 }
 #header_max_con {
   width: 100%;
@@ -241,6 +241,8 @@ html {
 .splash_con {
   display: block;
   padding-top: 70px;
+  padding-bottom: 70px;
+  margin-bottom: 70px;
   width: 100%;
   height: 85vh;
   color: #FFFFFF;
@@ -303,7 +305,7 @@ z-index: 600;
 }
 
 .input_fields input {
-width: 95%;
+width: 92%;
 height: 45px;
 display: block;
 margin: 5px auto;
@@ -355,7 +357,7 @@ border-radius: 5px;
 }
 @media only screen and (max-width: 1200px){
   .find_a_program_user_input {
-    width: 20em;
+    width: 21em;
   }
 
 }
@@ -385,6 +387,7 @@ border-radius: 5px;
 @media only screen and (max-width: 375px) {
   .splash_con {
     padding-bottom: 100px;
+    background-position: center;
   }
 }
 /*main featured camp container*/
@@ -392,23 +395,32 @@ border-radius: 5px;
   display:block;
   width: 100%;
   height: auto;
-  border: 2px solid pink;
 
 }
 
 .feat_camp--banner {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("../Assets/graphics/Feat_banner.svg");
+  /*background-image: url("../Assets/graphics/Feat_banner.svg");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover;*/
   background-color: transparent;
-  background-origin: content-box;
+  /*background-origin: content-box;*/
   width: 100%;
-  height: 175px;
+  height: auto;
 }
+
+.feat_camp--banner svg {
+  position: absolute;
+  overflow: hidden;
+  z-index: 0;
+}
+
 .feat_camp--banner h1{
+  position: relative;
+  z-index: 400;
   font-size:32px;
   font-weight: 700;
   letter-spacing: 1px;
@@ -466,8 +478,7 @@ h2#camp_local {
   background-color: #FF5500;
 }
 .abt_camp {
-  width: 20em;
-  border: 2px solid blue;
+  width: 22em;
   overflow: visible;
 }
 
@@ -480,14 +491,12 @@ h2#camp_local {
   font-size: 16px;
   font-weight: 400;
   margin-left: 20px;
-  border: 2px solid black;
   width: 20em;
 }
 
 .btn_con {
-  width: 300px;
+  width: 22em;
   margin: auto;
-  border: 2px solid red;
 }
 .feat_camp_info button {
   font-size: 20px;
@@ -514,16 +523,74 @@ h2#camp_local {
   font-weight: 700;
 }
 .avail_dates {
-  width: 300px;
-  border: 2px solid white;
+  width: 22em;
   position: relative;
 }
 
 .avail_dates .wrapper {
   position: absolute;
-  bottom: 10px;
+  bottom: 20px;
   right: 10px;
 }
+.avail_dates .camp_cal-icon {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  top: 2px;
+  margin-left: 5px;
+}
+
+.avail_dates span {
+  font-size: 18px;
+}
+.tab_breakpoint {
+  display: none;
+}
+/*responsive styling for main featured camp*/
+@media only screen and (max-width: 1024px) {
+  .abt_camp {
+    overflow: auto;
+  }
+  .abt_camp h3 {
+    width: auto;
+  }
+  .camp_cal-icon {
+    width: 1.25em;
+    height: auto;
+  }
+}
+@media only screen and (max-width: 950px) {
+  .tab_breakpoint {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .feat_camp_info {
+    height: auto;
+    display: block;
+  }
+  .abt_camp {
+    width: 100%;
+    height: 12em;
+  }
+  .abt_camp h3 {
+    margin-right: 10px;
+  }
+  .avail_dates {
+    width: 100%;
+  }
+  .avail_dates .wrapper {
+    position: unset;
+    text-align: center;
+  }
+  .tab_breakpoint {
+    display: none;
+  }
+}
+
+
+
 
 /*landing page featured camps list container*/
 .camp_list-con {
