@@ -134,7 +134,6 @@ html {
     background-color: white;
   }
   .account_btn--con_mobile ul {
-
     margin: 0;
     padding: 0;
     list-style: none;
@@ -205,7 +204,7 @@ html {
 }
 
 .account_btn--con_mobile .menu-btn:checked ~ .menu {
-  max-height: 300px;
+  max-height: 100vh;
   width: 300px;
   position: relative;
   left: -238px;
@@ -213,6 +212,10 @@ html {
   border: 2px solid #FF5500;
   box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.2);
 
+}
+#header_max_con > div.account_btn--con_mobile > ul {
+  height: 100vh;
+  box-shadow: 0 0 100vw rgba(0,0,0,0.8);
 }
 
 .account_btn--con_mobile .menu-btn:checked ~ .menu-icon .navicon {
@@ -365,7 +368,7 @@ border-radius: 5px;
 
   .find_a_program_user_input {
     width: 350px;
-    margin: 60px auto;
+    margin: 30px auto;
     float: none;
   }
 }
@@ -403,11 +406,7 @@ border-radius: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
-  /*background-image: url("../Assets/graphics/Feat_banner.svg");
-  background-repeat: no-repeat;
-  background-size: cover;*/
   background-color: transparent;
-  /*background-origin: content-box;*/
   width: 100%;
   height: auto;
 }
@@ -420,6 +419,7 @@ border-radius: 5px;
 
 .feat_camp--banner h1{
   position: relative;
+  top: -35px;
   z-index: 400;
   font-size:32px;
   font-weight: 700;
@@ -440,7 +440,14 @@ margin-left: 20px;
 }
 .feat_camp_pic_con {
   position: relative;
-  top: -75px;
+  background-image: url("../Assets/graphics/splash_graphics/feat_camp_pic.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right;
+  height: 35em;
+  width: 100%;
+  top: -25px;
+  margin-bottom: -25px;
   z-index: -200;
 }
 img#feat_camp_pic {
@@ -457,8 +464,8 @@ h2#camp_local {
 .feat_camp_con .camp_local {
   color: white;
   position: absolute;
-  bottom: -50px;
-  width: auto;
+  bottom: 20px;
+  width: -webkit-fill-available;
   height: 25px;
 
 }
@@ -489,6 +496,7 @@ h2#camp_local {
 
 .abt_camp h3 {
   font-size: 16px;
+  line-height: 1.25em;
   font-weight: 400;
   margin-left: 20px;
   width: 20em;
@@ -547,6 +555,11 @@ h2#camp_local {
   display: none;
 }
 /*responsive styling for main featured camp*/
+@media only screen and (min-width: 200px) {
+
+}
+
+
 @media only screen and (max-width: 1024px) {
   .abt_camp {
     overflow: auto;
@@ -569,10 +582,10 @@ h2#camp_local {
   .feat_camp_info {
     height: auto;
     display: block;
+    padding-bottom: 20px;
   }
   .abt_camp {
     width: 100%;
-    height: 12em;
   }
   .abt_camp h3 {
     margin-right: 10px;
@@ -589,6 +602,19 @@ h2#camp_local {
   }
 }
 
+@media only screen and (max-width: 600px) {
+  .feat_camp_info .btn_con {
+    display: none;
+  }
+  .avail_dates {
+    margin: 20px auto;
+  }
+  .avail_dates .wrapper {
+    text-align: left;
+    margin-left: 20px;
+  }
+}
+
 
 
 
@@ -596,19 +622,16 @@ h2#camp_local {
 .camp_list-con {
   width: 100%;
   height: auto;
-  border: 2px solid green;
+  margin: 40px auto;
 }
 
 .camp_results {
 display: grid;
 margin: 0;
-grid-template-columns: repeat(auto-fill, minmax(375px, 1fr));
+grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 grid-gap: 10px;
-
-/*
-display: flex;
-flex-direction: row;
-flex-wrap: wrap;*/
+justify-items: center;
+justify-content: center;
 }
 
 #feat_camp .feat_arrow {
@@ -623,8 +646,9 @@ flex-wrap: wrap;*/
   margin:0 10px;
   border: 2px solid #FF5500;
   background-color: #FF5500;
-  width: 300px;
-  height: 409px;
+  min-width: 300px;
+  max-width: 350px;
+  height: 410px;
   border-radius: 20px;
   box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.2);
   position: relative;
@@ -701,7 +725,19 @@ li .camp_title-con {
   right: 15px;
 }
 
+/*responsive camp list styling*/
+@media only screen and (min-width: 2000px){
+  .camp_results {
+    width: 2000px;
+    margin: 0 auto;
+  }
+}
 
+@media only screen and (min-width: 1200px) {
+  .camp_results {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+}
 
 /*footer styling*/
 #footer {
