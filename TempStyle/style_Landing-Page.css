@@ -352,7 +352,6 @@ border-radius: 5px;
 /*splash container responsive/mobile styling*/
 @media only screen and (min-width: 2000px) {
   .find_a_program_user_input {
-    border: 5px solid pink;
     margin-right: 21em;
   }
 }
