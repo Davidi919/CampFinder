@@ -342,7 +342,6 @@ border-radius: 5px;
   cursor: pointer;
   font-size: 20px;
   box-shadow: 3px 3px rgba(0, 0, 0, 0.2);
-  transition-duration: 0.4s;
 }
 #submit_btn:active {
   box-shadow: none;
@@ -712,7 +711,7 @@ li .camp_title-con {
   width:  auto;
 }
 .camp_card-abt_con #avail_dates--card {
-  font-size: 18px;
+  font-size: 1.25rem;
   position: absolute;
   bottom: 20px;
   left: 10px;
@@ -720,7 +719,7 @@ li .camp_title-con {
 
 .camp_card-abt_con .camp_cal-icon {
   position: absolute;
-  bottom: 17px;
+  bottom: 1.25rem;
   right: 15px;
 }
 
