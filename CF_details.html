@@ -14,257 +14,272 @@
     <meta name="theme-color" content="#FF5500">
     <meta name="robots" content="index,follow"><!-- All Search Engines -->
     <meta name="googlebot" content="index,follow"><!-- Google Specific -->
-    <!--header styling-->
+    <!--global styling-->
     <style>
-      /* type face import */
+    /* type face import */
 
-      @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;0,900;1,300&display=swap');
-
-
-      /* Lemon reset */
-      body, div, span, applet, object, iframe,
-      h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-      a, abbr, acronym, address, big, cite, code,
-      del, dfn, em, img, ins, kbd, q, s, samp,
-      small, strike, strong, sub, sup, tt, var,
-      b, u, i, center,
-      dl, dt, dd, ol, ul, li,
-      fieldset, form, label, legend,
-      table, caption, tbody, tfoot, thead, tr, th, td,
-      article, aside, canvas, details, embed,
-      figure, figcaption, footer, header, hgroup,
-      menu, nav, output, ruby, section, summary,
-      time, mark, audio, video {
-        margin: 0;
-        padding: 0;
-        border: 0;
-        font-size: 100%;
-        font-family: "Roboto", sans-serif;
-        vertical-align: baseline;
-      }
-
-      /* HTML5 display-role reset for older browsers */
-      article, aside, details, figcaption, figure,
-      footer, header, hgroup, menu, nav, section {
-        display: block;
-      }
-
-      body {
-        line-height: 1;
-        background-color: whitesmoke;
-      }
-
-      ol, ul {
-        list-style: none;
-      }
-
-      blockquote, q {
-        quotes: none;
-      }
-
-      blockquote:before, blockquote:after,
-      q:before, q:after {
-        content: "";
-        content: none;
-      }
-
-      table {
-        border-collapse: collapse;
-        border-spacing: 0;
-      }
-      /* global rules */
-      html {
-        font-size: 14px;
-        font-family: "Roboto", sans-serif;
-        margin: 0;
-      }
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,800;0,900;1,300&display=swap');
 
 
-      /*begin header styling */
+    /* Lemon reset */
+    body, div, span, applet, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    a, abbr, acronym, address, big, cite, code,
+    del, dfn, em, img, ins, kbd, q, s, samp,
+    small, strike, strong, sub, sup, tt, var,
+    b, u, i, center,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, embed,
+    figure, figcaption, footer, header, hgroup,
+    menu, nav, output, ruby, section, summary,
+    time, mark, audio, video {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font-size: 100%;
+      font-family: "Roboto", sans-serif;
+      vertical-align: baseline;
+    }
 
-      #header {
-        width: 100%;
-        height: 70px;
-        position: fixed;
-        background-color: #FF5500;
-        box-shadow: 3px 0px 4px rgba(0, 0, 0, 0.2);
-        z-index: 1000;
-      }
-      #header_max_con {
-        width: 100%;
-        max-width: 1440px;
-        margin: 0 auto;
-      }
-      #header svg {
-        margin: 10px;
-        margin-top: 12px;
-      }
-      .account_btn--con {
-        display: inline-block;
-        float: right;
-        margin: 10px 20px;
+    /* HTML5 display-role reset for older browsers */
+    article, aside, details, figcaption, figure,
+    footer, header, hgroup, menu, nav, section {
+      display: block;
+    }
 
-      }
-      .account_btn--con_mobile {
-        display: none;
-      }
-      .header_btn {
-        display: inline-block;
-        font-size: 20px;
-        width: 150px;
-        height: 50px;
-        margin-left: 20px;
-        cursor: pointer;
-        background-color: #FFFFFF;
-        border: none;
-        box-shadow: 3px 3px rgba(0, 0, 0, 0.2);
-        border-radius: 5px;
-         transition-duration: 0.4s;
-      }
-      .header_btn:active {
-        box-shadow: none;
-        padding: 3px 3px inherit inherit;
-      }
-      .header_btn a {
-        text-align: center;
-        text-transform: uppercase;
-        color: #FF5500;
-        text-decoration: none;
-        width: 150px;
-        font-weight: 700;
-      }
-      /*mobile header styling*/
-      @media only screen and (max-width: 600px) {
-        .account_btn--con {
-          display: none;
+    body {
+      line-height: 1;
+      background-color: white;
+      position: relative;
+      min-height: 100%;
+
+    }
+
+    ol, ul {
+      list-style: none;
+    }
+
+    blockquote, q {
+      quotes: none;
+    }
+
+    blockquote:before, blockquote:after,
+    q:before, q:after {
+      content: "";
+      content: none;
+    }
+
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+    /* global rules */
+    html {
+      font-size: 14px;
+      font-family: "Roboto", sans-serif;
+      margin: 0;
+      height: 100%;
+    }
+        </style>
+        <!--header styling-->
+        <style>
+        #header {
+          width: 100%;
+          height: 70px;
+          position: fixed;
+          background-color: #FF5500;
+          box-shadow: 3px 0px 4px rgba(0, 0, 0, 0.2);
+          z-index: 5000;
         }
-        .account_btn--con_mobile {
+        #header_max_con {
+          width: 100%;
+          max-width: 2000px;
+          margin: 0 auto;
+        }
+        #header svg {
+          margin: 10px;
+          margin-top: 12px;
+        }
+        .account_btn--con {
           display: inline-block;
           float: right;
-          margin: 15px;
-          margin-top: 10px;
-          width: 50px;
+          margin: 10px 20px;
+
+        }
+        .account_btn--con_mobile {
+          display: none;
+        }
+        .header_btn {
+          display: inline-block;
+          font-size: 20px;
+          width: 150px;
           height: 50px;
-          background-color: white;
+          margin-left: 20px;
+          cursor: pointer;
+          background-color: #FFFFFF;
+          border: none;
+          box-shadow: 3px 3px rgba(0, 0, 0, 0.2);
+          border-radius: 5px;
+           transition-duration: 0.4s;
         }
-        .account_btn--con_mobile ul {
-
-          margin: 0;
-          padding: 0;
-          list-style: none;
-          overflow: hidden;
+        .header_btn:active {
+          box-shadow: none;
+          padding: 3px 3px inherit inherit;
         }
-        .account_btn--con_mobile li a {
-        display: block;
-        text-align: center;
-        font-size: 24px;
-        padding: 20px 20px;
-        border-bottom: 1px solid #FF5500;
-        text-decoration: none;
-        text-transform: uppercase;
-        font-weight: 700;
-        color: #FF5500;
+        .header_btn a {
+          text-align: center;
+          text-transform: uppercase;
+          color: #FF5500;
+          text-decoration: none;
+          width: 150px;
+          font-weight: 700;
+        }
+        /*mobile header styling*/
+        @media only screen and (max-width: 600px) {
+          .account_btn--con {
+            display: none;
           }
+          .account_btn--con_mobile {
+            display: inline-block;
+            float: right;
+            margin: 15px;
+            margin-top: 10px;
+            width: 50px;
+            height: 50px;
+            background-color: white;
+          }
+          .account_btn--con_mobile ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            overflow: hidden;
+          }
+          .account_btn--con_mobile li a {
+          display: block;
+          text-align: center;
+          font-size: 24px;
+          padding: 20px 20px;
+          border-bottom: 1px solid #FF5500;
+          text-decoration: none;
+          text-transform: uppercase;
+          font-weight: 700;
+          color: #FF5500;
+            }
 
-        .account_btn--con_mobile .menu {
-          background-color: white;
-          clear: both;
-          max-height: 0;
-          transition: max-height .2s ease-out;
+          .account_btn--con_mobile .menu {
+            background-color: white;
+            clear: both;
+            max-height: 0;
+            transition: max-height .2s ease-out;
+
+          }
+          .account_btn--con_mobile .menu-icon {
+          cursor: pointer;
+          display: inline-block;
+          float: right;
+          margin: 22px 12px;
+          position: relative;
+          -webkit-user-select: none;
+             -moz-user-select: none;
+              -ms-user-select: none;
+                  user-select: none;
+        }
+
+        .account_btn--con_mobile .menu-icon .navicon {
+          background: #FF5500;
+          display: block;
+          height: 3px;
+          position: relative;
+          transition: background .2s ease-out;
+          width: 27px;
+        }
+
+        .account_btn--con_mobile .menu-icon .navicon:before,
+        .account_btn--con_mobile .menu-icon .navicon:after {
+          background: #FF5500;
+          content: '';
+          display: block;
+          height: 100%;
+          position: absolute;
+          transition: all .2s ease-out;
+          width: 100%;
 
         }
-        .account_btn--con_mobile .menu-icon {
-        cursor: pointer;
-        display: inline-block;
-        float: right;
-        margin: 22px 12px;
-        position: relative;
-        -webkit-user-select: none;
-           -moz-user-select: none;
-            -ms-user-select: none;
-                user-select: none;
-      }
 
-      .account_btn--con_mobile .menu-icon .navicon {
-        background: #FF5500;
-        display: block;
-        height: 3px;
-        position: relative;
-        transition: background .2s ease-out;
-        width: 27px;
-      }
+        .account_btn--con_mobile .menu-icon .navicon:before {
+          top: 10px;
+        }
 
-      .account_btn--con_mobile .menu-icon .navicon:before,
-      .account_btn--con_mobile .menu-icon .navicon:after {
-        background: #FF5500;
-        content: '';
-        display: block;
-        height: 100%;
-        position: absolute;
-        transition: all .2s ease-out;
-        width: 100%;
+        .account_btn--con_mobile .menu-icon .navicon:after {
+          top: -10px;
+        }
 
-      }
+        .account_btn--con_mobile .menu-btn {
+          display: none;
+        }
 
-      .account_btn--con_mobile .menu-icon .navicon:before {
-        top: 10px;
-      }
-
-      .account_btn--con_mobile .menu-icon .navicon:after {
-        top: -10px;
-      }
-
-      .account_btn--con_mobile .menu-btn {
-        display: none;
-      }
-
-      .account_btn--con_mobile .menu-btn:checked ~ .menu {
-        max-height: 300px;
-        width: 300px;
-        position: relative;
-        left: -238px;
-        top: 10px;
-        border: 2px solid #FF5500;
-        box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.2);
-
-      }
-
-      .account_btn--con_mobile .menu-btn:checked ~ .menu-icon .navicon {
-        background: transparent;
-      }
-
-      .account_btn--con_mobile .menu-btn:checked ~ .menu-icon .navicon:before {
-        transform: rotate(-45deg);
-      }
-
-      .account_btn--con_mobile .menu-btn:checked ~ .menu-icon .navicon:after {
-        transform: rotate(45deg);
-      }
-
-      .account_btn--con_mobile .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
-      .account_btn--con_mobile .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
-        top: 0;
-      }
+        .account_btn--con_mobile .menu-btn:checked ~ .menu {
+          max-height: 100vh;
+          width: 300px;
+          position: relative;
+          left: -238px;
+          top: 10px;
+          border: 2px solid #FF5500;
+          box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.2);
 
         }
+        #header_max_con > div.account_btn--con_mobile > ul {
+          height: 100vh;
+          box-shadow: 0 0 100vw rgba(0,0,0,0.8);
+        }
+
+        .account_btn--con_mobile .menu-btn:checked ~ .menu-icon .navicon {
+          background: transparent;
+        }
+
+        .account_btn--con_mobile .menu-btn:checked ~ .menu-icon .navicon:before {
+          transform: rotate(-45deg);
+        }
+
+        .account_btn--con_mobile .menu-btn:checked ~ .menu-icon .navicon:after {
+          transform: rotate(45deg);
+        }
+
+        .account_btn--con_mobile .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+        .account_btn--con_mobile .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+          top: 0;
+        }
+
+          }
         </style>
-        <!--footer styling-->
+
+        <!--main content styling-->
         <style>
-          /*footer styling*/
+          /*main content styling*/
           #placeholder_block {
             display: block;
             width: 90%;
-            height: 600px;
-            margin: 0 auto;
-            padding-top: 500px;
+            height: 1800px;
             background-color: grey;
-            text-align: center;
-            border: 2px solid blue;
+            border: 2px solid black;
+            margin: 0 auto;
           }
+
+        </style>
+
+        <!--footer styling-->
+        <style>
+          /*footer styling*/
           #footer {
-            display: flex;
+            position: relative;
+            left: 0;
+            right: 0;
+            bottom: 0;
             width: 100%;
-            height: 22em;
+            height: 350px;
+            margin-bottom: -350px;
             background-color: #FF5500;
             color: white;
           }
@@ -397,7 +412,7 @@
             text-transform: uppercase;
           }
 
-          .mail_cta-con input {
+          #footer .mail_cta-con input {
             font-size: 18px;
             font-style: italic;
             width: 330px;
@@ -410,7 +425,7 @@
           /*tablet/mobile phone styling*/
           @media only screen and (max-width: 915px) {
             #footer {
-              height: auto;
+              height: 750px;
             }
             #footer_max_con {
               display: block;
@@ -425,7 +440,7 @@
           }
           /*tablet styling*/
           @media only screen and (max-width: 1024px) {
-            #footer #footer_max_con > div {
+            #footer #max_con > div {
            }
           #footer_max_con .site_map-con {
             margin-left: auto;
@@ -437,8 +452,7 @@
               font-size: 1.75em;
             }
           }
-
-
+          }
         </style>
 
 
@@ -451,7 +465,7 @@
   <!--header container-->
   <header id="header">
     <div id="header_max_con">
-    <a href="#home">
+    <a href="index.html">
       <!--svg logo begin-->
       <svg xmlns="http://www.w3.org/2000/svg" width="99.999" height="45" viewBox="0 0 99.999 45">
     <g id="LOGO" transform="translate(23952.999 24220.434)">
