@@ -1,24 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> CampFinder | Find A Camp
-    </title>
-    <!-- css link -->
-     <!--<link href="./TempStyle/style_Landing-Page.css" type="text/css" rel="stylesheet">-->
-     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="CampFinder">
-    <meta name="subject" content="Find a camp experience your kids will love">
-    <meta name="description" content="Look through the variety of camps and find the one that fits your child perfectly.">
-    <meta name="theme-color" content="#FF5500">
-    <meta name="robots" content="index,follow"><!-- All Search Engines -->
-    <meta name="googlebot" content="index,follow"><!-- Google Specific -->
-    <!--header styling-->
-    <style>
-      /* type face import */
 
-      @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;0,900;1,300&display=swap');
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> CampFinder | Find A Camp
+  </title>
+  <!-- css link -->
+  <!--<link href="./TempStyle/style_Landing-Page.css" type="text/css" rel="stylesheet">-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="CampFinder">
+  <meta name="subject" content="Find a camp experience your kids will love">
+  <meta name="description" content="Look through the variety of camps and find the one that fits your child perfectly.">
+  <meta name="theme-color" content="#FF5500">
+  <meta name="robots" content="index,follow"><!-- All Search Engines -->
+  <meta name="googlebot" content="index,follow"><!-- Google Specific -->
+
+  <script type="text/javascript">
+    < script >
+      var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("demo");
+      var captionText = document.getElementById("caption");
+      if (n > slides.length) {
+        slideIndex = 1
+      }
+      if (n < 1) {
+        slideIndex = slides.length
+      }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+      captionText.innerHTML = dots[slideIndex - 1].alt;
+    }
+  </script>
+  </script>
+  <!--header styling-->
+  <style>
+    /* type face import */
+
+      @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 
       /* Lemon reset */
@@ -249,34 +287,78 @@
         }
         </style>
 
-        <!--cap details main content-->
-        <style>
+  <!--cap details main content-->
+  <style>
 
-          .heading_text {
+    .heading_con {
             display: block;
             width: 100%;
             height: auto;
             padding-top: 70px;
             text-align: center;
-            border: 2px solid blue;
           }
-          .camp_overview-bts {
+          #camp_name-header {
+            font-size: 34px;
+            font-weight: 700;
+            margin: 40px auto 30px auto;
+          }
+          .bts-con p {
+            display: inline;
+            font-size: 23px;
+          }
+          .bts-con {
+            position: absolute;
+            top: 80px;
+            left: 20px;
             text-align: left;
+            width: 200px;
+            height: 18px;
+          }
+          .bts-con svg {
+            margin-bottom: -1px;
+            margin-right: 10px;
+          }
+          .bts-con a {
+            text-decoration: none;
+            color: #707070;
+          }
+          .camp_local {
+            margin-left: 4%;
+            margin-bottom: 5px;
+          }
+          .camp_local-icon {
+            float: left;
+            margin-right: 5px;
+            height: 18px;
+            width: auto;
+          }
+          #camp_local {
+            font-size: 18px;
+            font-weight: 400;
+            font-style: italic;
+            color: #707070;
+
           }
 
-          .cf_details_img {
+          .camp_gallery {
             display: block;
+            min-width: 300px;
             width: 92%;
-            height: auto;
+            height: 500px;
             margin: 0 auto;
-            padding-top: 500px;
             background-color: grey;
             border: 2px solid #FF5500;
             border-radius: 5px;
-            text-align: left;
+            overflow: hidden;
+
+          }
+          #camp_detail_image{
+            width: 100%;
+            height: auto;
+            transform: translate(0, -25%);
           }
 
-          .grid_section {
+          .camp_details-con {
             margin: 0 auto;
             max-width: 1440px;
             width: 100%;
@@ -417,29 +499,55 @@
             border: 2px solid #FF5500;
           }
 
-          #card6 {
-            height: 300px;
+          .faq-con {
+            max-width: 830px;
+            min-width: 300px;
+            height: 450px;
             margin: 10px auto;
             border: 2px solid #FF5500;
-            font-size:
+            border-radius: 5px;
+            box-shadow: 4px 4px 6px rgb(0 0 0 / 20%);
+            font-size: 24px;
+          }
+          .faq_title {
+            font-size: 30px;
+            font-weight: 800;
+            text-align: center;
+            margin: 20px auto 10px auto;
           }
 
-          .camp_overview-faq {
+          .q-a_con {
             text-align: left;
+            margin:0 10px;
           }
 
-          .faq_question-section{
-
+          .faq_question{
+            font-style: italic;
+            font-weight: 600;
+            font-size: 28px;
+            display: block;
+            margin: 30px auto 0px auto;
           }
+          .q-a_con strong {
+            font-size: 28px;
+            font-weight: 600;
+          }
+          .faq_answer {
+            font-weight: 400;
+            font-size: 28px;
+            display: block;
+            margin: 5px auto 30px auto;
+          }
+
 
         </style>
 
 
 
-        <!--footer styling-->
-        <style>
+  <!--footer styling-->
+  <style>
 
-          /*begin footer styling*/
+    /*begin footer styling*/
           #footer {
             display: flex;
             width: 100%;
@@ -623,222 +731,234 @@
 
 
 
-  </head>
+</head>
 
 <!-- begin body -->
+
 <body>
   <!--header container-->
   <header id="header">
     <div id="header_max_con">
-    <a href="#home">
-      <!--svg logo begin-->
-      <svg xmlns="http://www.w3.org/2000/svg" width="99.999" height="45" viewBox="0 0 99.999 45">
-    <g id="LOGO" transform="translate(23952.999 24220.434)">
-      <path id="Path_9" data-name="Path 9" d="M23.227-16.475a11.507,11.507,0,0,0-3.4-2.078,10.452,10.452,0,0,0-3.73-.659,8.971,8.971,0,0,0-6.5,2.334A8.314,8.314,0,0,0,7.175-10.6,8.293,8.293,0,0,0,9.423-4.484a8.265,8.265,0,0,0,6.135,2.262,11.664,11.664,0,0,0,4.117-.7A11.351,11.351,0,0,0,23.2-5.055L23.161.305a14.777,14.777,0,0,1-3.655,1.468,16.279,16.279,0,0,1-4.016.484A14.142,14.142,0,0,1,5.477-1.375,12.029,12.029,0,0,1,1.564-10.6a11.977,11.977,0,0,1,3.922-9.2,14.314,14.314,0,0,1,10.109-3.624,18.956,18.956,0,0,1,4.009.418,18.325,18.325,0,0,1,3.817,1.282ZM41.51-7.69l-2.858-7.9q-.122-.35-.313-1.2t-.4-2.087q-.223,1.185-.436,2.129t-.315,1.258l-2.754,7.8Zm-16.243,9.3,9.7-24.444h6.24l9.85,24.444H44.856L42.782-3.585H32.9L31.123,1.607Zm26.264,0,3.886-24.444h5.717L66.049-8.444a11.506,11.506,0,0,1,.335,1.319q.183.869.335,1.986.139-1.135.313-2.03a8.91,8.91,0,0,1,.335-1.311l5-14.358H78L81.91,1.607H76.733L74.868-13.139q-.209-1.636-.279-2.471t-.069-1.553q0-.384.009-.576t.026-.342q-.261,1.436-.5,2.479a14.35,14.35,0,0,1-.427,1.578l-5.4,15.63H65.16L59.845-14.021q-.07-.214-.3-1.2t-.654-2.871v.718a34.046,34.046,0,0,1-.313,4.174l-.018.067L56.707,1.607ZM90.938-11.8h.781a4.868,4.868,0,0,0,3.241-.885,3.584,3.584,0,0,0,1.011-2.838,3.2,3.2,0,0,0-1.011-2.63,5.117,5.117,0,0,0-3.241-.826h-.781ZM85.448,1.607V-22.837h6.274q5.019,0,7.415,1.837a6.691,6.691,0,0,1,2.4,5.677A6.876,6.876,0,0,1,99.12-9.746a10.109,10.109,0,0,1-6.684,2.021h-1.5V1.607Z" transform="translate(-23954.557 -24197)" fill="#fff"/>
-      <text id="FINDER" transform="translate(-23952 -24178.434)" fill="#fff" font-size="12" font-family="ArialMT, Arial" letter-spacing="0.86em"><tspan x="0" y="0">FINDER</tspan></text>
-    </g>
-  </svg>
+      <a href="#home">
+        <!--svg logo begin-->
+        <svg xmlns="http://www.w3.org/2000/svg" width="99.999" height="45" viewBox="0 0 99.999 45">
+          <g id="LOGO" transform="translate(23952.999 24220.434)">
+            <path id="Path_9" data-name="Path 9" d="M23.227-16.475a11.507,11.507,0,0,0-3.4-2.078,10.452,10.452,0,0,0-3.73-.659,8.971,8.971,0,0,0-6.5,2.334A8.314,8.314,0,0,0,7.175-10.6,8.293,8.293,0,0,0,9.423-4.484a8.265,8.265,0,0,0,6.135,2.262,11.664,11.664,0,0,0,4.117-.7A11.351,11.351,0,0,0,23.2-5.055L23.161.305a14.777,14.777,0,0,1-3.655,1.468,16.279,16.279,0,0,1-4.016.484A14.142,14.142,0,0,1,5.477-1.375,12.029,12.029,0,0,1,1.564-10.6a11.977,11.977,0,0,1,3.922-9.2,14.314,14.314,0,0,1,10.109-3.624,18.956,18.956,0,0,1,4.009.418,18.325,18.325,0,0,1,3.817,1.282ZM41.51-7.69l-2.858-7.9q-.122-.35-.313-1.2t-.4-2.087q-.223,1.185-.436,2.129t-.315,1.258l-2.754,7.8Zm-16.243,9.3,9.7-24.444h6.24l9.85,24.444H44.856L42.782-3.585H32.9L31.123,1.607Zm26.264,0,3.886-24.444h5.717L66.049-8.444a11.506,11.506,0,0,1,.335,1.319q.183.869.335,1.986.139-1.135.313-2.03a8.91,8.91,0,0,1,.335-1.311l5-14.358H78L81.91,1.607H76.733L74.868-13.139q-.209-1.636-.279-2.471t-.069-1.553q0-.384.009-.576t.026-.342q-.261,1.436-.5,2.479a14.35,14.35,0,0,1-.427,1.578l-5.4,15.63H65.16L59.845-14.021q-.07-.214-.3-1.2t-.654-2.871v.718a34.046,34.046,0,0,1-.313,4.174l-.018.067L56.707,1.607ZM90.938-11.8h.781a4.868,4.868,0,0,0,3.241-.885,3.584,3.584,0,0,0,1.011-2.838,3.2,3.2,0,0,0-1.011-2.63,5.117,5.117,0,0,0-3.241-.826h-.781ZM85.448,1.607V-22.837h6.274q5.019,0,7.415,1.837a6.691,6.691,0,0,1,2.4,5.677A6.876,6.876,0,0,1,99.12-9.746a10.109,10.109,0,0,1-6.684,2.021h-1.5V1.607Z"
+              transform="translate(-23954.557 -24197)" fill="#fff" />
+            <text id="FINDER" transform="translate(-23952 -24178.434)" fill="#fff" font-size="12" font-family="ArialMT, Arial" letter-spacing="0.86em">
+              <tspan x="0" y="0">FINDER</tspan>
+            </text>
+          </g>
+        </svg>
 
-  <!--svg logo end-->
-  </a>
-  <div class="account_btn--con">
-    <button type="button" class="header_btn" id="login-btn">
-    <a class="header_btn--link" href="#register">
-      Login
+        <!--svg logo end-->
       </a>
-    </button>
-    <button type="button" class="header_btn" id="register-btn">
-    <a class="header_btn--link" href="#register">
-      Register
-      </a>
-    </button>
-  </div>
-  <!--mobile dropdown menu-->
-  <div class="account_btn--con_mobile">
-    <input class="menu-btn" type="checkbox" id="menu-btn" />
-    <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-    <ul class="menu">
-      <li><a href="#login">Login</a></li>
-      <li><a href="#register">Register</a></li>
-    </ul>
-  </div>
-  <!--end of header container-->
-  </div>
+      <div class="account_btn--con">
+        <button type="button" class="header_btn" id="login-btn">
+          <a class="header_btn--link" href="#register">
+            Login
+          </a>
+        </button>
+        <button type="button" class="header_btn" id="register-btn">
+          <a class="header_btn--link" href="#register">
+            Register
+          </a>
+        </button>
+      </div>
+      <!--mobile dropdown menu-->
+      <div class="account_btn--con_mobile">
+        <input class="menu-btn" type="checkbox" id="menu-btn" />
+        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+        <ul class="menu">
+          <li><a href="#login">Login</a></li>
+          <li><a href="#register">Register</a></li>
+        </ul>
+      </div>
+      <!--end of header container-->
+    </div>
 
   </header>
 
 
-<div id="cf_details_main">
-  <div class="heading_text">
-    <a href="url" class="camp_overview-bts">Back To Search</a>
-    <h1> Adventure Camp</h1>
-    <span>Every town,USA</span>
-  </div>
-
-  <div class="cf_details_img">
-
-  </div>
-
-
-
-<div class="grid_section">
-  <div class="grid-container">
-    <div class="grid-item" id="card1">
-      <div class="categories_con">
-        <div class="categories" id="category_1">
-          Category 1
-        </div>
-        <div class="categories" id="category_2">
-          Category 2
-        </div>
-        <div class="categories" id="category_3">
-          Category 3
-        </div>
-        <div class="categories" id="category_4">
-          Category 4
-        </div>
-        <div class="categories" id="category_5">
-          Category 5
-        </div>
-      </div>
-      <div class="camp_overview">Camp Overview</div>
-      <div class="camp_description">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren
-      </div>
-    </div>
-
-    <div class="grid-item" id="card2">
-      <div class="date_picker">
-        <div class="start_date">
-          02/01/2021
-        </div>
-        <div class="end_date">
-          02/01/2021
-        </div>
-      </div>
-      <div class="cost_info">
-        $550
-
-    </div>
-
-    <div class="grid-item" id="card3">
-      <div class="requirements_section">
-        Requirements <br> <br>
-
-        Stay Terms: Day <br>
-        Age Range: 7 - 9 <br>
-        Gender: Coed
-      </div>
-      <div class="availability_section">
-        Availability
-      </div>
-    </div>
-
-
-    <div class="grid-item" id="card4">Camp Info
-      <div class="overview_map">
-      </div>
-      <div class="overview_abt">Camp Info
-        Adventure Camp
-        123 Adventure Way
-        YourTown, AL 12345
-        (555) 555-5555
-        AdventureCamp@camp.com
-      </div>
-    </div>
-
-    <br>
-
-
-    <div class="grid-item" id="card6">
-      Frequently asked questions
-      <p class="camp_overview-faq">
-        <span class="faq_question-section">Q: Will my kids leave the campground?</span> <br>
-        A: No, the camp ground has everything your child will need
-
-        <span class="faq_question">Q: My kids have dietary restrictions, can your camp accommodate that?</span> <br>
-
-        A: Yes, we have a great chef and cooking staff that will help with your child’s needs
-
-        <span class="faq_question">Q: Does your camp have team building exercises?</span> <br>
-
-        A: No, the camp ground has everything your child will need
-
-      </p>
-    </div>
-
-
-  </div>
-
-</div>
-
-
-
-<!--start of footer-->
-  <div id="footer">
-    <div id="footer_max_con">
-  <div class="site_map-con">
-    <ul class="site_map">
-      <li class="site_map--item">
-        <a href="#aboutUs">About Us</a>
-      </li>
-      <li class="site_map--item">
-        <a href="#aboutUs">Host a Program</a>
-      </li>
-      <li class="site_map--item">
-        <a href="#aboutUs">COVID-19 Resources</a>
-      </li>
-      <li class="site_map--item">
-        <a href="#aboutUs">Privacy Policy</a>
-      </li>
-      <li class="site_map--item" id="social_media-con">
-        <ul class="social_media-list">
-          <li class="footer_icon"> <a target="_blank" href="https://www.facebook.com/"><img src="Assets\icons\footer-facebook.svg" alt=""></a> </li>
-          <li class="footer_icon"> <a target="_blank" href="https://www.instagram.com/?hl=en"><img src="Assets\icons\footer-instagram.svg" alt=""></a> </li>
-          <li class="footer_icon"> <a target="_blank" href="https://twitter.com/?lang=en"><img src="Assets\icons\footer-twitter.svg" alt=""></a> </li>
-          <li class="footer_icon"> <a target="_blank" href="https://www.tiktok.com/"><img src="Assets\icons\footer-tiktok.svg" alt=""></a> </li>
-        </ul>
-      </li>
-      <li class="site_map--item" id="footer_copyright">
-        Copyright ©<script>document.write(' ' + new Date().getFullYear() + ' ');</script>
-      </li>
-    </ul>
-
-  </div>
-
-    <!--find a program-->
-    <div class="fap_cta-con">
-      <div class="brand_slogan">
-        <h1 class="fap_cta--brand">CampFinder</h1>
-        <h2 class="fap_cta--slogan">A Camp Experience Kids Will Love</h2>
-      </div>
-      <div class="fap_btn-con">
-      <button type="button" class="fap_btn" id="fap-btn">
-      <a class="footer_btn--link" href="#findAProgram">
-        find a program
+  <div id="cf_details_max_con">
+    <div class="heading_con">
+      <div class="bts-con">
+        <a href="CF_Map_Search.html" class="camp_overview-bts">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+            <path id="Icon_material-arrow_back" data-name="Icon material-arrow_back" d="M23,13.437H10.069L16.009,7.5,14.5,6,6,14.5,14.5,23,16,21.5l-5.929-5.939H23Z" transform="translate(-6 -6)" fill="#707070" />
+          </svg>
+          <p>Back To Search</p>
         </a>
-      </button>
       </div>
+      <h1 id="camp_name-header">Adventure Camp</h1>
+    </div>
+    <div class="camp_local">
+      <img class="camp_local-icon" src="Assets\icons\camp_location.svg" alt="location">
+      <h2 id="camp_local">Everytown, USA</h2>
+    </div>
+    <div class="camp_gallery">
+      <img id="camp_detail_image" src="Assets/graphics/card_graphics/camp5_pic-card.png" alt="Adventure Camp">
     </div>
 
-    <!--mailing list cta-->
-  <div class="mail_cta-con">
-  <h1 class="mail_title">Signup for our mailing list</h1>
-  <div class="user_input">
-    <input type="text" name="email" placeholder="myemail@example.com">
-  </div>
-  <button type="button" class="mail_btn" id="mail-btn">
-  <a class="footer_btn--link" href="#mailingListSignup">
-    signup
-    </a>
-  </button>
-
-  </div>
-  </div>
-  <!--end of footer container-->
-  </div>
 
 
+    <div class="camp_details-con">
+      <div class="grid-container">
+        <div class="grid-item" id="card1">
+          <div class="categories_con">
+            <div class="categories" id="category_1">
+              Category 1
+            </div>
+            <div class="categories" id="category_2">
+              Category 2
+            </div>
+            <div class="categories" id="category_3">
+              Category 3
+            </div>
+            <div class="categories" id="category_4">
+              Category 4
+            </div>
+            <div class="categories" id="category_5">
+              Category 5
+            </div>
+          </div>
+          <div class="camp_overview">Camp Overview</div>
+          <div class="camp_description">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+            rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+            voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren
+          </div>
+        </div>
+
+        <div class="grid-item" id="card2">
+          <div class="date_picker">
+            <div class="start_date">
+              02/01/2021
+            </div>
+            <div class="end_date">
+              02/01/2021
+            </div>
+          </div>
+          <div class="cost_info">
+            $550
+
+          </div>
+        </div>
+
+        <div class="grid-item" id="card3">
+          <div class="requirements_section">
+            Requirements <br> <br>
+
+            Stay Terms: Day <br>
+            Age Range: 7 - 9 <br>
+            Gender: Coed
+          </div>
+          <div class="availability_section">
+            Availability
+          </div>
+        </div>
+
+
+        <div class="grid-item" id="card4">Camp Info
+          <div class="overview_map">
+          </div>
+          <div class="overview_abt">Camp Info
+            Adventure Camp
+            123 Adventure Way
+            YourTown, AL 12345
+            (555) 555-5555
+            AdventureCamp@camp.com
+          </div>
+        </div>
+      </div>
+
+
+      <div class="faq-con" id="faq">
+        <h1 class="faq_title">Frequently asked questions</h1>
+        <div class="q-a_con">
+          <span class="faq_question"><i><strong>Q:</strong> Will my kids leave the campground?</span></i>
+          <span class="faq_answer"><strong>A:</strong> No, the camp ground has everything your child will need</span>
+
+          <span class="faq_question"><i><strong>Q:</strong> My kids have dietary restrictions, can your camp accommodate that?</span></i>
+
+          <span class="faq_answer"><strong>A:</strong> Yes, we have a great chef and cooking staff that will help with your child’s needs</span>
+
+          <span class="faq_question"><i><strong>Q:</strong> Does your camp have team building exercises?</span></i>
+
+          <span class="faq_answer"><strong>A:</strong> No, the camp ground has everything your child will need.</span>
+        </div>
 
 
 
-  </body>
+      </div>
+
+
+
+      <!--start of footer-->
+      <div id="footer">
+        <div id="footer_max_con">
+          <div class="site_map-con">
+            <ul class="site_map">
+              <li class="site_map--item">
+                <a href="#aboutUs">About Us</a>
+              </li>
+              <li class="site_map--item">
+                <a href="#aboutUs">Host a Program</a>
+              </li>
+              <li class="site_map--item">
+                <a href="#aboutUs">COVID-19 Resources</a>
+              </li>
+              <li class="site_map--item">
+                <a href="#aboutUs">Privacy Policy</a>
+              </li>
+              <li class="site_map--item" id="social_media-con">
+                <ul class="social_media-list">
+                  <li class="footer_icon"> <a target="_blank" href="https://www.facebook.com/"><img src="Assets\icons\footer-facebook.svg" alt=""></a> </li>
+                  <li class="footer_icon"> <a target="_blank" href="https://www.instagram.com/?hl=en"><img src="Assets\icons\footer-instagram.svg" alt=""></a> </li>
+                  <li class="footer_icon"> <a target="_blank" href="https://twitter.com/?lang=en"><img src="Assets\icons\footer-twitter.svg" alt=""></a> </li>
+                  <li class="footer_icon"> <a target="_blank" href="https://www.tiktok.com/"><img src="Assets\icons\footer-tiktok.svg" alt=""></a> </li>
+                </ul>
+              </li>
+              <li class="site_map--item" id="footer_copyright">
+                Copyright ©<script>document.write(' ' + new Date().getFullYear() + ' ');</script>
+              </li>
+            </ul>
+
+          </div>
+
+          <!--find a program-->
+          <div class="fap_cta-con">
+            <div class="brand_slogan">
+              <h1 class="fap_cta--brand">CampFinder</h1>
+              <h2 class="fap_cta--slogan">A Camp Experience Kids Will Love</h2>
+            </div>
+            <div class="fap_btn-con">
+              <button type="button" class="fap_btn" id="fap-btn">
+                <a class="footer_btn--link" href="#findAProgram">
+                  find a program
+                </a>
+              </button>
+            </div>
+          </div>
+
+          <!--mailing list cta-->
+          <div class="mail_cta-con">
+            <h1 class="mail_title">Signup for our mailing list</h1>
+            <div class="user_input">
+              <input type="text" name="email" placeholder="myemail@example.com">
+            </div>
+            <button type="button" class="mail_btn" id="mail-btn">
+              <a class="footer_btn--link" href="#mailingListSignup">
+                signup
+              </a>
+            </button>
+
+          </div>
+        </div>
+        <!--end of footer container-->
+      </div>
+
+
+
+
+
+</body>
