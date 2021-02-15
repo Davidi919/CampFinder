@@ -14,272 +14,436 @@
     <meta name="theme-color" content="#FF5500">
     <meta name="robots" content="index,follow"><!-- All Search Engines -->
     <meta name="googlebot" content="index,follow"><!-- Google Specific -->
-    <!--global styling-->
+    <!--header styling-->
     <style>
-    /* type face import */
+      /* type face import */
 
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,800;0,900;1,300&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;0,900;1,300&display=swap');
 
 
-    /* Lemon reset */
-    body, div, span, applet, object, iframe,
-    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-    a, abbr, acronym, address, big, cite, code,
-    del, dfn, em, img, ins, kbd, q, s, samp,
-    small, strike, strong, sub, sup, tt, var,
-    b, u, i, center,
-    dl, dt, dd, ol, ul, li,
-    fieldset, form, label, legend,
-    table, caption, tbody, tfoot, thead, tr, th, td,
-    article, aside, canvas, details, embed,
-    figure, figcaption, footer, header, hgroup,
-    menu, nav, output, ruby, section, summary,
-    time, mark, audio, video {
-      margin: 0;
-      padding: 0;
-      border: 0;
-      font-size: 100%;
-      font-family: "Roboto", sans-serif;
-      vertical-align: baseline;
-    }
+      /* Lemon reset */
+      body, div, span, applet, object, iframe,
+      h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+      a, abbr, acronym, address, big, cite, code,
+      del, dfn, em, img, ins, kbd, q, s, samp,
+      small, strike, strong, sub, sup, tt, var,
+      b, u, i, center,
+      dl, dt, dd, ol, ul, li,
+      fieldset, form, label, legend,
+      table, caption, tbody, tfoot, thead, tr, th, td,
+      article, aside, canvas, details, embed,
+      figure, figcaption, footer, header, hgroup,
+      menu, nav, output, ruby, section, summary,
+      time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font-family: "Roboto", sans-serif;
+        vertical-align: baseline;
+      }
 
-    /* HTML5 display-role reset for older browsers */
-    article, aside, details, figcaption, figure,
-    footer, header, hgroup, menu, nav, section {
-      display: block;
-    }
+      /* HTML5 display-role reset for older browsers */
+      article, aside, details, figcaption, figure,
+      footer, header, hgroup, menu, nav, section {
+        display: block;
+      }
 
-    body {
-      line-height: 1;
-      background-color: white;
-      position: relative;
-      min-height: 100%;
+      body {
+        line-height: 1;
+        background-color: #FFFFFF;
+      }
 
-    }
+      ol, ul {
+        list-style: none;
+      }
 
-    ol, ul {
-      list-style: none;
-    }
+      blockquote, q {
+        quotes: none;
+      }
 
-    blockquote, q {
-      quotes: none;
-    }
+      blockquote:before, blockquote:after,
+      q:before, q:after {
+        content: "";
+        content: none;
+      }
 
-    blockquote:before, blockquote:after,
-    q:before, q:after {
-      content: "";
-      content: none;
-    }
+      table {
+        border-collapse: collapse;
+        border-spacing: 0;
+      }
+      /* global rules */
+      html {
+        font-size: 14px;
+        font-family: "Roboto", sans-serif;
+        margin: 0;
+      }
 
-    table {
-      border-collapse: collapse;
-      border-spacing: 0;
-    }
-    /* global rules */
-    html {
-      font-size: 14px;
-      font-family: "Roboto", sans-serif;
-      margin: 0;
-      height: 100%;
-    }
-        </style>
-        <!--header styling-->
-        <style>
-        #header {
-          width: 100%;
-          height: 70px;
-          position: fixed;
-          background-color: #FF5500;
-          box-shadow: 3px 0px 4px rgba(0, 0, 0, 0.2);
-          z-index: 5000;
-        }
-        #header_max_con {
-          width: 100%;
-          max-width: 2000px;
-          margin: 0 auto;
-        }
-        #header svg {
-          margin: 10px;
-          margin-top: 12px;
-        }
+
+      /*begin header styling */
+
+      #header {
+        width: 100%;
+        height: 70px;
+        position: fixed;
+        background-color: #FF5500;
+        box-shadow: 3px 0px 4px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+      }
+      #header_max_con {
+        width: 100%;
+        max-width: 1440px;
+        margin: 0 auto;
+      }
+      #header svg {
+        margin: 10px;
+        margin-top: 12px;
+      }
+      .account_btn--con {
+        display: inline-block;
+        float: right;
+        margin: 10px 20px;
+
+      }
+      .account_btn--con_mobile {
+        display: none;
+      }
+      .header_btn {
+        display: inline-block;
+        font-size: 20px;
+        width: 150px;
+        height: 50px;
+        margin-left: 20px;
+        cursor: pointer;
+        background-color: #FFFFFF;
+        border: none;
+        box-shadow: 3px 3px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+         transition-duration: 0.4s;
+      }
+      .header_btn:active {
+        box-shadow: none;
+        padding: 3px 3px inherit inherit;
+      }
+      .header_btn a {
+        text-align: center;
+        text-transform: uppercase;
+        color: #FF5500;
+        text-decoration: none;
+        width: 150px;
+        font-weight: 700;
+      }
+      /*mobile header styling*/
+      @media only screen and (max-width: 600px) {
         .account_btn--con {
-          display: inline-block;
-          float: right;
-          margin: 10px 20px;
-
+          display: none;
         }
         .account_btn--con_mobile {
-          display: none;
-        }
-        .header_btn {
-          display: inline-block;
-          font-size: 20px;
-          width: 150px;
-          height: 50px;
-          margin-left: 20px;
-          cursor: pointer;
-          background-color: #FFFFFF;
-          border: none;
-          box-shadow: 3px 3px rgba(0, 0, 0, 0.2);
-          border-radius: 5px;
-           transition-duration: 0.4s;
-        }
-        .header_btn:active {
-          box-shadow: none;
-          padding: 3px 3px inherit inherit;
-        }
-        .header_btn a {
-          text-align: center;
-          text-transform: uppercase;
-          color: #FF5500;
-          text-decoration: none;
-          width: 150px;
-          font-weight: 700;
-        }
-        /*mobile header styling*/
-        @media only screen and (max-width: 600px) {
-          .account_btn--con {
-            display: none;
-          }
-          .account_btn--con_mobile {
-            display: inline-block;
-            float: right;
-            margin: 15px;
-            margin-top: 10px;
-            width: 50px;
-            height: 50px;
-            background-color: white;
-          }
-          .account_btn--con_mobile ul {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-            overflow: hidden;
-          }
-          .account_btn--con_mobile li a {
-          display: block;
-          text-align: center;
-          font-size: 24px;
-          padding: 20px 20px;
-          border-bottom: 1px solid #FF5500;
-          text-decoration: none;
-          text-transform: uppercase;
-          font-weight: 700;
-          color: #FF5500;
-            }
-
-          .account_btn--con_mobile .menu {
-            background-color: white;
-            clear: both;
-            max-height: 0;
-            transition: max-height .2s ease-out;
-
-          }
-          .account_btn--con_mobile .menu-icon {
-          cursor: pointer;
           display: inline-block;
           float: right;
-          margin: 22px 12px;
-          position: relative;
-          -webkit-user-select: none;
-             -moz-user-select: none;
-              -ms-user-select: none;
-                  user-select: none;
+          margin: 15px;
+          margin-top: 10px;
+          width: 50px;
+          height: 50px;
+          background-color: white;
         }
+        .account_btn--con_mobile ul {
 
-        .account_btn--con_mobile .menu-icon .navicon {
-          background: #FF5500;
-          display: block;
-          height: 3px;
-          position: relative;
-          transition: background .2s ease-out;
-          width: 27px;
+          margin: 0;
+          padding: 0;
+          list-style: none;
+          overflow: hidden;
         }
-
-        .account_btn--con_mobile .menu-icon .navicon:before,
-        .account_btn--con_mobile .menu-icon .navicon:after {
-          background: #FF5500;
-          content: '';
-          display: block;
-          height: 100%;
-          position: absolute;
-          transition: all .2s ease-out;
-          width: 100%;
-
-        }
-
-        .account_btn--con_mobile .menu-icon .navicon:before {
-          top: 10px;
-        }
-
-        .account_btn--con_mobile .menu-icon .navicon:after {
-          top: -10px;
-        }
-
-        .account_btn--con_mobile .menu-btn {
-          display: none;
-        }
-
-        .account_btn--con_mobile .menu-btn:checked ~ .menu {
-          max-height: 100vh;
-          width: 300px;
-          position: relative;
-          left: -238px;
-          top: 10px;
-          border: 2px solid #FF5500;
-          box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.2);
-
-        }
-        #header_max_con > div.account_btn--con_mobile > ul {
-          height: 100vh;
-          box-shadow: 0 0 100vw rgba(0,0,0,0.8);
-        }
-
-        .account_btn--con_mobile .menu-btn:checked ~ .menu-icon .navicon {
-          background: transparent;
-        }
-
-        .account_btn--con_mobile .menu-btn:checked ~ .menu-icon .navicon:before {
-          transform: rotate(-45deg);
-        }
-
-        .account_btn--con_mobile .menu-btn:checked ~ .menu-icon .navicon:after {
-          transform: rotate(45deg);
-        }
-
-        .account_btn--con_mobile .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
-        .account_btn--con_mobile .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
-          top: 0;
-        }
-
+        .account_btn--con_mobile li a {
+        display: block;
+        text-align: center;
+        font-size: 24px;
+        padding: 20px 20px;
+        border-bottom: 1px solid #FF5500;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: #FF5500;
           }
+
+        .account_btn--con_mobile .menu {
+          background-color: white;
+          clear: both;
+          max-height: 0;
+          transition: max-height .2s ease-out;
+
+        }
+        .account_btn--con_mobile .menu-icon {
+        cursor: pointer;
+        display: inline-block;
+        float: right;
+        margin: 22px 12px;
+        position: relative;
+        -webkit-user-select: none;
+           -moz-user-select: none;
+            -ms-user-select: none;
+                user-select: none;
+      }
+
+      .account_btn--con_mobile .menu-icon .navicon {
+        background: #FF5500;
+        display: block;
+        height: 3px;
+        position: relative;
+        transition: background .2s ease-out;
+        width: 27px;
+      }
+
+      .account_btn--con_mobile .menu-icon .navicon:before,
+      .account_btn--con_mobile .menu-icon .navicon:after {
+        background: #FF5500;
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        transition: all .2s ease-out;
+        width: 100%;
+
+      }
+
+      .account_btn--con_mobile .menu-icon .navicon:before {
+        top: 10px;
+      }
+
+      .account_btn--con_mobile .menu-icon .navicon:after {
+        top: -10px;
+      }
+
+      .account_btn--con_mobile .menu-btn {
+        display: none;
+      }
+
+      .account_btn--con_mobile .menu-btn:checked ~ .menu {
+        max-height: 300px;
+        width: 300px;
+        position: relative;
+        left: -238px;
+        top: 10px;
+        border: 2px solid #FF5500;
+        box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.2);
+
+      }
+
+      .account_btn--con_mobile .menu-btn:checked ~ .menu-icon .navicon {
+        background: transparent;
+      }
+
+      .account_btn--con_mobile .menu-btn:checked ~ .menu-icon .navicon:before {
+        transform: rotate(-45deg);
+      }
+
+      .account_btn--con_mobile .menu-btn:checked ~ .menu-icon .navicon:after {
+        transform: rotate(45deg);
+      }
+
+      .account_btn--con_mobile .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+      .account_btn--con_mobile .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+        top: 0;
+      }
+
+        }
         </style>
 
-        <!--main content styling-->
+        <!--cap details main content-->
         <style>
-          /*main content styling*/
-          #placeholder_block {
+
+          .heading_text {
             display: block;
-            width: 90%;
-            height: 1800px;
-            background-color: grey;
-            border: 2px solid black;
+            width: 100%;
+            height: auto;
+            padding-top: 70px;
+            text-align: center;
+            border: 2px solid blue;
+          }
+          .camp_overview-bts {
+            text-align: left;
+          }
+
+          .cf_details_img {
+            display: block;
+            width: 92%;
+            height: auto;
             margin: 0 auto;
+            padding-top: 500px;
+            background-color: grey;
+            border: 2px solid #FF5500;
+            border-radius: 5px;
+            text-align: left;
+          }
+
+          .grid_section {
+            margin: 0 auto;
+            max-width: 1440px;
+            width: 100%;
+
+          }
+          @media only screen and (min-width:636px) and (max-width:1440px){
+          .grid-container {
+            display: grid;
+            width: 92%;
+            height: auto;
+            margin: 10px auto;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr;
+            background-color: ;
+            grid-gap: 10px 15px;
+          }
+        }
+
+      @media only screen and (min-width:636px) and (max-width:1440px){
+          .grid-item {
+            display: block;
+            border-radius: 5px;
+            box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.2) ;
+            padding: 0px;
+            margin: 10px 0px;
+            font-size: 24px;
+            text-align: center;
+            min-width: 400px;
+            max-width: 1366px;
+
+          }
+        }
+
+        #card1 {
+          box-shadow: none;
+        }
+
+          .categories_con {
+            display: flex;
+          }
+
+           .categories {
+             display: flex;
+             width: 110px;
+             height: 35px;
+             margin: 0px 5px;
+             border: 2px solid #FF5500;
+             border-radius: 5px;
+             font-size: 16px;
+             font-weight: 500;
+
+             justify-content: center;
+             align-items: center;
+           }
+
+           .camp_overview {
+             text-align: left;
+             margin: 25px 0px 10px;
+             font-size: 30px;
+             font-weight: 500;
+           }
+           .camp_description {
+             text-align: left;
+             font-size: 18px;
+             font-weight: 400;
+           }
+
+
+
+          #card2 {
+            border: 2px solid #39A9DB;
+            min-width: 400px;
+            max-width: 1366px;
+
+          }
+
+          .date_picker {
+            display: flex;
+            width: 85%;
+            height: 30%;
+            margin: 18px auto;
+            border: 2px solid #39A9DB;
+            border-radius: 5px;
+            background-color: #E1F2FA;
+            font-size: 30px;
+            font-weight: 700;
+            text-align: left;
+            white-space: nowrap;
+          }
+
+            .start_date {
+              margin: auto;
+            }
+
+            .end_date {
+              margin: auto;
+              padding:0px 50px 0px;
+              border-left:1px solid black
+            }
+
+          #card3 {
+            box-shadow: none;
+          }
+
+          .requirements_section {
+            height: 161px;
+            border-radius: 5px;
+            background: #FF5500;
+          }
+
+          .availability_section {
+            height: 161px;
+            margin-top: 34px;
+            border-radius: 5px;
+            border: 2px solid #FF5500
+
+          }
+
+          .overview_map {
+            width: 300px;
+            height: 30%;
+            margin: 10px auto;
+            border: 2px solid #FF5500;
+            background-color: green;
+          }
+
+
+
+
+
+          #card4 {
+
+            border: 2px solid #FF5500;
+          }
+
+          #card5 {
+
+            border: 2px solid #FF5500;
+          }
+
+          #card6 {
+            height: 300px;
+            margin: 10px auto;
+            border: 2px solid #FF5500;
+            font-size:
+          }
+
+          .camp_overview-faq {
+            text-align: left;
+          }
+
+          .faq_question-section{
+
           }
 
         </style>
+
+
 
         <!--footer styling-->
         <style>
-          /*footer styling*/
+
+          /*begin footer styling*/
           #footer {
-            position: relative;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            display: flex;
             width: 100%;
-            height: 350px;
-            margin-bottom: -350px;
+            height: 22em;
             background-color: #FF5500;
             color: white;
           }
@@ -412,7 +576,7 @@
             text-transform: uppercase;
           }
 
-          #footer .mail_cta-con input {
+          .mail_cta-con input {
             font-size: 18px;
             font-style: italic;
             width: 330px;
@@ -425,7 +589,7 @@
           /*tablet/mobile phone styling*/
           @media only screen and (max-width: 915px) {
             #footer {
-              height: 750px;
+              height: auto;
             }
             #footer_max_con {
               display: block;
@@ -440,7 +604,7 @@
           }
           /*tablet styling*/
           @media only screen and (max-width: 1024px) {
-            #footer #max_con > div {
+            #footer #footer_max_con > div {
            }
           #footer_max_con .site_map-con {
             margin-left: auto;
@@ -452,7 +616,8 @@
               font-size: 1.75em;
             }
           }
-          }
+
+
         </style>
 
 
@@ -465,7 +630,7 @@
   <!--header container-->
   <header id="header">
     <div id="header_max_con">
-    <a href="index.html">
+    <a href="#home">
       <!--svg logo begin-->
       <svg xmlns="http://www.w3.org/2000/svg" width="99.999" height="45" viewBox="0 0 99.999 45">
     <g id="LOGO" transform="translate(23952.999 24220.434)">
@@ -503,8 +668,107 @@
   </header>
 
 
-<div id="placeholder_block">
-  <h1>This is a placeholder</h1>
+<div id="cf_details_main">
+  <div class="heading_text">
+    <a href="url" class="camp_overview-bts">Back To Search</a>
+    <h1> Adventure Camp</h1>
+    <span>Every town,USA</span>
+  </div>
+
+  <div class="cf_details_img">
+
+  </div>
+
+
+
+<div class="grid_section">
+  <div class="grid-container">
+    <div class="grid-item" id="card1">
+      <div class="categories_con">
+        <div class="categories" id="category_1">
+          Category 1
+        </div>
+        <div class="categories" id="category_2">
+          Category 2
+        </div>
+        <div class="categories" id="category_3">
+          Category 3
+        </div>
+        <div class="categories" id="category_4">
+          Category 4
+        </div>
+        <div class="categories" id="category_5">
+          Category 5
+        </div>
+      </div>
+      <div class="camp_overview">Camp Overview</div>
+      <div class="camp_description">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren
+      </div>
+    </div>
+
+    <div class="grid-item" id="card2">
+      <div class="date_picker">
+        <div class="start_date">
+          02/01/2021
+        </div>
+        <div class="end_date">
+          02/01/2021
+        </div>
+      </div>
+      <div class="cost_info">
+        $550
+
+    </div>
+
+    <div class="grid-item" id="card3">
+      <div class="requirements_section">
+        Requirements <br> <br>
+
+        Stay Terms: Day <br>
+        Age Range: 7 - 9 <br>
+        Gender: Coed
+      </div>
+      <div class="availability_section">
+        Availability
+      </div>
+    </div>
+
+
+    <div class="grid-item" id="card4">Camp Info
+      <div class="overview_map">
+      </div>
+      <div class="overview_abt">Camp Info
+        Adventure Camp
+        123 Adventure Way
+        YourTown, AL 12345
+        (555) 555-5555
+        AdventureCamp@camp.com
+      </div>
+    </div>
+
+    <br>
+
+
+    <div class="grid-item" id="card6">
+      Frequently asked questions
+      <p class="camp_overview-faq">
+        <span class="faq_question-section">Q: Will my kids leave the campground?</span> <br>
+        A: No, the camp ground has everything your child will need
+
+        <span class="faq_question">Q: My kids have dietary restrictions, can your camp accommodate that?</span> <br>
+
+        A: Yes, we have a great chef and cooking staff that will help with your child’s needs
+
+        <span class="faq_question">Q: Does your camp have team building exercises?</span> <br>
+
+        A: No, the camp ground has everything your child will need
+
+      </p>
+    </div>
+
+
+  </div>
+
 </div>
 
 
