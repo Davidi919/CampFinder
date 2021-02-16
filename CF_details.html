@@ -566,11 +566,10 @@
         display: grid;
         width: 92%;
         height: auto;
-        margin: 10px auto;
+        margin: 30px auto;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr;
-        grid-gap: 10px 15px;
-        border: 2px solid red;
+        grid-template-rows: 1fr 500px;
+        grid-gap: 60px 30px;
       }
 
 
@@ -580,44 +579,47 @@
       }
     }
 
-    #card1 {
+    #camp_overview-con {
       box-shadow: none;
     }
 
     .categories_con {
       display: flex;
-    }
+      flex-wrap: wrap;
+      margin: auto 15px;
+        }
 
     .categories {
       display: flex;
-      width: 110px;
+      width: 100px;
       height: 35px;
-      margin: 0px 5px;
+      margin:5px;
       border: 2px solid #FF5500;
       border-radius: 5px;
       font-size: 16px;
       font-weight: 500;
-
       justify-content: center;
       align-items: center;
     }
 
     .camp_overview {
       text-align: left;
-      margin: 25px 0px 10px;
+      margin: 25px 20px;
       font-size: 30px;
       font-weight: 500;
     }
 
-    .camp_description {
+    #abt_camp {
       text-align: left;
-      font-size: 18px;
+      margin-top: 10px;
+      font-size: 16px;
+      line-height: 1.75rem;
       font-weight: 400;
     }
 
 
 
-    #card2 {
+    #booking-con {
       border: 2px solid #39A9DB;
       min-width: 400px;
       max-width: 1366px;
@@ -648,14 +650,28 @@
       border-left: 1px solid black
     }
 
-    #card3 {
+    #camp_requirements-con {
       box-shadow: none;
     }
 
-    .requirements_section {
+    .requirements-con {
       height: 161px;
       border-radius: 5px;
       background: #FF5500;
+      color: white;
+      box-shadow: 4px 4px 8px rgba(0, 0, 0, .2);
+    }
+    .req-title {
+      text-align: center;
+      padding-top: 10px;
+      font-size: 28px;
+      font-weight: 600;
+    }
+    .camp_req {
+      margin-top: 10px;
+      margin-left: 30px;
+      font-size: 22px;
+      font-weight: 400;
     }
 
     .availability_section {
@@ -664,24 +680,56 @@
       border-radius: 5px;
       border: 2px solid #FF5500
     }
+    .camp_info-title {
+      text-align: center;
+      font-size: 28px;
+      font-weight: 700;
+      margin: 20px auto 30px auto;
+    }
 
-    .overview_map {
-      width: 300px;
-      height: 30%;
+    .map-con {
+      max-width: 485px;
+      height: 120px;
       margin: 10px auto;
       border: 2px solid #FF5500;
-      background-color: green;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    .camp_address-con {
+      text-align: center;
+
+    }
+    .camp_address-con h1 {
+      font-size: 24px;
+      font-weight: 500;
+      font-style: initial;
+      margin-top: 30px;
+    }
+    .camp_address-wrapper span {
+      font-style: initial;
+      display: inline-block;
+      font-size: 24px;
+    }
+    #camp_address {
+      line-height: 1.25em;
+      margin: 20px auto;
+    }
+    #camp_telephone_number {
+      margin: 20px auto;
+    }
+    #camp_telephone_number a {
+      text-decoration: none;
+      color: black;
+    }
+    #camp_email {
+      margin: 0 auto 30px auto;
     }
 
-    #card4 {
+    #camp_contact-con {
 
       border: 2px solid #FF5500;
     }
 
-    #card5 {
-
-      border: 2px solid #FF5500;
-    }
 
     .faq-con {
       max-width: 830px;
@@ -995,7 +1043,7 @@
 
   </header>
 
-
+<!--start of main body content-->
   <div id="cf_details_max_con">
     <div class="heading_con">
       <div class="bts-con">
@@ -1046,33 +1094,33 @@
 
     <div class="camp_details-con">
       <div class="grid-container">
-        <div class="grid-item" id="card1">
+        <div class="grid-item" id="camp_overview-con">
           <div class="categories_con">
             <div class="categories" id="category_1">
-              Category 1
+              <span>Category 1</span>
             </div>
             <div class="categories" id="category_2">
-              Category 2
+              <span>Category 2</span>
             </div>
             <div class="categories" id="category_3">
-              Category 3
+              <span>Category 3</span>
             </div>
             <div class="categories" id="category_4">
-              Category 4
+              <span>Category 4</span>
             </div>
             <div class="categories" id="category_5">
-              Category 5
+              <span>Category 5</span>
             </div>
           </div>
           <div class="camp_overview">
-            <h2 class="overview_title">Camp Overview</h2>
-          <div class="camp_description">
+            <h2 class="overview_title">Camp Overview:</h2>
+          <div id="abt_camp">
             <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et earebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren</p>
           </div>
         </div>
         </div>
 
-        <div class="grid-item" id="card2">
+        <div class="grid-item" id="booking-con">
           <div class="date_picker">
             <div class="start_date">
               02/01/2021
@@ -1087,13 +1135,12 @@
           </div>
         </div>
 
-        <div class="grid-item" id="card3">
-          <div class="requirements_section">
-            Requirements <br> <br>
-
-            Stay Terms: Day <br>
-            Age Range: 7 - 9 <br>
-            Gender: Coed
+        <div class="grid-item" id="camp_requirements-con">
+          <div class="requirements-con">
+            <h2 class="req-title">Requirements</h2>
+            <h3 class="camp_req">Stay Terms:<span id="camp_stay_terms"> Day </span></h3>
+            <h3 class="camp_req">Age Range:<span id="camp_age_range"> 7 - 9</span></h3>
+            <h3 class="camp_req">Gender:<span id="camp_gender"> Coed</span></h3>
           </div>
           <div class="availability_section">
             Availability
@@ -1101,15 +1148,19 @@
         </div>
 
 
-        <div class="grid-item" id="card4">Camp Info
-          <div class="overview_map">
+        <div class="grid-item" id="camp_contact-con">
+          <h2 class="camp_info-title">Camp Info</h2>
+          <div class="map-con">
+            <div class="mapouter"><div class="gmap_canvas"><iframe width="100%" height="100%" id="gmap_canvas" src="https://maps.google.com/maps?q=6030%20Barber%20Motorsports%20Pkwy,%20Leeds,%20AL%2035094&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.whatismyip-address.com"></a><br></div></div>
           </div>
-          <div class="overview_abt">Camp Info
-            Adventure Camp
-            123 Adventure Way
-            YourTown, AL 12345
-            (555) 555-5555
-            AdventureCamp@camp.com
+          <div class="camp_address-con">
+            <address class="camp_address-wrapper">
+            <h1 id="camp_address-title">Adventure Camp</h1><br>
+            <span id="camp_address">123 Adventure Way<br>
+            YourTown, AL 12345</span><br>
+            <span id="camp_telephone_number"><a href="tel:+15555555555">(555) 555-5555</a></span><br>
+            <span id="camp_email"><a href="mailto:AdventureCamp@camp.com">AdventureCamp@camp.com</a></span><br>
+            </address>
           </div>
         </div>
       </div>
@@ -1133,6 +1184,8 @@
 
 
       </div>
+    </div>
+  </div>
 
 
 
