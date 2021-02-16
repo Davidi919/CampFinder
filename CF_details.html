@@ -448,7 +448,7 @@
     .camp_gallery img {
       vertical-align: middle;
       object-fit: cover;
-      width: 92vw;
+      width: 100%;
       height: 500px;
     }
 
@@ -457,10 +457,11 @@
     }
 
     /* Slideshow container */
-    .slideshow-container {
+    .slideshow-con {
       border: 2px solid #FF5500;
       border-radius: 5px;
       width: 92vw;
+      max-width: 1440px;
       height: 500px;
       position: relative;
       margin: auto;
@@ -490,8 +491,6 @@
       left: 40px;
       box-shadow: 3px 3px 6px rgba(0, 0, 0, .2);
     }
-
-    /* Position the "next button" to the right */
     .next {
       right: 40px;
       box-shadow: -3px 3px 6px rgba(0, 0, 0, .2);
@@ -550,7 +549,12 @@
     }
 
     /* responsive gallery styling */
-
+    @media only screen and (min-width: 1530px) {
+      .camp_local {
+        max-width: 1440px;
+        margin: 0 auto;
+      }
+    }
 
 /*end gallery styling*/
 
@@ -629,25 +633,24 @@
     .date_picker {
       display: flex;
       width: 85%;
-      height: 30%;
+      height: 90px;
       margin: 18px auto;
       border: 2px solid #39A9DB;
       border-radius: 5px;
       background-color: #E1F2FA;
       font-size: 30px;
       font-weight: 700;
-      text-align: left;
-      white-space: nowrap;
     }
 
-    .start_date {
-      margin: auto;
+    .start_date, .end_date {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .end_date {
-      margin: auto;
-      padding: 0px 50px 0px;
-      border-left: 1px solid black
+      border-left: 2px solid #39A9DB;
     }
 
     #camp_requirements-con {
@@ -1061,7 +1064,7 @@
       <h2 id="camp_local">Everytown, USA</h2>
     </div>
     <div class="camp_gallery">
-      <div class="slideshow-container">
+      <div class="slideshow-con">
 
         <div class="campSlides fade" id="landing_img--slideshow">
           <div class="numbertext">1/3</div>
@@ -1123,10 +1126,10 @@
         <div class="grid-item" id="booking-con">
           <div class="date_picker">
             <div class="start_date">
-              02/01/2021
+              <time datetime="2021-02-01">2/01/2021</time>
             </div>
             <div class="end_date">
-              02/01/2021
+              <time datetime="2021-02-08">2/08/2021</time>
             </div>
           </div>
           <div class="cost_info">
