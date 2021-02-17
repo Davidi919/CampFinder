@@ -47,6 +47,7 @@
       slides[slideIndex - 1].style.display = "block";
       dots[slideIndex - 1].className += " active";
     }
+
   </script>
   <!--header styling-->
   <style>
@@ -552,7 +553,7 @@
     @media only screen and (min-width: 1530px) {
       .camp_local {
         max-width: 1440px;
-        margin: 0 auto;
+        margin: 5px auto;
       }
     }
 
@@ -625,9 +626,10 @@
 
     #booking-con {
       border: 2px solid #39A9DB;
+      border-radius: 5px;
+      box-shadow: 3px 3px 6px rgba(0,0,0,0.15);
       min-width: 400px;
       max-width: 1366px;
-
     }
 
     .date_picker {
@@ -652,6 +654,53 @@
     .end_date {
       border-left: 2px solid #39A9DB;
     }
+    .cost_book-con {
+      width: 85%;
+      margin: 10px auto;
+      display: flex;
+      justify-content: space-between;
+    }
+    .cost_book-con .cost-con {
+      text-align: center;
+      display: block;
+      width: 50%;
+      height: 45px;
+      margin-top: 7px;
+    }
+    .cost-con #camp_cost {
+      font-size: 28px;
+      font-weight: 700;
+    }
+    .cost-con sub {
+      font-weight: 600;
+      font-size: 12px;
+    }
+    .cost_book-con .reserve_btn {
+      width: 47%;
+      height: 45px;
+      background-color: #39A9DB;
+      border-radius: 5px;
+      box-shadow: 3px 3px rgba(0, 0, 0, 0.2);
+      transition: .4s;
+    }
+    .reserve_btn a {
+      text-decoration: none;
+    }
+    .reserve_btn:active {
+      box-shadow: none;
+      padding: 3px 3px inherit inherit;
+    }
+    .reserve_btn span {
+      display: block;
+      font-size: 28px;
+      font-weight: 500;
+      color: white;
+      text-align: center;
+      margin: 10.5px auto;
+      text-transform: uppercase;
+    }
+
+
 
     #camp_requirements-con {
       box-shadow: none;
@@ -1048,6 +1097,7 @@
 
 <!--start of main body content-->
   <div id="cf_details_max_con">
+    <!--container for title, back to search, and camp icon-->
     <div class="heading_con">
       <div class="bts-con">
         <a href="CF_Map_Search.html" class="camp_overview-bts">
@@ -1063,24 +1113,23 @@
       <img class="camp_local-icon" src="Assets\icons\camp_location.svg" alt="location">
       <h2 id="camp_local">Everytown, USA</h2>
     </div>
+    <!--end of camp title header-->
+    <!--begin slideshow container-->
     <div class="camp_gallery">
       <div class="slideshow-con">
-
         <div class="campSlides fade" id="landing_img--slideshow">
           <div class="numbertext">1/3</div>
           <img src="Assets\graphics\card_graphics\camp1_pic-card.png">
         </div>
-
         <div class="campSlides fade">
           <div class="numbertext">2/3</div>
           <img src="Assets\graphics\card_graphics\camp2_pic-card.png">
         </div>
-
         <div class="campSlides fade">
           <div class="numbertext">3/3</div>
           <img src="Assets\graphics\card_graphics\camp3_pic-card.png">
         </div>
-
+<!--slideshow navigation buttons-->
         <a class="prev" onclick="plusSlides(-1)"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17">
             <path id="Icon_material-arrow_back" data-name="Icon material-arrow_back" d="M23,13.437H10.069L16.009,7.5,14.5,6,6,14.5,14.5,23,16,21.5l-5.929-5.939H23Z" transform="translate(-5.293 -5.294)" fill="#f50" stroke="#f50" stroke-width="1" />
           </svg>
@@ -1089,10 +1138,10 @@
             <path id="Icon_material-arrow_back" data-name="Icon material-arrow_back" d="M6,13.437H18.931L12.991,7.5,14.5,6,23,14.5,14.5,23,13,21.5l5.929-5.939H6Z" transform="translate(-5.5 -5.294)" fill="#f50" stroke="#f50" stroke-width="1" />
           </svg>
         </a>
-
+<!--end of slideshow container-->
       </div>
     </div>
-
+<!--end of camp gallery container-->
 
 
     <div class="camp_details-con">
@@ -1132,8 +1181,34 @@
               <time datetime="2021-02-08">2/08/2021</time>
             </div>
           </div>
-          <div class="cost_info">
-            $550
+          <div class="cost_book-con">
+            <div class="cost-con">
+            <span id="camp_cost">$550/</span><sub>CHILD</sub>
+          </div>
+
+            <div class="reserve_btn">
+              <a href="#reserve_now" id="reserve_now-link"><span>reserve now</span></a>
+          </div>
+          </div>
+          <div class="spot_remaining-con">
+            <div class="spot_icon-con">
+              <svg xmlns="http://www.w3.org/2000/svg" width="31.5" height="20.25" viewBox="0 0 31.5 20.25">
+                <path id="Icon_ionic-md-people" data-name="Icon ionic-md-people" d="M23.727,16.313a4.219,4.219,0,1,0-4.3-4.219A4.27,4.27,0,0,0,23.727,16.313Zm-11.454,0a4.219,4.219,0,1,0-4.3-4.219A4.27,4.27,0,0,0,12.273,16.313Zm0,3.094c-3.365,0-10.023,1.617-10.023,4.922v3.8H22.5v-3.8C22.5,21.023,15.638,19.406,12.273,19.406Zm11.454.774a7.641,7.641,0,0,0-1.227.07c1.647,1.2,2.25,1.969,2.25,4.078v3.8h9v-3.8C33.75,21.023,27.092,20.18,23.727,20.18Z" transform="translate(-2.25 -7.875)" fill="#f50"/>
+              </svg>
+            </div>
+            <div class="spot-wrapper">
+              <span id="camp_spots_remaining">4</span><span>Spots Remaining</span>
+            </div>
+          </div>
+          <div class="avail_dates-con">
+              <div class="avail_dates-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="23.885" height="27.297" viewBox="0 0 23.885 27.297">
+                  <path id="Icon_awesome-calendar-check" data-name="Icon awesome-calendar-check" d="M23.245,8.53H.64A.64.64,0,0,1,0,7.891V5.971A2.559,2.559,0,0,1,2.559,3.412H5.118V.64A.64.64,0,0,1,5.758,0H7.891a.64.64,0,0,1,.64.64V3.412h6.824V.64a.64.64,0,0,1,.64-.64h2.133a.64.64,0,0,1,.64.64V3.412h2.559a2.559,2.559,0,0,1,2.559,2.559V7.891A.64.64,0,0,1,23.245,8.53ZM.64,10.236H23.245a.64.64,0,0,1,.64.64V24.738A2.559,2.559,0,0,1,21.326,27.3H2.559A2.559,2.559,0,0,1,0,24.738V10.876A.64.64,0,0,1,.64,10.236Zm17.77,5.115-1.5-1.514a.64.64,0,0,0-.9,0l-5.653,5.608L7.9,16.971a.64.64,0,0,0-.9,0l-1.514,1.5a.64.64,0,0,0,0,.9l4.4,4.439a.64.64,0,0,0,.9,0l7.622-7.56a.64.64,0,0,0,0-.9Z" fill="#f50"/>
+                </svg>
+              </div>
+              <div class="dates-con">
+                <span>Next Available Dates: </span><span id="avail_date">Aug. 7, 2021</span>
+              </div>
 
           </div>
         </div>
