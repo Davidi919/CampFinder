@@ -389,6 +389,7 @@
     }
 
     #camp_name-header {
+      text-transform: capitalize;
       font-size: 34px;
       font-weight: 700;
       margin: 40px auto 30px auto;
@@ -451,6 +452,7 @@
       object-fit: cover;
       width: 100%;
       height: 500px;
+      border-radius: 2.5px;
     }
 
     .camp_gallery {
@@ -517,19 +519,20 @@
       border-radius: 5px;
       box-shadow: 3px 3px 6px rgba(0,0,0,0.15);
       font-size: 18px;
+      font-weight: 500;
       position: absolute;
       bottom: 20px;
       left: calc(50% - 2rem);
     }
-    /* Fading animation */
-    .fade {
+    /* Fading animation
+    /* .fade {
       -webkit-animation-name: fade;
       -webkit-animation-duration: 1s;
       animation-name: fade;
       animation-duration: 1s;
-    }
+    } */
 
-    @-webkit-keyframes fade {
+    /* @-webkit-keyframes fade {
       from {
         opacity: .4
       }
@@ -547,7 +550,7 @@
       to {
         opacity: 1
       }
-    }
+    }  */
 
     /* responsive gallery styling */
     @media only screen and (min-width: 1530px) {
@@ -722,12 +725,12 @@
     .dates-con {
       border: 31px soild pink;
     }
-    #camp_requirements-con {
+    #camp_requirements_card-con {
       box-shadow: none;
     }
     /* requirements container styling */
-    .requirements-con {
-      height: 161px;
+    #requirements_card-con {
+      height: 160px;
       border-radius: 5px;
       background: #FF5500;
       color: white;
@@ -736,14 +739,13 @@
     .req-title {
       text-align: center;
       padding-top: 10px;
-      font-size: 28px;
-      font-weight: 600;
+      font-size: 30px;
+      font-weight: 500;
     }
     .camp_req {
-      margin-top: 10px;
-      margin-left: 30px;
-      font-size: 22px;
-      font-weight: 400;
+      margin: 10px 30px;
+      font-size: 24px;
+      font-weight: 500;
     }
 
     .availability_section {
@@ -798,7 +800,7 @@
     }
 
     #camp_contact-con {
-
+      border-radius: 5px;
       border: 2px solid #FF5500;
     }
     /* responsive grid styling */
@@ -806,6 +808,11 @@
       .grid-container {
         display: flex;
         flex-flow: column;
+        width: 100%;
+      }
+      .grid-item {
+        width: 92%;
+        margin: 0 auto;
       }
       #booking-con {
       order: -1;
@@ -826,6 +833,16 @@
       #camp_name-header {
         margin-top: 60px;
       }
+      .categories_con {
+        margin: 0 auto;
+      }
+      .categories {
+        height: 2rem;
+        margin: 8px 10px;
+      }
+      .camp_overview {
+        margin: 25px auto;
+      }
       .cost_book-con {
         display: block;
         margin: 0 auto;
@@ -838,8 +855,9 @@
         margin: 10px auto;
       }
       .reserve_btn span {
-        font-size: 2em;
-        padding-top: .25em;
+        font-size: 1.6rem;
+        font-weight: 400;
+        padding-top: .6em;
         margin: 0 auto;
       }
       .date_picker {
@@ -847,7 +865,7 @@
         font-size: 1.5em;
       }
       #booking-con {
-        margin: 0px auto;
+        margin-bottom: -20px;
         order: -1;
       }
       .spot_remaining-con {
@@ -861,16 +879,35 @@
         width: 80%;
         font-size: 1.5rem;
       }
+      #camp_requirements_card-con {
+        margin-top: -40px;
+        width: 100%;
+      }
+      #requirements_card-con {
+        border-radius: 0;
+        height: auto;
+        padding-bottom: 20px;
+      }
+      .req-title {
+        padding: 30px 0px 20px 0px;
+      }
+      .camp_req {
+        margin: 30px;
+      }
+      .availability_section {
+        width: 92%;
+        margin: 20px auto;
+      }
       .map-con {
         width: 80%;
-        height: 100px;
+        height: 125px;
       }
       #camp_email {
         font-size: 1.5rem;
       }
     }
-    /* end of grid stlying */
-    /* frequently asked questions container styling */
+    /* end of grid responsive stlying */
+    /* frequently asked questions container responsive styling */
     .faq-con {
       max-width: 830px;
       min-width: 300px;
@@ -891,7 +928,8 @@
 
     .q-a_con {
       text-align: left;
-      margin: 0 10px;
+      width: 95%;
+      margin: 0 auto;
     }
 
     .faq_question {
@@ -919,6 +957,12 @@
         width: 92vw;
         height: auto;
         margin: 20px auto;
+      }
+      .faq-con .faq_question, .faq-con .faq_answer {
+        font-size: 1.5rem;
+      }
+      .faq-con strong {
+        font-size: 1.5rem;
       }
     }
   </style>
@@ -1206,11 +1250,11 @@
       <div class="slideshow-con">
         <div class="campSlides fade" id="landing_img--slideshow">
           <div class="numbertext">1/3</div>
-          <img src="Assets\graphics\card_graphics\camp1_pic-card.png">
+          <img src="Assets\graphics\card_graphics\camp4_pic-card.png">
         </div>
         <div class="campSlides fade">
           <div class="numbertext">2/3</div>
-          <img src="Assets\graphics\card_graphics\camp2_pic-card.png">
+          <img src="Assets\graphics\card_graphics\camp8_pic-card.png">
         </div>
         <div class="campSlides fade">
           <div class="numbertext">3/3</div>
@@ -1301,8 +1345,8 @@
         </div>
         
 
-        <div class="grid-item" id="camp_requirements-con">
-          <div class="requirements-con">
+        <div class="grid-item" id="camp_requirements_card-con">
+          <div id="requirements_card-con">
             <h2 class="req-title">Requirements</h2>
             <h3 class="camp_req">Stay Terms:<span id="camp_stay_terms"> Day </span></h3>
             <h3 class="camp_req">Age Range:<span id="camp_age_range"> 7 - 9</span></h3>
@@ -1333,7 +1377,7 @@
 
 
       <div class="faq-con" id="faq">
-        <h1 class="faq_title">Frequently asked questions</h1>
+        <h1 class="faq_title">Frequently Asked Questions</h1>
         <div class="q-a_con">
           <span class="faq_question"><i><strong>Q:</strong> Will my kids leave the campground?</span></i>
           <span class="faq_answer"><strong>A:</strong> No, the camp ground has everything your child will need</span>
