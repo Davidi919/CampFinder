@@ -219,7 +219,7 @@
     }
 
     .account_btn--con {
-      display: inline-block;
+      display: inline;
       float: right;
       margin: 10px 20px;
 
@@ -264,7 +264,7 @@
       }
 
       .account_btn--con_mobile {
-        display: inline-block;
+        display: inline;
         float: right;
         margin: 15px;
         margin-top: 10px;
@@ -303,7 +303,7 @@
 
       .account_btn--con_mobile .menu-icon {
         cursor: pointer;
-        display: inline-block;
+        display: inline;
         float: right;
         margin: 22px 12px;
         position: relative;
@@ -578,11 +578,7 @@
       }
 
 
-    @media only screen and (max-width:1024px) {
-      .grid-container {
-        display: block;
-      }
-    }
+    
 
     #camp_overview-con {
       box-shadow: none;
@@ -628,7 +624,7 @@
       border: 2px solid #39A9DB;
       border-radius: 5px;
       box-shadow: 3px 3px 6px rgba(0,0,0,0.15);
-      min-width: 400px;
+      min-width: 285px;
       max-width: 1366px;
     }
 
@@ -676,7 +672,7 @@
       font-size: 12px;
     }
     .cost_book-con .reserve_btn {
-      width: 47%;
+      width: 50%;
       height: 45px;
       background-color: #39A9DB;
       border-radius: 5px;
@@ -692,7 +688,7 @@
     }
     .reserve_btn span {
       display: block;
-      font-size: 28px;
+      font-size: 1.5em;
       font-weight: 500;
       color: white;
       text-align: center;
@@ -700,12 +696,36 @@
       text-transform: uppercase;
     }
 
+    .spot_icon-con {
+      float: left;
+      margin-right: 5px;
+    }
+    .spot_remaining-con {
+      clear: both;
+      display:block;
+      font-size: 26px;
+      line-height: 30px;
+      margin: 30px auto 15px 2em;
+    }
+    .avail_dates-icon {
+      float: left;
+      margin-right: 5px;
+    }
+    .avail_dates-con {
+      clear: both;
+      display: block;
+      font-size: 26px;
+      line-height: 30px;
+      margin: 30px auto 15px 2em;
+    }
 
-
+    .dates-con {
+      border: 31px soild pink;
+    }
     #camp_requirements-con {
       box-shadow: none;
     }
-
+    /* requirements container styling */
     .requirements-con {
       height: 161px;
       border-radius: 5px;
@@ -781,8 +801,76 @@
 
       border: 2px solid #FF5500;
     }
-
-
+    /* responsive grid styling */
+    @media only screen and (max-width:1024px) {
+      .grid-container {
+        display: flex;
+        flex-flow: column;
+      }
+      #booking-con {
+      order: -1;
+    }
+    }
+    
+    @media only screen and (max-width:600px) {
+      .bts-con {
+        left: 10px;
+      }
+      .bts-con p {
+        font-size: 1.25rem;
+      }
+      .bts-con svg {
+        margin-bottom: -2px;
+        margin-right: 5px;
+      }
+      #camp_name-header {
+        margin-top: 60px;
+      }
+      .cost_book-con {
+        display: block;
+        margin: 0 auto;
+      }
+      .cost-con {
+        margin: 2.5px auto;
+      }
+      .cost_book-con .reserve_btn {
+        width: 100%;
+        margin: 10px auto;
+      }
+      .reserve_btn span {
+        font-size: 2em;
+        padding-top: .25em;
+        margin: 0 auto;
+      }
+      .date_picker {
+        height: 5rem;
+        font-size: 1.5em;
+      }
+      #booking-con {
+        margin: 0px auto;
+        order: -1;
+      }
+      .spot_remaining-con {
+        margin: 30px auto 20px auto;
+        height: auto;
+        width: 80%;
+        font-size: 1.5rem;
+      }
+      .avail_dates-con {
+        margin: 0 auto 30px auto;
+        width: 80%;
+        font-size: 1.5rem;
+      }
+      .map-con {
+        width: 80%;
+        height: 100px;
+      }
+      #camp_email {
+        font-size: 1.5rem;
+      }
+    }
+    /* end of grid stlying */
+    /* frequently asked questions container styling */
     .faq-con {
       max-width: 830px;
       min-width: 300px;
@@ -1027,7 +1115,6 @@
 
     /*tablet styling*/
     @media only screen and (max-width: 1024px) {
-      #footer #footer_max_con>div {}
 
       #footer_max_con .site_map-con {
         margin-left: auto;
@@ -1192,17 +1279,17 @@
           </div>
           <div class="spot_remaining-con">
             <div class="spot_icon-con">
-              <svg xmlns="http://www.w3.org/2000/svg" width="31.5" height="20.25" viewBox="0 0 31.5 20.25">
+              <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 40 40">
                 <path id="Icon_ionic-md-people" data-name="Icon ionic-md-people" d="M23.727,16.313a4.219,4.219,0,1,0-4.3-4.219A4.27,4.27,0,0,0,23.727,16.313Zm-11.454,0a4.219,4.219,0,1,0-4.3-4.219A4.27,4.27,0,0,0,12.273,16.313Zm0,3.094c-3.365,0-10.023,1.617-10.023,4.922v3.8H22.5v-3.8C22.5,21.023,15.638,19.406,12.273,19.406Zm11.454.774a7.641,7.641,0,0,0-1.227.07c1.647,1.2,2.25,1.969,2.25,4.078v3.8h9v-3.8C33.75,21.023,27.092,20.18,23.727,20.18Z" transform="translate(-2.25 -7.875)" fill="#f50"/>
               </svg>
             </div>
             <div class="spot-wrapper">
-              <span id="camp_spots_remaining">4</span><span>Spots Remaining</span>
+              <span id="camp_spots_remaining">4</span><span> Spots Remaining</span>
             </div>
           </div>
           <div class="avail_dates-con">
               <div class="avail_dates-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="23.885" height="27.297" viewBox="0 0 23.885 27.297">
+                <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 40 40">
                   <path id="Icon_awesome-calendar-check" data-name="Icon awesome-calendar-check" d="M23.245,8.53H.64A.64.64,0,0,1,0,7.891V5.971A2.559,2.559,0,0,1,2.559,3.412H5.118V.64A.64.64,0,0,1,5.758,0H7.891a.64.64,0,0,1,.64.64V3.412h6.824V.64a.64.64,0,0,1,.64-.64h2.133a.64.64,0,0,1,.64.64V3.412h2.559a2.559,2.559,0,0,1,2.559,2.559V7.891A.64.64,0,0,1,23.245,8.53ZM.64,10.236H23.245a.64.64,0,0,1,.64.64V24.738A2.559,2.559,0,0,1,21.326,27.3H2.559A2.559,2.559,0,0,1,0,24.738V10.876A.64.64,0,0,1,.64,10.236Zm17.77,5.115-1.5-1.514a.64.64,0,0,0-.9,0l-5.653,5.608L7.9,16.971a.64.64,0,0,0-.9,0l-1.514,1.5a.64.64,0,0,0,0,.9l4.4,4.439a.64.64,0,0,0,.9,0l7.622-7.56a.64.64,0,0,0,0-.9Z" fill="#f50"/>
                 </svg>
               </div>
@@ -1212,6 +1299,7 @@
 
           </div>
         </div>
+        
 
         <div class="grid-item" id="camp_requirements-con">
           <div class="requirements-con">
