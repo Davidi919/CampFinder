@@ -47,8 +47,23 @@
       slides[slideIndex - 1].style.display = "block";
       dots[slideIndex - 1].className += " active";
     }
-
   </script>
+  <script>
+    var coll = document.getElementsByClassName("date_dropdown");
+    var i;
+    
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active_date");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      });
+    }
+    </script>
   <!--header styling-->
   <style>
     /* type face import */
@@ -494,6 +509,7 @@
       left: 40px;
       box-shadow: 3px 3px 6px rgba(0, 0, 0, .2);
     }
+
     .next {
       right: 40px;
       box-shadow: -3px 3px 6px rgba(0, 0, 0, .2);
@@ -504,10 +520,12 @@
       display: block;
       margin: 6px auto;
     }
+
     .prev:hover,
     .next:hover {
       background-color: rgba(250, 250, 250, 0.8);
     }
+
     /* img number text (1/3 etc) */
     .numbertext {
       text-align: center;
@@ -517,13 +535,14 @@
       color: white;
       background-color: #FF5500;
       border-radius: 5px;
-      box-shadow: 3px 3px 6px rgba(0,0,0,0.15);
+      box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.15);
       font-size: 18px;
       font-weight: 500;
       position: absolute;
       bottom: 20px;
       left: calc(50% - 2rem);
     }
+
     /* Fading animation
     /* .fade {
       -webkit-animation-name: fade;
@@ -560,7 +579,7 @@
       }
     }
 
-/*end gallery styling*/
+    /*end gallery styling*/
 
     /* grid styling */
     .camp_details-con {
@@ -571,17 +590,17 @@
     }
 
     .grid-container {
-        display: grid;
-        width: 92%;
-        height: auto;
-        margin: 30px auto;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 500px;
-        grid-gap: 60px 30px;
-      }
+      display: grid;
+      width: 92%;
+      height: auto;
+      margin: 30px auto;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 500px;
+      grid-gap: 60px 30px;
+    }
 
 
-    
+
 
     #camp_overview-con {
       box-shadow: none;
@@ -591,13 +610,13 @@
       display: flex;
       flex-wrap: wrap;
       margin: auto 15px;
-        }
+    }
 
     .categories {
       display: flex;
       width: 100px;
       height: 35px;
-      margin:5px;
+      margin: 5px;
       border: 2px solid #FF5500;
       border-radius: 5px;
       font-size: 16px;
@@ -626,7 +645,7 @@
     #booking-con {
       border: 2px solid #39A9DB;
       border-radius: 5px;
-      box-shadow: 3px 3px 6px rgba(0,0,0,0.15);
+      box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.15);
       min-width: 285px;
       max-width: 1366px;
     }
@@ -643,7 +662,8 @@
       font-weight: 700;
     }
 
-    .start_date, .end_date {
+    .start_date,
+    .end_date {
       width: 100%;
       display: flex;
       align-items: center;
@@ -653,12 +673,14 @@
     .end_date {
       border-left: 2px solid #39A9DB;
     }
+
     .cost_book-con {
       width: 85%;
       margin: 10px auto;
       display: flex;
       justify-content: space-between;
     }
+
     .cost_book-con .cost-con {
       text-align: center;
       display: block;
@@ -666,14 +688,17 @@
       height: 45px;
       margin-top: 7px;
     }
+
     .cost-con #camp_cost {
       font-size: 28px;
       font-weight: 700;
     }
+
     .cost-con sub {
       font-weight: 600;
       font-size: 12px;
     }
+
     .cost_book-con .reserve_btn {
       width: 50%;
       height: 45px;
@@ -682,13 +707,16 @@
       box-shadow: 3px 3px rgba(0, 0, 0, 0.2);
       transition: .4s;
     }
+
     .reserve_btn a {
       text-decoration: none;
     }
+
     .reserve_btn:active {
       box-shadow: none;
       padding: 3px 3px inherit inherit;
     }
+
     .reserve_btn span {
       display: block;
       font-size: 1.5em;
@@ -703,17 +731,20 @@
       float: left;
       margin-right: 5px;
     }
+
     .spot_remaining-con {
       clear: both;
-      display:block;
+      display: block;
       font-size: 26px;
       line-height: 30px;
       margin: 30px auto 15px 2em;
     }
+
     .avail_dates-icon {
       float: left;
       margin-right: 5px;
     }
+
     .avail_dates-con {
       clear: both;
       display: block;
@@ -725,35 +756,89 @@
     .dates-con {
       border: 31px soild pink;
     }
+
     #camp_requirements_card-con {
       box-shadow: none;
     }
+
     /* requirements container styling */
     #requirements_card-con {
-      height: 160px;
+      height: 35%;
       border-radius: 5px;
       background: #FF5500;
       color: white;
       box-shadow: 4px 4px 8px rgba(0, 0, 0, .2);
     }
+
     .req-title {
       text-align: center;
       padding-top: 10px;
       font-size: 30px;
       font-weight: 500;
     }
+
     .camp_req {
       margin: 10px 30px;
       font-size: 24px;
       font-weight: 500;
     }
 
+    /* camp availability container styling */
     .availability_section {
-      height: 161px;
-      margin-top: 34px;
+      height: 55%;
+      margin-top: 50px;
       border-radius: 5px;
-      border: 2px solid #FF5500
+      border: 2px solid #FF5500;
+      box-shadow: 4px 4px 8px rgba(0, 0, 0, .2);
     }
+
+    .avail_title-con {
+      font-size: 2rem;
+      font-weight: 500;
+      text-align: center;
+      margin: 15px auto 10px auto;
+      position: relative;
+    }
+
+    .date_card {
+      display: block;
+      border: 1.5px solid black;
+      border-radius: 5px;
+      width: 600px;
+      height: 40px;
+      margin: 10px auto;
+      position: relative;
+    }
+    .date_dropdown {
+      cursor: pointer;
+      border: none;
+      outline: none;
+      width: 100%;
+      background-color: white;
+      height: 100%;
+      border-radius: 5px;
+    }
+    .collaspe_date-con {
+      padding: 0 18px;
+      display: none;
+      overflow: hidden;
+      background-color: grey;
+    }
+    .active_date, .date_dropdown:hover {
+      background-color: rgba(255, 85, 0, .2);
+    }
+
+
+    /* 
+    .date_expand-icon {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      right: 5px;
+      bottom: 10px;
+    } */
+
+    /* camp info container styling */
     .camp_info-title {
       text-align: center;
       font-size: 28px;
@@ -769,32 +854,39 @@
       border-radius: 5px;
       overflow: hidden;
     }
+
     .camp_address-con {
       text-align: center;
 
     }
+
     .camp_address-con h1 {
       font-size: 24px;
       font-weight: 500;
       font-style: initial;
       margin-top: 30px;
     }
+
     .camp_address-wrapper span {
       font-style: initial;
       display: inline-block;
       font-size: 24px;
     }
+
     #camp_address {
       line-height: 1.25em;
       margin: 20px auto;
     }
+
     #camp_telephone_number {
       margin: 20px auto;
     }
+
     #camp_telephone_number a {
       text-decoration: none;
       color: black;
     }
+
     #camp_email {
       margin: 0 auto 30px auto;
     }
@@ -802,7 +894,9 @@
     #camp_contact-con {
       border-radius: 5px;
       border: 2px solid #FF5500;
+      box-shadow: 4px 4px 8px rgba(0, 0, 0, .2);
     }
+
     /* responsive grid styling */
     @media only screen and (max-width:1024px) {
       .grid-container {
@@ -810,102 +904,126 @@
         flex-flow: column;
         width: 100%;
       }
+
       .grid-item {
         width: 92%;
         margin: 0 auto;
       }
+
       #booking-con {
-      order: -1;
+        order: -1;
+      }
     }
-    }
-    
+
     @media only screen and (max-width:600px) {
       .bts-con {
         left: 10px;
       }
+
       .bts-con p {
         font-size: 1.25rem;
       }
+
       .bts-con svg {
         margin-bottom: -2px;
         margin-right: 5px;
       }
+
       #camp_name-header {
         margin-top: 60px;
       }
+
       .categories_con {
         margin: 0 auto;
       }
+
       .categories {
         height: 2rem;
         margin: 8px 10px;
       }
+
       .camp_overview {
         margin: 25px auto;
       }
+
       .cost_book-con {
         display: block;
         margin: 0 auto;
       }
+
       .cost-con {
         margin: 2.5px auto;
       }
+
       .cost_book-con .reserve_btn {
         width: 100%;
         margin: 10px auto;
       }
+
       .reserve_btn span {
         font-size: 1.6rem;
         font-weight: 400;
         padding-top: .6em;
         margin: 0 auto;
       }
+
       .date_picker {
         height: 5rem;
         font-size: 1.5em;
       }
+
       #booking-con {
         margin-bottom: -20px;
         order: -1;
       }
+
       .spot_remaining-con {
         margin: 30px auto 20px auto;
         height: auto;
         width: 80%;
         font-size: 1.5rem;
       }
+
       .avail_dates-con {
         margin: 0 auto 30px auto;
         width: 80%;
         font-size: 1.5rem;
       }
+
       #camp_requirements_card-con {
         margin-top: -40px;
         width: 100%;
       }
+
       #requirements_card-con {
         border-radius: 0;
         height: auto;
         padding-bottom: 20px;
       }
+
       .req-title {
         padding: 30px 0px 20px 0px;
       }
+
       .camp_req {
         margin: 30px;
       }
+
       .availability_section {
         width: 92%;
         margin: 20px auto;
       }
+
       .map-con {
         width: 80%;
         height: 125px;
       }
+
       #camp_email {
         font-size: 1.5rem;
       }
     }
+
     /* end of grid responsive stlying */
     /* frequently asked questions container responsive styling */
     .faq-con {
@@ -949,8 +1067,9 @@
       font-weight: 400;
       font-size: 28px;
       display: block;
-      margin: 5px auto 30px auto;
+      margin: 10px auto 40px auto;
     }
+
     /*faq responsive styling */
     @media only screen and (max-width:1024px) {
       .faq-con {
@@ -958,9 +1077,12 @@
         height: auto;
         margin: 20px auto;
       }
-      .faq-con .faq_question, .faq-con .faq_answer {
+
+      .faq-con .faq_question,
+      .faq-con .faq_answer {
         font-size: 1.5rem;
       }
+
       .faq-con strong {
         font-size: 1.5rem;
       }
@@ -1192,7 +1314,8 @@
             <path id="Path_9" data-name="Path 9"
               d="M23.227-16.475a11.507,11.507,0,0,0-3.4-2.078,10.452,10.452,0,0,0-3.73-.659,8.971,8.971,0,0,0-6.5,2.334A8.314,8.314,0,0,0,7.175-10.6,8.293,8.293,0,0,0,9.423-4.484a8.265,8.265,0,0,0,6.135,2.262,11.664,11.664,0,0,0,4.117-.7A11.351,11.351,0,0,0,23.2-5.055L23.161.305a14.777,14.777,0,0,1-3.655,1.468,16.279,16.279,0,0,1-4.016.484A14.142,14.142,0,0,1,5.477-1.375,12.029,12.029,0,0,1,1.564-10.6a11.977,11.977,0,0,1,3.922-9.2,14.314,14.314,0,0,1,10.109-3.624,18.956,18.956,0,0,1,4.009.418,18.325,18.325,0,0,1,3.817,1.282ZM41.51-7.69l-2.858-7.9q-.122-.35-.313-1.2t-.4-2.087q-.223,1.185-.436,2.129t-.315,1.258l-2.754,7.8Zm-16.243,9.3,9.7-24.444h6.24l9.85,24.444H44.856L42.782-3.585H32.9L31.123,1.607Zm26.264,0,3.886-24.444h5.717L66.049-8.444a11.506,11.506,0,0,1,.335,1.319q.183.869.335,1.986.139-1.135.313-2.03a8.91,8.91,0,0,1,.335-1.311l5-14.358H78L81.91,1.607H76.733L74.868-13.139q-.209-1.636-.279-2.471t-.069-1.553q0-.384.009-.576t.026-.342q-.261,1.436-.5,2.479a14.35,14.35,0,0,1-.427,1.578l-5.4,15.63H65.16L59.845-14.021q-.07-.214-.3-1.2t-.654-2.871v.718a34.046,34.046,0,0,1-.313,4.174l-.018.067L56.707,1.607ZM90.938-11.8h.781a4.868,4.868,0,0,0,3.241-.885,3.584,3.584,0,0,0,1.011-2.838,3.2,3.2,0,0,0-1.011-2.63,5.117,5.117,0,0,0-3.241-.826h-.781ZM85.448,1.607V-22.837h6.274q5.019,0,7.415,1.837a6.691,6.691,0,0,1,2.4,5.677A6.876,6.876,0,0,1,99.12-9.746a10.109,10.109,0,0,1-6.684,2.021h-1.5V1.607Z"
               transform="translate(-23954.557 -24197)" fill="#fff" />
-            <text id="FINDER" transform="translate(-23952 -24178.434)" fill="#fff" font-size="12" font-family="ArialMT, Arial" letter-spacing="0.86em">
+            <text id="FINDER" transform="translate(-23952 -24178.434)" fill="#fff" font-size="12"
+              font-family="ArialMT, Arial" letter-spacing="0.86em">
               <tspan x="0" y="0">FINDER</tspan>
             </text>
           </g>
@@ -1226,14 +1349,16 @@
 
   </header>
 
-<!--start of main body content-->
+  <!--start of main body content-->
   <div id="cf_details_max_con">
     <!--container for title, back to search, and camp icon-->
     <div class="heading_con">
       <div class="bts-con">
         <a href="CF_Map_Search.html" class="camp_overview-bts">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
-            <path id="Icon_material-arrow_back" data-name="Icon material-arrow_back" d="M23,13.437H10.069L16.009,7.5,14.5,6,6,14.5,14.5,23,16,21.5l-5.929-5.939H23Z" transform="translate(-6 -6)" fill="#707070" />
+            <path id="Icon_material-arrow_back" data-name="Icon material-arrow_back"
+              d="M23,13.437H10.069L16.009,7.5,14.5,6,6,14.5,14.5,23,16,21.5l-5.929-5.939H23Z"
+              transform="translate(-6 -6)" fill="#707070" />
           </svg>
           <p>Back To Search</p>
         </a>
@@ -1260,19 +1385,25 @@
           <div class="numbertext">3/3</div>
           <img src="Assets\graphics\card_graphics\camp3_pic-card.png">
         </div>
-<!--slideshow navigation buttons-->
-        <a class="prev" onclick="plusSlides(-1)"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17">
-            <path id="Icon_material-arrow_back" data-name="Icon material-arrow_back" d="M23,13.437H10.069L16.009,7.5,14.5,6,6,14.5,14.5,23,16,21.5l-5.929-5.939H23Z" transform="translate(-5.293 -5.294)" fill="#f50" stroke="#f50" stroke-width="1" />
+        <!--slideshow navigation buttons-->
+        <a class="prev" onclick="plusSlides(-1)"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+            viewBox="0 0 17 17">
+            <path id="Icon_material-arrow_back" data-name="Icon material-arrow_back"
+              d="M23,13.437H10.069L16.009,7.5,14.5,6,6,14.5,14.5,23,16,21.5l-5.929-5.939H23Z"
+              transform="translate(-5.293 -5.294)" fill="#f50" stroke="#f50" stroke-width="1" />
           </svg>
         </a>
-        <a class="next" onclick="plusSlides(1)"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 18.207 18.413">
-            <path id="Icon_material-arrow_back" data-name="Icon material-arrow_back" d="M6,13.437H18.931L12.991,7.5,14.5,6,23,14.5,14.5,23,13,21.5l5.929-5.939H6Z" transform="translate(-5.5 -5.294)" fill="#f50" stroke="#f50" stroke-width="1" />
+        <a class="next" onclick="plusSlides(1)"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+            viewBox="0 0 18.207 18.413">
+            <path id="Icon_material-arrow_back" data-name="Icon material-arrow_back"
+              d="M6,13.437H18.931L12.991,7.5,14.5,6,23,14.5,14.5,23,13,21.5l5.929-5.939H6Z"
+              transform="translate(-5.5 -5.294)" fill="#f50" stroke="#f50" stroke-width="1" />
           </svg>
         </a>
-<!--end of slideshow container-->
+        <!--end of slideshow container-->
       </div>
     </div>
-<!--end of camp gallery container-->
+    <!--end of camp gallery container-->
 
 
     <div class="camp_details-con">
@@ -1297,10 +1428,15 @@
           </div>
           <div class="camp_overview">
             <h2 class="overview_title">Camp Overview:</h2>
-          <div id="abt_camp">
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et earebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren</p>
+            <div id="abt_camp">
+              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et
+                earebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+                dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+                clita kasd gubergren</p>
+            </div>
           </div>
-        </div>
         </div>
 
         <div class="grid-item" id="booking-con">
@@ -1314,17 +1450,19 @@
           </div>
           <div class="cost_book-con">
             <div class="cost-con">
-            <span id="camp_cost">$550/</span><sub>CHILD</sub>
-          </div>
+              <span id="camp_cost">$550/</span><sub>CHILD</sub>
+            </div>
 
             <div class="reserve_btn">
               <a href="#reserve_now" id="reserve_now-link"><span>reserve now</span></a>
-          </div>
+            </div>
           </div>
           <div class="spot_remaining-con">
             <div class="spot_icon-con">
               <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 40 40">
-                <path id="Icon_ionic-md-people" data-name="Icon ionic-md-people" d="M23.727,16.313a4.219,4.219,0,1,0-4.3-4.219A4.27,4.27,0,0,0,23.727,16.313Zm-11.454,0a4.219,4.219,0,1,0-4.3-4.219A4.27,4.27,0,0,0,12.273,16.313Zm0,3.094c-3.365,0-10.023,1.617-10.023,4.922v3.8H22.5v-3.8C22.5,21.023,15.638,19.406,12.273,19.406Zm11.454.774a7.641,7.641,0,0,0-1.227.07c1.647,1.2,2.25,1.969,2.25,4.078v3.8h9v-3.8C33.75,21.023,27.092,20.18,23.727,20.18Z" transform="translate(-2.25 -7.875)" fill="#f50"/>
+                <path id="Icon_ionic-md-people" data-name="Icon ionic-md-people"
+                  d="M23.727,16.313a4.219,4.219,0,1,0-4.3-4.219A4.27,4.27,0,0,0,23.727,16.313Zm-11.454,0a4.219,4.219,0,1,0-4.3-4.219A4.27,4.27,0,0,0,12.273,16.313Zm0,3.094c-3.365,0-10.023,1.617-10.023,4.922v3.8H22.5v-3.8C22.5,21.023,15.638,19.406,12.273,19.406Zm11.454.774a7.641,7.641,0,0,0-1.227.07c1.647,1.2,2.25,1.969,2.25,4.078v3.8h9v-3.8C33.75,21.023,27.092,20.18,23.727,20.18Z"
+                  transform="translate(-2.25 -7.875)" fill="#f50" />
               </svg>
             </div>
             <div class="spot-wrapper">
@@ -1332,18 +1470,20 @@
             </div>
           </div>
           <div class="avail_dates-con">
-              <div class="avail_dates-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 40 40">
-                  <path id="Icon_awesome-calendar-check" data-name="Icon awesome-calendar-check" d="M23.245,8.53H.64A.64.64,0,0,1,0,7.891V5.971A2.559,2.559,0,0,1,2.559,3.412H5.118V.64A.64.64,0,0,1,5.758,0H7.891a.64.64,0,0,1,.64.64V3.412h6.824V.64a.64.64,0,0,1,.64-.64h2.133a.64.64,0,0,1,.64.64V3.412h2.559a2.559,2.559,0,0,1,2.559,2.559V7.891A.64.64,0,0,1,23.245,8.53ZM.64,10.236H23.245a.64.64,0,0,1,.64.64V24.738A2.559,2.559,0,0,1,21.326,27.3H2.559A2.559,2.559,0,0,1,0,24.738V10.876A.64.64,0,0,1,.64,10.236Zm17.77,5.115-1.5-1.514a.64.64,0,0,0-.9,0l-5.653,5.608L7.9,16.971a.64.64,0,0,0-.9,0l-1.514,1.5a.64.64,0,0,0,0,.9l4.4,4.439a.64.64,0,0,0,.9,0l7.622-7.56a.64.64,0,0,0,0-.9Z" fill="#f50"/>
-                </svg>
-              </div>
-              <div class="dates-con">
-                <span>Next Available Dates: </span><span id="avail_date">Aug. 7, 2021</span>
-              </div>
+            <div class="avail_dates-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 40 40">
+                <path id="Icon_awesome-calendar-check" data-name="Icon awesome-calendar-check"
+                  d="M23.245,8.53H.64A.64.64,0,0,1,0,7.891V5.971A2.559,2.559,0,0,1,2.559,3.412H5.118V.64A.64.64,0,0,1,5.758,0H7.891a.64.64,0,0,1,.64.64V3.412h6.824V.64a.64.64,0,0,1,.64-.64h2.133a.64.64,0,0,1,.64.64V3.412h2.559a2.559,2.559,0,0,1,2.559,2.559V7.891A.64.64,0,0,1,23.245,8.53ZM.64,10.236H23.245a.64.64,0,0,1,.64.64V24.738A2.559,2.559,0,0,1,21.326,27.3H2.559A2.559,2.559,0,0,1,0,24.738V10.876A.64.64,0,0,1,.64,10.236Zm17.77,5.115-1.5-1.514a.64.64,0,0,0-.9,0l-5.653,5.608L7.9,16.971a.64.64,0,0,0-.9,0l-1.514,1.5a.64.64,0,0,0,0,.9l4.4,4.439a.64.64,0,0,0,.9,0l7.622-7.56a.64.64,0,0,0,0-.9Z"
+                  fill="#f50" />
+              </svg>
+            </div>
+            <div class="dates-con">
+              <span>Next Available Dates: </span><span id="avail_date">Aug. 7, 2021</span>
+            </div>
 
           </div>
         </div>
-        
+
 
         <div class="grid-item" id="camp_requirements_card-con">
           <div id="requirements_card-con">
@@ -1353,7 +1493,92 @@
             <h3 class="camp_req">Gender:<span id="camp_gender"> Coed</span></h3>
           </div>
           <div class="availability_section">
-            Availability
+            <h2 class="avail_title-con">Availability</h2>
+            <div class="dates-con">
+              <ul class="avail_dates-list">
+                <li class="date_card" id="card-1">
+                  <button type="button" class="date_dropdown">
+                    <div id="date_range">Aug 07 - Aug 14, 2021</div>
+                    <div id="cost">$550</div>
+                    <div class="date_expand-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20.00" height="20.00"
+                        viewBox="0 0 20.00 20.00">
+                        <g id="Icon_feather-plus-circle" data-name="Icon feather-plus-circle"
+                          transform="translate(1.5 1.5)">
+                          <path id="Path_6" data-name="Path 6"
+                            d="M20.044,11.522A8.522,8.522,0,1,1,11.522,3a8.522,8.522,0,0,1,8.522,8.522Z"
+                            transform="translate(-3 -3)" fill="none" stroke="#000" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="3" />
+                          <path id="Path_7" data-name="Path 7" d="M18,12v6.818" transform="translate(-9.478 -6.887)"
+                            fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" />
+                          <path id="Path_8" data-name="Path 8" d="M12,18h6.818" transform="translate(-6.887 -9.478)"
+                            fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" />
+                        </g>
+                      </svg></div>
+                  </button>
+                  <div class="collaspe_date-con">
+                    <p>some content <br> with <br> stuff</p>
+                  </div>
+                </li>
+                <li class="date_card" id="card-2">
+                  <div id="date_range">Aug 07 - Aug 14, 2021</div>
+                  <div id="cost">$550</div>
+                  <div class="date_expand-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20.00" height="20.00" viewBox="0 0 20.00 20.00">
+                      <g id="Icon_feather-plus-circle" data-name="Icon feather-plus-circle"
+                        transform="translate(1.5 1.5)">
+                        <path id="Path_6" data-name="Path 6"
+                          d="M20.044,11.522A8.522,8.522,0,1,1,11.522,3a8.522,8.522,0,0,1,8.522,8.522Z"
+                          transform="translate(-3 -3)" fill="none" stroke="#000" stroke-linecap="round"
+                          stroke-linejoin="round" stroke-width="3" />
+                        <path id="Path_7" data-name="Path 7" d="M18,12v6.818" transform="translate(-9.478 -6.887)"
+                          fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" />
+                        <path id="Path_8" data-name="Path 8" d="M12,18h6.818" transform="translate(-6.887 -9.478)"
+                          fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" />
+                      </g>
+                    </svg>
+                  </div>
+                </li>
+                <li class="date_card" id="card-3">
+                  <div id="date_range">Aug 07 - Aug 14, 2021</div>
+                  <div id="cost">$550</div>
+                  <div class="date_expand-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20.00" height="20.00" viewBox="0 0 20.00 20.00">
+                      <g id="Icon_feather-plus-circle" data-name="Icon feather-plus-circle"
+                        transform="translate(1.5 1.5)">
+                        <path id="Path_6" data-name="Path 6"
+                          d="M20.044,11.522A8.522,8.522,0,1,1,11.522,3a8.522,8.522,0,0,1,8.522,8.522Z"
+                          transform="translate(-3 -3)" fill="none" stroke="#000" stroke-linecap="round"
+                          stroke-linejoin="round" stroke-width="3" />
+                        <path id="Path_7" data-name="Path 7" d="M18,12v6.818" transform="translate(-9.478 -6.887)"
+                          fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" />
+                        <path id="Path_8" data-name="Path 8" d="M12,18h6.818" transform="translate(-6.887 -9.478)"
+                          fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" />
+                      </g>
+                    </svg>
+                  </div>
+                </li>
+                <li class="date_card" id="card-4">
+                  <div id="date_range">Aug 07 - Aug 14, 2021</div>
+                  <div id="cost">$550</div>
+                  <div class="date_expand-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20.00" height="20.00" viewBox="0 0 20.00 20.00">
+                      <g id="Icon_feather-plus-circle" data-name="Icon feather-plus-circle"
+                        transform="translate(1.5 1.5)">
+                        <path id="Path_6" data-name="Path 6"
+                          d="M20.044,11.522A8.522,8.522,0,1,1,11.522,3a8.522,8.522,0,0,1,8.522,8.522Z"
+                          transform="translate(-3 -3)" fill="none" stroke="#000" stroke-linecap="round"
+                          stroke-linejoin="round" stroke-width="3" />
+                        <path id="Path_7" data-name="Path 7" d="M18,12v6.818" transform="translate(-9.478 -6.887)"
+                          fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" />
+                        <path id="Path_8" data-name="Path 8" d="M12,18h6.818" transform="translate(-6.887 -9.478)"
+                          fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" />
+                      </g>
+                    </svg>
+                  </div>
+                </li>
+
+              </ul>
+            </div>
           </div>
         </div>
 
@@ -1361,15 +1586,20 @@
         <div class="grid-item" id="camp_contact-con">
           <h2 class="camp_info-title">Camp Info</h2>
           <div class="map-con">
-            <div class="mapouter"><div class="gmap_canvas"><iframe width="100%" height="100%" id="gmap_canvas" src="https://maps.google.com/maps?q=6030%20Barber%20Motorsports%20Pkwy,%20Leeds,%20AL%2035094&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.whatismyip-address.com"></a><br></div></div>
+            <div class="mapouter">
+              <div class="gmap_canvas"><iframe width="100%" height="100%" id="gmap_canvas"
+                  src="https://maps.google.com/maps?q=6030%20Barber%20Motorsports%20Pkwy,%20Leeds,%20AL%2035094&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                  frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a
+                  href="https://www.whatismyip-address.com"></a><br></div>
+            </div>
           </div>
           <div class="camp_address-con">
             <address class="camp_address-wrapper">
-            <h1 id="camp_address-title">Adventure Camp</h1><br>
-            <span id="camp_address">123 Adventure Way<br>
-            YourTown, AL 12345</span><br>
-            <span id="camp_telephone_number"><a href="tel:+15555555555">(555) 555-5555</a></span><br>
-            <span id="camp_email"><a href="mailto:AdventureCamp@camp.com">AdventureCamp@camp.com</a></span><br>
+              <h1 id="camp_address-title">Adventure Camp</h1><br>
+              <span id="camp_address">123 Adventure Way<br>
+                YourTown, AL 12345</span><br>
+              <span id="camp_telephone_number"><a href="tel:+15555555555">(555) 555-5555</a></span><br>
+              <span id="camp_email"><a href="mailto:AdventureCamp@camp.com">AdventureCamp@camp.com</a></span><br>
             </address>
           </div>
         </div>
@@ -1382,9 +1612,11 @@
           <span class="faq_question"><i><strong>Q:</strong> Will my kids leave the campground?</span></i>
           <span class="faq_answer"><strong>A:</strong> No, the camp ground has everything your child will need</span>
 
-          <span class="faq_question"><i><strong>Q:</strong> My kids have dietary restrictions, can your camp accommodate that?</span></i>
+          <span class="faq_question"><i><strong>Q:</strong> My kids have dietary restrictions, can your camp accommodate
+              that?</span></i>
 
-          <span class="faq_answer"><strong>A:</strong> Yes, we have a great chef and cooking staff that will help with your child’s needs</span>
+          <span class="faq_answer"><strong>A:</strong> Yes, we have a great chef and cooking staff that will help with
+            your child’s needs</span>
 
           <span class="faq_question"><i><strong>Q:</strong> Does your camp have team building exercises?</span></i>
 
@@ -1399,71 +1631,75 @@
 
 
 
-      <!--start of footer-->
-      <div id="footer">
-        <div id="footer_max_con">
-          <div class="site_map-con">
-            <ul class="site_map">
-              <li class="site_map--item">
-                <a href="#aboutUs">About Us</a>
-              </li>
-              <li class="site_map--item">
-                <a href="#aboutUs">Host a Program</a>
-              </li>
-              <li class="site_map--item">
-                <a href="#aboutUs">COVID-19 Resources</a>
-              </li>
-              <li class="site_map--item">
-                <a href="#aboutUs">Privacy Policy</a>
-              </li>
-              <li class="site_map--item" id="social_media-con">
-                <ul class="social_media-list">
-                  <li class="footer_icon"> <a target="_blank" href="https://www.facebook.com/"><img src="Assets\icons\footer-facebook.svg" alt=""></a> </li>
-                  <li class="footer_icon"> <a target="_blank" href="https://www.instagram.com/?hl=en"><img src="Assets\icons\footer-instagram.svg" alt=""></a> </li>
-                  <li class="footer_icon"> <a target="_blank" href="https://twitter.com/?lang=en"><img src="Assets\icons\footer-twitter.svg" alt=""></a> </li>
-                  <li class="footer_icon"> <a target="_blank" href="https://www.tiktok.com/"><img src="Assets\icons\footer-tiktok.svg" alt=""></a> </li>
-                </ul>
-              </li>
-              <li class="site_map--item" id="footer_copyright">
-                Copyright ©<script>
-                  document.write(' ' + new Date().getFullYear() + ' ');
-                </script>
-              </li>
+  <!--start of footer-->
+  <div id="footer">
+    <div id="footer_max_con">
+      <div class="site_map-con">
+        <ul class="site_map">
+          <li class="site_map--item">
+            <a href="#aboutUs">About Us</a>
+          </li>
+          <li class="site_map--item">
+            <a href="#aboutUs">Host a Program</a>
+          </li>
+          <li class="site_map--item">
+            <a href="#aboutUs">COVID-19 Resources</a>
+          </li>
+          <li class="site_map--item">
+            <a href="#aboutUs">Privacy Policy</a>
+          </li>
+          <li class="site_map--item" id="social_media-con">
+            <ul class="social_media-list">
+              <li class="footer_icon"> <a target="_blank" href="https://www.facebook.com/"><img
+                    src="Assets\icons\footer-facebook.svg" alt=""></a> </li>
+              <li class="footer_icon"> <a target="_blank" href="https://www.instagram.com/?hl=en"><img
+                    src="Assets\icons\footer-instagram.svg" alt=""></a> </li>
+              <li class="footer_icon"> <a target="_blank" href="https://twitter.com/?lang=en"><img
+                    src="Assets\icons\footer-twitter.svg" alt=""></a> </li>
+              <li class="footer_icon"> <a target="_blank" href="https://www.tiktok.com/"><img
+                    src="Assets\icons\footer-tiktok.svg" alt=""></a> </li>
             </ul>
+          </li>
+          <li class="site_map--item" id="footer_copyright">
+            Copyright ©<script>
+              document.write(' ' + new Date().getFullYear() + ' ');
+            </script>
+          </li>
+        </ul>
 
-          </div>
-
-          <!--find a program-->
-          <div class="fap_cta-con">
-            <div class="brand_slogan">
-              <h1 class="fap_cta--brand">CampFinder</h1>
-              <h2 class="fap_cta--slogan">A Camp Experience Kids Will Love</h2>
-            </div>
-            <div class="fap_btn-con">
-              <button type="button" class="fap_btn" id="fap-btn">
-                <a class="footer_btn--link" href="#findAProgram">
-                  find a program
-                </a>
-              </button>
-            </div>
-          </div>
-
-          <!--mailing list cta-->
-          <div class="mail_cta-con">
-            <h1 class="mail_title">Signup for our mailing list</h1>
-            <div class="user_input">
-              <input type="text" name="email" placeholder="myemail@example.com">
-            </div>
-            <button type="button" class="mail_btn" id="mail-btn">
-              <a class="footer_btn--link" href="#mailingListSignup">
-                signup
-              </a>
-            </button>
-
-          </div>
-        </div>
-        <!--end of footer container-->
       </div>
+
+      <!--find a program-->
+      <div class="fap_cta-con">
+        <div class="brand_slogan">
+          <h1 class="fap_cta--brand">CampFinder</h1>
+          <h2 class="fap_cta--slogan">A Camp Experience Kids Will Love</h2>
+        </div>
+        <div class="fap_btn-con">
+          <button type="button" class="fap_btn" id="fap-btn">
+            <a class="footer_btn--link" href="#findAProgram">
+              find a program
+            </a>
+          </button>
+        </div>
+      </div>
+
+      <!--mailing list cta-->
+      <div class="mail_cta-con">
+        <h1 class="mail_title">Signup for our mailing list</h1>
+        <div class="user_input">
+          <input type="text" name="email" placeholder="myemail@example.com">
+        </div>
+        <button type="button" class="mail_btn" id="mail-btn">
+          <a class="footer_btn--link" href="#mailingListSignup">
+            signup
+          </a>
+        </button>
+
+      </div>
+    </div>
+    <!--end of footer container-->
+  </div>
 
 
 
