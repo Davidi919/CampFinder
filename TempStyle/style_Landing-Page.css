@@ -637,7 +637,14 @@ justify-content: center;
   position: inherit;
   z-index: 1000;
 }
-
+.camp_results .card-link {
+  color: inherit;
+  text-decoration: none;
+}
+.camp_results .card-link:visited {
+  color: inherit;
+  text-decoration: none;
+}
 .camp_results li {
   color: white;
   margin:0 10px;
@@ -660,7 +667,7 @@ li .camp_title-con {
 #camp_pic--card {
   width: 100%;
   height: 100%;
-  position: absolute;
+    position: absolute;
   -o-object-fit: cover;
      object-fit: cover;
   top: 0;
@@ -905,8 +912,7 @@ li .camp_title-con {
 }
 /*tablet styling*/
 @media only screen and (max-width: 1024px) {
-  #footer #max_con > div {
- }
+ 
 #footer_max_con .site_map-con {
   margin-left: auto;
 }
@@ -917,4 +923,4 @@ li .camp_title-con {
     font-size: 1.75em;
   }
 }
-}
+
