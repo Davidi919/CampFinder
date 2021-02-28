@@ -1,5 +1,3 @@
-
-
 /*main content styling*/
 #main_max_con {
   display: block;
@@ -9,27 +7,139 @@
   /*padding for fixed header*/
   padding-top: 70px;
 }
+
 /*filter/dates styling*/
 .date_input-con {
   width: calc(100% - 375px);
   display: block;
   height: 75px;
-  background-color: grey;
+  background-color: white;
   float: right;
 }
+.input-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.date_input-con .input_box {
+  width: 25%;
+  margin-left: 20px;
+}
+.date_input-con input {
+  border: 2px solid #FF5500;
+  border-radius: 5px;
+  width: 100%;
+  height: 40px;
+}
+.date_input-con input[type=text] {
+  padding: 0px;
+}
+.date_input-con input::-webkit-input-placeholder {
+  
+}
+.date_input-con input::-moz-placeholder {
+  
+}
+.date_input-con input:-ms-input-placeholder {
+  
+}
+.date_input-con input::-ms-input-placeholder {
+  
+}
+.date_input-con input::placeholder {
+  
+}
+.filter-btn {
+  border-radius: 5px;
+  width: 100px;
+  height: 40px;
+  margin-left: 20px;
+  border: 2px solid #FF5500;
+}
+
 .applied_filters-con {
   width: 375px;
   height: 75px;
   float: left;
-  display: block;
-  background-color: blue;
+  position: relative;
+  z-index: 200;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: white;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+
+}
+
+/* applied filters scrollbar styling scrollbar styling */
+.applied_filters-con::-webkit-scrollbar {
+  position: absolute;
+  width: 5px;
+}
+
+/* Track */
+.applied_filters-con::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(100, 100, 100, 0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(100, 100, 100, 0.3);
+
+}
+
+/* Handle */
+.applied_filters-con::-webkit-scrollbar-thumb {
+  background: rgba(57, 169, 219, .7);
+  border-radius: 0px 4px 4px 0px;
+}
+
+.filter_card {
+  width: 100px;
+  height: 25px;
+  margin: 2px 8px;
+  border-radius: 5px;
+  border: 2px solid #39A9DB;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+
+}
+
+.remove_filter-btn,
+.remove_filter-btn:visited {
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filter_card span {
+  color: #39A9DB;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 500;
+  margin-left: 5px;
+}
+
+.filter_card .close_icon {
+  margin-right: 5px;
+  width: 12px;
+  height: 12px;
 }
 
 /*search results camp list styling*/
-#list_wrapper {
-  height: 100vh;
-  width: 100%;
-  position: relative;
+
+@media only screen and (max-width: 920px) {
+  #list_wrapper {
+    /* list wrapper used to place cards at bottom of screen in mobile  */
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    z-index: 0;
+  }
 }
 
 .camp_list-con {
@@ -41,13 +151,17 @@
   background-color: #FFEEE6;
   overflow-y: scroll;
   /*hiding scrollbar*/
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
+
 /*hiding scrollbar*/
 .camp_list-con::-webkit-scrollbar {
   display: none;
 }
+
 .date_br {
   display: none;
 }
@@ -69,34 +183,38 @@
   border-radius: 20px;
   box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.2);
 }
+
 .camp_results .card-link {
   color: inherit;
   text-decoration: none;
 }
+
 .camp_results .card-link:visited {
   color: inherit;
   text-decoration: none;
 }
+
 li .camp_title-con {
   clear: both;
   height: 50%;
   width: auto;
-  position:relative;
+  position: relative;
 
 }
+
 #camp_pic--card {
   width: 100%;
   height: 100%;
   position: absolute;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   top: 0;
   left: 0;
   z-index: 0;
   border-radius: 20px 20px 0px 0px;
 }
 
-.camp_title-con h1{
+.camp_title-con h1 {
   font-size: 24px;
   clear: both;
   padding-top: 5px;
@@ -105,12 +223,14 @@ li .camp_title-con {
   position: inherit;
   z-index: 900;
 }
+
 .camp_title-con .camp_local-icon {
   position: absolute;
   bottom: 10px;
   left: 10px;
   float: left;
 }
+
 .camp_title-con #camp_local {
   font-size: 18px;
   font-style: italic;
@@ -119,24 +239,28 @@ li .camp_title-con {
   left: 30px;
   text-shadow: 3px 3px 6px rgba(0, 0, 0, 1);
 }
+
 .camp_card-abt_con {
   height: 50%;
   position: relative;
 }
+
 .camp_card-abt_con #camp_host {
   display: block;
   font-size: 18px;
   margin: 5px auto 25px 10px;
   text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
 }
+
 .camp_card-abt_con #camp_abt--card {
   display: block;
   font-size: 16px;
   line-height: 1.25em;
   margin-left: 10px;
   padding-right: 5px;
-  width:  auto;
+  width: auto;
 }
+
 .camp_card-abt_con #avail_dates--card {
   font-size: 18px;
   position: absolute;
@@ -158,6 +282,7 @@ li .camp_title-con {
   float: right;
   background-color: #ECEAE4;
 }
+
 .google_map-api {
   width: 100%;
   height: 100%;
@@ -167,36 +292,40 @@ li .camp_title-con {
 
 /*mobile/responsive search results map styling*/
 @media only screen and (min-width: 1250px) {
+
   /*resizing search map container for large screens*/
   .search_map-con {
     width: calc(100% - 375px);
   }
-  }
+}
+
 /*adding small breakpoint for camp list cards dates*/
 @media only screen and (max-width: 1200px) {
   .date_br {
     display: block;
   }
 }
+
 /*resizing map container for tablet/min-width for list breakpoint*/
 @media only screen and (max-width: 915px) {
 
-.date_input-con {
-  position: absolute;
-  top: 70px;
-  z-index: 200;
-  width: 100vw;
-  height: 75px;
-  background-color: grey;
-}
-.applied_filters-con {
-  position: absolute;
-  z-index: 200;
-  top: 145px;
-  width: 100vw;
-  height: 75px;
-  background-color: tan;
-}
+  .date_input-con {
+    position: absolute;
+    top: 70px;
+    z-index: 200;
+    width: 100vw;
+    height: 75px;
+    background-color: grey;
+  }
+
+  .applied_filters-con {
+    position: absolute;
+    z-index: 200;
+    top: 145px;
+    width: 100vw;
+    height: 75px;
+    background-color: tan;
+  }
 
 
   .search_map-con {
@@ -206,6 +335,7 @@ li .camp_title-con {
     height: 90vh;
     z-index: -100;
   }
+
   .camp_list-con {
     background-color: transparent;
     max-width: none;
@@ -222,22 +352,28 @@ li .camp_title-con {
     overflow-x: auto;
     overflow-y: hidden;
   }
-.camp_list-con .camp_card-abt_con, .camp_local-icon, #camp_local {
-  display: none;
-}
+
+  .camp_list-con .camp_card-abt_con,
+  .camp_local-icon,
+  #camp_local {
+    display: none;
+  }
+
   .camp_results li {
     display: inline-block;
     width: 300px;
     height: 100px;
     margin-left: 15px;
     vertical-align: top;
-    }
-    li .camp_title-con{
-      clear: unset;
-      height: 100%;
-      border-radius: 20px;
-    }
-    #camp_pic--card {
-      border-radius: 20px;
-    }
+  }
+
+  li .camp_title-con {
+    clear: unset;
+    height: 100%;
+    border-radius: 20px;
+  }
+
+  #camp_pic--card {
+    border-radius: 20px;
+  }
 }

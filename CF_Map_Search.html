@@ -1,40 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> CampFinder | Find A Camp
-    </title>
-    <!-- css link -->
-     <link href="./TempStyle/style.css" type="text/css" rel="stylesheet">
-     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="CampFinder">
-    <meta name="subject" content="Find a camp experience your kids will love">
-    <meta name="description" content="Look through the variety of camps and find the one that fits your child perfectly.">
-    <meta name="theme-color" content="#FF5500">
-    <meta name="robots" content="index,follow"><!-- All Search Engines -->
-    <meta name="googlebot" content="index,follow"><!-- Google Specific -->
-    <!--global styling-->
-    <style>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> CampFinder | Find A Camp
+  </title>
+  <!-- css link -->
+  <link href="./TempStyle/style.css" type="text/css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="CampFinder">
+  <meta name="subject" content="Find a camp experience your kids will love">
+  <meta name="description" content="Look through the variety of camps and find the one that fits your child perfectly.">
+  <meta name="theme-color" content="#FF5500">
+  <meta name="robots" content="index,follow"><!-- All Search Engines -->
+  <meta name="googlebot" content="index,follow"><!-- Google Specific -->
+  <!--global styling-->
+  <style>
     /* type face import */
 
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,800;0,900;1,300&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 
     /* Lemon reset */
-    body, div, span, applet, object, iframe,
-    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-    a, abbr, acronym, address, big, cite, code,
-    del, dfn, em, img, ins, kbd, q, s, samp,
-    small, strike, strong, sub, sup, tt, var,
-    b, u, i, center,
-    dl, dt, dd, ol, ul, li,
-    fieldset, form, label, legend,
-    table, caption, tbody, tfoot, thead, tr, th, td,
-    article, aside, canvas, details, embed,
-    figure, figcaption, footer, header, hgroup,
-    menu, nav, output, ruby, section, summary,
-    time, mark, audio, video {
+    body,
+    div,
+    span,
+    applet,
+    object,
+    iframe,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    blockquote,
+    pre,
+    a,
+    abbr,
+    acronym,
+    address,
+    big,
+    cite,
+    code,
+    del,
+    dfn,
+    em,
+    img,
+    ins,
+    kbd,
+    q,
+    s,
+    samp,
+    small,
+    strike,
+    strong,
+    sub,
+    sup,
+    tt,
+    var,
+    b,
+    u,
+    i,
+    center,
+    dl,
+    dt,
+    dd,
+    ol,
+    ul,
+    li,
+    fieldset,
+    form,
+    label,
+    legend,
+    table,
+    caption,
+    tbody,
+    tfoot,
+    thead,
+    tr,
+    th,
+    td,
+    article,
+    aside,
+    canvas,
+    details,
+    embed,
+    figure,
+    figcaption,
+    footer,
+    header,
+    hgroup,
+    menu,
+    nav,
+    output,
+    ruby,
+    section,
+    summary,
+    time,
+    mark,
+    audio,
+    video {
       margin: 0;
       padding: 0;
       border: 0;
@@ -44,8 +112,17 @@
     }
 
     /* HTML5 display-role reset for older browsers */
-    article, aside, details, figcaption, figure,
-    footer, header, hgroup, menu, nav, section {
+    article,
+    aside,
+    details,
+    figcaption,
+    figure,
+    footer,
+    header,
+    hgroup,
+    menu,
+    nav,
+    section {
       display: block;
     }
 
@@ -57,16 +134,20 @@
 
     }
 
-    ol, ul {
+    ol,
+    ul {
       list-style: none;
     }
 
-    blockquote, q {
+    blockquote,
+    q {
       quotes: none;
     }
 
-    blockquote:before, blockquote:after,
-    q:before, q:after {
+    blockquote:before,
+    blockquote:after,
+    q:before,
+    q:after {
       content: "";
       content: none;
     }
@@ -75,6 +156,7 @@
       border-collapse: collapse;
       border-spacing: 0;
     }
+
     /* global rules */
     html {
       font-size: 14px;
@@ -82,615 +164,755 @@
       margin: 0;
       height: 100%;
     }
-        </style>
-        <!--header styling-->
-        <style>
-        /*header styling */
-        #header {
-          width: 100%;
-          height: 70px;
-          position: fixed;
-          background-color: #FF5500;
-          box-shadow: 3px 0px 4px rgba(0, 0, 0, 0.2);
-          z-index: 5000;
-        }
-        #header_max_con {
-          width: 100%;
-          max-width: 2000px;
-          margin: 0 auto;
-        }
-        #header svg {
-          margin: 10px;
-          margin-top: 12px;
-        }
-        .account_btn--con {
-          display: inline-block;
-          float: right;
-          margin: 10px 20px;
+  </style>
+  <!--header styling-->
+  <style>
+    /*header styling */
+    #header {
+      width: 100%;
+      height: 70px;
+      position: fixed;
+      background-color: #FF5500;
+      box-shadow: 3px 0px 4px rgba(0, 0, 0, 0.2);
+      z-index: 5000;
+    }
 
-        }
-        .account_btn--con_mobile {
-          display: none;
-        }
-        .header_btn {
-          display: inline-block;
-          font-size: 20px;
-          width: 150px;
-          height: 50px;
-          margin-left: 20px;
-          cursor: pointer;
-          background-color: #FFFFFF;
-          border: none;
-          box-shadow: 3px 3px rgba(0, 0, 0, 0.2);
-          border-radius: 5px;
-           transition-duration: 0.4s;
-        }
-        .header_btn:active {
-          box-shadow: none;
-          padding: 3px 3px inherit inherit;
-        }
-        .header_btn a {
-          text-align: center;
-          text-transform: uppercase;
-          color: #FF5500;
-          text-decoration: none;
-          width: 150px;
-          font-weight: 700;
-        }
-        /*mobile header styling*/
-        @media only screen and (max-width: 600px) {
-          .account_btn--con {
-            display: none;
-          }
-          .account_btn--con_mobile {
-            display: inline-block;
-            float: right;
-            margin: 15px;
-            margin-top: 10px;
-            width: 50px;
-            height: 50px;
-            background-color: white;
-          }
-          .account_btn--con_mobile ul {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-            overflow: hidden;
-          }
-          .account_btn--con_mobile li a {
-          display: block;
-          text-align: center;
-          font-size: 24px;
-          padding: 20px 20px;
-          border-bottom: 1px solid #FF5500;
-          text-decoration: none;
-          text-transform: uppercase;
-          font-weight: 700;
-          color: #FF5500;
-            }
+    #header_max_con {
+      width: 100%;
+      max-width: 2000px;
+      margin: 0 auto;
+    }
 
-          .account_btn--con_mobile .menu {
-            background-color: white;
-            clear: both;
-            max-height: 0;
-            transition: max-height .2s ease-out;
+    #header svg {
+      margin: 10px;
+      margin-top: 12px;
+    }
 
-          }
-          .account_btn--con_mobile .menu-icon {
-          cursor: pointer;
-          display: inline-block;
-          float: right;
-          margin: 22px 12px;
-          position: relative;
-          -webkit-user-select: none;
-             -moz-user-select: none;
-              -ms-user-select: none;
-                  user-select: none;
-        }
+    .account_btn--con {
+      display: inline-block;
+      float: right;
+      margin: 10px 20px;
 
-        .account_btn--con_mobile .menu-icon .navicon {
-          background: #FF5500;
-          display: block;
-          height: 3px;
-          position: relative;
-          transition: background .2s ease-out;
-          width: 27px;
-        }
+    }
 
-        .account_btn--con_mobile .menu-icon .navicon:before,
-        .account_btn--con_mobile .menu-icon .navicon:after {
-          background: #FF5500;
-          content: '';
-          display: block;
-          height: 100%;
-          position: absolute;
-          transition: all .2s ease-out;
-          width: 100%;
+    .account_btn--con_mobile {
+      display: none;
+    }
 
-        }
+    .header_btn {
+      display: inline-block;
+      font-size: 20px;
+      width: 150px;
+      height: 50px;
+      margin-left: 20px;
+      cursor: pointer;
+      background-color: #FFFFFF;
+      border: none;
+      box-shadow: 3px 3px rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
+      transition-duration: 0.4s;
+    }
 
-        .account_btn--con_mobile .menu-icon .navicon:before {
-          top: 10px;
-        }
+    .header_btn:active {
+      box-shadow: none;
+      padding: 3px 3px inherit inherit;
+    }
 
-        .account_btn--con_mobile .menu-icon .navicon:after {
-          top: -10px;
-        }
+    .header_btn a {
+      text-align: center;
+      text-transform: uppercase;
+      color: #FF5500;
+      text-decoration: none;
+      width: 150px;
+      font-weight: 700;
+    }
 
-        .account_btn--con_mobile .menu-btn {
-          display: none;
-        }
+    /*mobile header styling*/
+    @media only screen and (max-width: 600px) {
+      .account_btn--con {
+        display: none;
+      }
 
-        .account_btn--con_mobile .menu-btn:checked ~ .menu {
-          max-height: 100vh;
-          width: 300px;
-          position: relative;
-          left: -238px;
-          top: 10px;
-          border: 2px solid #FF5500;
-          box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.2);
+      .account_btn--con_mobile {
+        display: inline-block;
+        float: right;
+        margin: 15px;
+        margin-top: 10px;
+        width: 50px;
+        height: 50px;
+        background-color: white;
+      }
 
-        }
-        #header_max_con > div.account_btn--con_mobile > ul {
-          height: 100vh;
-          box-shadow: 0 0 100vw rgba(0,0,0,0.8);
-        }
+      .account_btn--con_mobile ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        overflow: hidden;
+      }
 
-        .account_btn--con_mobile .menu-btn:checked ~ .menu-icon .navicon {
-          background: transparent;
-        }
+      .account_btn--con_mobile li a {
+        display: block;
+        text-align: center;
+        font-size: 24px;
+        padding: 20px 20px;
+        border-bottom: 1px solid #FF5500;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: #FF5500;
+      }
 
-        .account_btn--con_mobile .menu-btn:checked ~ .menu-icon .navicon:before {
-          transform: rotate(-45deg);
-        }
+      .account_btn--con_mobile .menu {
+        background-color: white;
+        clear: both;
+        max-height: 0;
+        transition: max-height .2s ease-out;
 
-        .account_btn--con_mobile .menu-btn:checked ~ .menu-icon .navicon:after {
-          transform: rotate(45deg);
-        }
+      }
 
-        .account_btn--con_mobile .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
-        .account_btn--con_mobile .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
-          top: 0;
-        }
+      .account_btn--con_mobile .menu-icon {
+        cursor: pointer;
+        display: inline-block;
+        float: right;
+        margin: 22px 12px;
+        position: relative;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
 
-          }
-        </style>
-        <!--end of header styling-->
+      .account_btn--con_mobile .menu-icon .navicon {
+        background: #FF5500;
+        display: block;
+        height: 3px;
+        position: relative;
+        transition: background .2s ease-out;
+        width: 27px;
+      }
 
-        <!--footer styling-->
-        <style>
-        /*footer styling*/
-        #footer {
-          position: relative;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          width: 100%;
-          height: 350px;
-          margin-bottom: -350px;
-          background-color: #FF5500;
-          color: white;
-        }
-        #footer_max_con {
-          display: flex;
-          align-self: center;
-          align-items: center;
-          width: 100%;
-          height: -webkit-fill-available;
-          max-width: 1440px;
-          margin: 0 auto;
-          padding-top: 2em;
-        }
-        /*site map sytling*/
-        .site_map-con {
-          margin-left: 30px;
-          display: inline-block;
-          width: 235px;
-        }
+      .account_btn--con_mobile .menu-icon .navicon:before,
+      .account_btn--con_mobile .menu-icon .navicon:after {
+        background: #FF5500;
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        transition: all .2s ease-out;
+        width: 100%;
 
-        .site_map-con ul {
-          font-size: 18px;
-          text-align: center;
-          width: inherit;
-        }
-        .site_map--item {
-          margin-bottom: 15px;
-        }
-        .site_map-con ul a {
-          text-decoration: none;
-          color: white;
-        }
-        #social_media-con {
-          margin-top: -5px;
-          width: 235px;
-          height: 30px;
-        }
-        #social_media-con ul {
-          margin: 10px auto;
-          margin-left: 20px;
-        }
-        #social_media-con li img{
-          float: left;
-          width: 25px;
-          height: 30px;
-          margin-left: 20px;
-        }
-        #footer_copyright {
-          clear: both;
-        }
-        /*find a program styling*/
+      }
 
-        .fap_cta-con {
-          width: 300px;
-          margin: 0 auto;
-        }
-        .fap_cta-con h1 {
-          font-size: 32px;
-          font-weight: 800;
-          text-align: center;
-          padding-bottom: 10px;
-        }
-        .fap_cta-con h2 {
-          font-size: 26px;
-          font-weight: 400;
-          text-align: center;
-          width: 255px;
-          margin: 0 auto;
-        }
-        .fap_btn-con button {
-          font-size: 20px;
-          width: 270px;
-          height: 45px;
-          margin: 20px;
-          cursor: pointer;
-          background-color: #39A9DB;
-          border: none;
-          box-shadow: 3px 3px rgba(0, 0, 0, 0.2);
-          border-radius: 5px;
-           transition-duration: 0.2s;
-        }
-        .fap_btn-con button:active {
-          box-shadow: none;
-          padding: 3px 3px inherit inherit;
-        }
-        .fap_btn-con a {
-          text-align: center;
-          text-transform: uppercase;
-          color: #FFF;
-          text-decoration: none;
-          width: 150px;
-          font-weight: 500;
-        }
+      .account_btn--con_mobile .menu-icon .navicon:before {
+        top: 10px;
+      }
 
+      .account_btn--con_mobile .menu-icon .navicon:after {
+        top: -10px;
+      }
 
-        /*mailing list signup*/
-        .mail_cta-con {
-          margin-right: 30px;
-        }
-        .mail_title {
-          text-align: center;
-          font-weight: 400;
-          margin-bottom: 20px;
-          text-transform: capitalize;
-        }
-        .mail_cta-con h1 {
-          font-size: 26px;
-          font-weight: 700;
-        }
-        .mail_btn {
-          display: block;
-          font-size: 20px;
-          width: 225px;
-          height: 45px;
-          margin: 20px auto;
-          cursor: pointer;
-          background-color: #FFF;
-          border: none;
-          box-shadow: 3px 3px rgba(0, 0, 0, 0.2);
-          border-radius: 5px;
-           transition-duration: 0.2s
-        }
-        .mail_btn:active {
-          box-shadow: none;
-          padding: 3px 3px inherit inherit;
-        }
+      .account_btn--con_mobile .menu-btn {
+        display: none;
+      }
 
-        .mail_btn a {
-          color: #FF5500;
-          font-weight: 700;
-          text-decoration: none;
-          text-transform: uppercase;
-        }
+      .account_btn--con_mobile .menu-btn:checked~.menu {
+        max-height: 100vh;
+        width: 300px;
+        position: relative;
+        left: -238px;
+        top: 10px;
+        border: 2px solid #FF5500;
+        box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.2);
 
-        #footer .mail_cta-con input {
-          font-size: 18px;
-          font-style: italic;
-          width: 330px;
-          height: 45px;
-          border: 1px solid grey;
-        }
+      }
 
-        /*footer responsive styling*/
+      #header_max_con>div.account_btn--con_mobile>ul {
+        height: 100vh;
+        box-shadow: 0 0 100vw rgba(0, 0, 0, 0.8);
+      }
 
-        /*tablet/mobile phone styling*/
-        @media only screen and (max-width: 915px) {
-          #footer {
-            height: 750px;
-          }
-          #footer_max_con {
-            display: block;
-            align-self: unset;
-            width: 98%;
-            text-align: center;
-          }
-          .site_map-con, .fap_cta-con, .mail_cta-con {
-            margin: 30px auto 0 auto;
-          }
+      .account_btn--con_mobile .menu-btn:checked~.menu-icon .navicon {
+        background: transparent;
+      }
 
-        }
-        /*tablet styling*/
-        @media only screen and (max-width: 1024px) {
-          
-        #footer_max_con .site_map-con {
-          margin-left: auto;
-        }
-          #footer_max_con .mail_cta-con input {
-            width: 16em;
-          }
-          #footer_max_con .mail_title {
-            font-size: 1.75em;
-          }
-        }
+      .account_btn--con_mobile .menu-btn:checked~.menu-icon .navicon:before {
+        transform: rotate(-45deg);
+      }
 
-        </style>
+      .account_btn--con_mobile .menu-btn:checked~.menu-icon .navicon:after {
+        transform: rotate(45deg);
+      }
+
+      .account_btn--con_mobile .menu-btn:checked~.menu-icon:not(.steps) .navicon:before,
+      .account_btn--con_mobile .menu-btn:checked~.menu-icon:not(.steps) .navicon:after {
+        top: 0;
+      }
+
+    }
+  </style>
+  <!--end of header styling-->
+
+  <!--footer styling-->
+  <style>
+    /*footer styling*/
+    #footer {
+      position: relative;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 350px;
+      margin-bottom: -350px;
+      background-color: #FF5500;
+      color: white;
+    }
+
+    #footer_max_con {
+      display: flex;
+      align-self: center;
+      align-items: center;
+      width: 100%;
+      height: -webkit-fill-available;
+      max-width: 1440px;
+      margin: 0 auto;
+      padding-top: 2em;
+    }
+
+    /*site map sytling*/
+    .site_map-con {
+      margin-left: 30px;
+      display: inline-block;
+      width: 235px;
+    }
+
+    .site_map-con ul {
+      font-size: 18px;
+      text-align: center;
+      width: inherit;
+    }
+
+    .site_map--item {
+      margin-bottom: 15px;
+    }
+
+    .site_map-con ul a {
+      text-decoration: none;
+      color: white;
+    }
+
+    #social_media-con {
+      margin-top: -5px;
+      width: 235px;
+      height: 30px;
+    }
+
+    #social_media-con ul {
+      margin: 10px auto;
+      margin-left: 20px;
+    }
+
+    #social_media-con li img {
+      float: left;
+      width: 25px;
+      height: 30px;
+      margin-left: 20px;
+    }
+
+    #footer_copyright {
+      clear: both;
+    }
+
+    /*find a program styling*/
+
+    .fap_cta-con {
+      width: 300px;
+      margin: 0 auto;
+    }
+
+    .fap_cta-con h1 {
+      font-size: 32px;
+      font-weight: 800;
+      text-align: center;
+      padding-bottom: 10px;
+    }
+
+    .fap_cta-con h2 {
+      font-size: 26px;
+      font-weight: 400;
+      text-align: center;
+      width: 255px;
+      margin: 0 auto;
+    }
+
+    .fap_btn-con button {
+      font-size: 20px;
+      width: 270px;
+      height: 45px;
+      margin: 20px;
+      cursor: pointer;
+      background-color: #39A9DB;
+      border: none;
+      box-shadow: 3px 3px rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
+      transition-duration: 0.2s;
+    }
+
+    .fap_btn-con button:active {
+      box-shadow: none;
+      padding: 3px 3px inherit inherit;
+    }
+
+    .fap_btn-con a {
+      text-align: center;
+      text-transform: uppercase;
+      color: #FFF;
+      text-decoration: none;
+      width: 150px;
+      font-weight: 500;
+    }
 
 
+    /*mailing list signup*/
+    .mail_cta-con {
+      margin-right: 30px;
+    }
+
+    .mail_title {
+      text-align: center;
+      font-weight: 400;
+      margin-bottom: 20px;
+      text-transform: capitalize;
+    }
+
+    .mail_cta-con h1 {
+      font-size: 26px;
+      font-weight: 700;
+    }
+
+    .mail_btn {
+      display: block;
+      font-size: 20px;
+      width: 225px;
+      height: 45px;
+      margin: 20px auto;
+      cursor: pointer;
+      background-color: #FFF;
+      border: none;
+      box-shadow: 3px 3px rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
+      transition-duration: 0.2s
+    }
+
+    .mail_btn:active {
+      box-shadow: none;
+      padding: 3px 3px inherit inherit;
+    }
+
+    .mail_btn a {
+      color: #FF5500;
+      font-weight: 700;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    #footer .mail_cta-con input {
+      font-size: 18px;
+      font-style: italic;
+      width: 330px;
+      height: 45px;
+      border: 1px solid grey;
+    }
+
+    /*footer responsive styling*/
+
+    /*tablet/mobile phone styling*/
+    @media only screen and (max-width: 915px) {
+      #footer {
+        height: 750px;
+      }
+
+      #footer_max_con {
+        display: block;
+        align-self: unset;
+        width: 98%;
+        text-align: center;
+      }
+
+      .site_map-con,
+      .fap_cta-con,
+      .mail_cta-con {
+        margin: 30px auto 0 auto;
+      }
+
+    }
+
+    /*tablet styling*/
+    @media only screen and (max-width: 1024px) {
+
+      #footer_max_con .site_map-con {
+        margin-left: auto;
+      }
+
+      #footer_max_con .mail_cta-con input {
+        width: 16em;
+      }
+
+      #footer_max_con .mail_title {
+        font-size: 1.75em;
+      }
+    }
+  </style>
 
 
-  </head>
+
+
+</head>
 
 <!-- begin body -->
+
 <body>
-  <!--header container-->
+  
   <!--header container-->
   <header id="header">
     <div id="header_max_con">
-    <a href="index.html">
-      <!--svg logo begin-->
-      <svg xmlns="http://www.w3.org/2000/svg" width="99.999" height="45" viewBox="0 0 99.999 45">
-    <g id="LOGO" transform="translate(23952.999 24220.434)">
-      <path id="Path_9" data-name="Path 9" d="M23.227-16.475a11.507,11.507,0,0,0-3.4-2.078,10.452,10.452,0,0,0-3.73-.659,8.971,8.971,0,0,0-6.5,2.334A8.314,8.314,0,0,0,7.175-10.6,8.293,8.293,0,0,0,9.423-4.484a8.265,8.265,0,0,0,6.135,2.262,11.664,11.664,0,0,0,4.117-.7A11.351,11.351,0,0,0,23.2-5.055L23.161.305a14.777,14.777,0,0,1-3.655,1.468,16.279,16.279,0,0,1-4.016.484A14.142,14.142,0,0,1,5.477-1.375,12.029,12.029,0,0,1,1.564-10.6a11.977,11.977,0,0,1,3.922-9.2,14.314,14.314,0,0,1,10.109-3.624,18.956,18.956,0,0,1,4.009.418,18.325,18.325,0,0,1,3.817,1.282ZM41.51-7.69l-2.858-7.9q-.122-.35-.313-1.2t-.4-2.087q-.223,1.185-.436,2.129t-.315,1.258l-2.754,7.8Zm-16.243,9.3,9.7-24.444h6.24l9.85,24.444H44.856L42.782-3.585H32.9L31.123,1.607Zm26.264,0,3.886-24.444h5.717L66.049-8.444a11.506,11.506,0,0,1,.335,1.319q.183.869.335,1.986.139-1.135.313-2.03a8.91,8.91,0,0,1,.335-1.311l5-14.358H78L81.91,1.607H76.733L74.868-13.139q-.209-1.636-.279-2.471t-.069-1.553q0-.384.009-.576t.026-.342q-.261,1.436-.5,2.479a14.35,14.35,0,0,1-.427,1.578l-5.4,15.63H65.16L59.845-14.021q-.07-.214-.3-1.2t-.654-2.871v.718a34.046,34.046,0,0,1-.313,4.174l-.018.067L56.707,1.607ZM90.938-11.8h.781a4.868,4.868,0,0,0,3.241-.885,3.584,3.584,0,0,0,1.011-2.838,3.2,3.2,0,0,0-1.011-2.63,5.117,5.117,0,0,0-3.241-.826h-.781ZM85.448,1.607V-22.837h6.274q5.019,0,7.415,1.837a6.691,6.691,0,0,1,2.4,5.677A6.876,6.876,0,0,1,99.12-9.746a10.109,10.109,0,0,1-6.684,2.021h-1.5V1.607Z" transform="translate(-23954.557 -24197)" fill="#fff"/>
-      <text id="FINDER" transform="translate(-23952 -24178.434)" fill="#fff" font-size="12" font-family="ArialMT, Arial" letter-spacing="0.86em"><tspan x="0" y="0">FINDER</tspan></text>
-    </g>
-  </svg>
+      <a href="index.html">
+        <!--svg logo begin-->
+        <svg xmlns="http://www.w3.org/2000/svg" width="99.999" height="45" viewBox="0 0 99.999 45">
+          <g id="LOGO" transform="translate(23952.999 24220.434)">
+            <path id="Path_9" data-name="Path 9"
+              d="M23.227-16.475a11.507,11.507,0,0,0-3.4-2.078,10.452,10.452,0,0,0-3.73-.659,8.971,8.971,0,0,0-6.5,2.334A8.314,8.314,0,0,0,7.175-10.6,8.293,8.293,0,0,0,9.423-4.484a8.265,8.265,0,0,0,6.135,2.262,11.664,11.664,0,0,0,4.117-.7A11.351,11.351,0,0,0,23.2-5.055L23.161.305a14.777,14.777,0,0,1-3.655,1.468,16.279,16.279,0,0,1-4.016.484A14.142,14.142,0,0,1,5.477-1.375,12.029,12.029,0,0,1,1.564-10.6a11.977,11.977,0,0,1,3.922-9.2,14.314,14.314,0,0,1,10.109-3.624,18.956,18.956,0,0,1,4.009.418,18.325,18.325,0,0,1,3.817,1.282ZM41.51-7.69l-2.858-7.9q-.122-.35-.313-1.2t-.4-2.087q-.223,1.185-.436,2.129t-.315,1.258l-2.754,7.8Zm-16.243,9.3,9.7-24.444h6.24l9.85,24.444H44.856L42.782-3.585H32.9L31.123,1.607Zm26.264,0,3.886-24.444h5.717L66.049-8.444a11.506,11.506,0,0,1,.335,1.319q.183.869.335,1.986.139-1.135.313-2.03a8.91,8.91,0,0,1,.335-1.311l5-14.358H78L81.91,1.607H76.733L74.868-13.139q-.209-1.636-.279-2.471t-.069-1.553q0-.384.009-.576t.026-.342q-.261,1.436-.5,2.479a14.35,14.35,0,0,1-.427,1.578l-5.4,15.63H65.16L59.845-14.021q-.07-.214-.3-1.2t-.654-2.871v.718a34.046,34.046,0,0,1-.313,4.174l-.018.067L56.707,1.607ZM90.938-11.8h.781a4.868,4.868,0,0,0,3.241-.885,3.584,3.584,0,0,0,1.011-2.838,3.2,3.2,0,0,0-1.011-2.63,5.117,5.117,0,0,0-3.241-.826h-.781ZM85.448,1.607V-22.837h6.274q5.019,0,7.415,1.837a6.691,6.691,0,0,1,2.4,5.677A6.876,6.876,0,0,1,99.12-9.746a10.109,10.109,0,0,1-6.684,2.021h-1.5V1.607Z"
+              transform="translate(-23954.557 -24197)" fill="#fff" />
+            <text id="FINDER" transform="translate(-23952 -24178.434)" fill="#fff" font-size="12"
+              font-family="ArialMT, Arial" letter-spacing="0.86em">
+              <tspan x="0" y="0">FINDER</tspan>
+            </text>
+          </g>
+        </svg>
 
-  <!--svg logo end-->
-  </a>
-  <div class="account_btn--con">
-    <button type="button" class="header_btn" id="login-btn">
-    <a class="header_btn--link" href="#register">
-      Login
+        <!--svg logo end-->
       </a>
-    </button>
-    <button type="button" class="header_btn" id="register-btn">
-    <a class="header_btn--link" href="#register">
-      Register
-      </a>
-    </button>
-  </div>
-  <!--mobile dropdown menu-->
-  <div class="account_btn--con_mobile">
-    <input class="menu-btn" type="checkbox" id="menu-btn" />
-    <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-    <ul class="menu">
-      <li><a href="#login">Login</a></li>
-      <li><a href="#register">Register</a></li>
-    </ul>
-  </div>
-  <!--end of header container-->
+      <div class="account_btn--con">
+        <button type="button" class="header_btn" id="login-btn">
+          <a class="header_btn--link" href="#register">
+            Login
+          </a>
+        </button>
+        <button type="button" class="header_btn" id="register-btn">
+          <a class="header_btn--link" href="#register">
+            Register
+          </a>
+        </button>
+      </div>
+      <!--mobile dropdown menu-->
+      <div class="account_btn--con_mobile">
+        <input class="menu-btn" type="checkbox" id="menu-btn" />
+        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+        <ul class="menu">
+          <li><a href="#login">Login</a></li>
+          <li><a href="#register">Register</a></li>
+        </ul>
+      </div>
+      <!--end of header container-->
   </header>
   </div>
 
 
-<!--main conent beginning -->
-<div id="main_max_con">
+  <!--main conent beginning -->
+  <div id="main_max_con">
 
-<!--date & zipcode inputs-->
-<div class="date_input-con">
-  <div class="location_input">
-    <input type="location" name="" value="">
-  </div>
-</div>
-
-
-
-<!--filters container-->
-<div class="applied_filters-con">
-
-</div>
-
-
-  <!--camp cards list-->
-  <div id="list_wrapper">
-  <div class="camp_list-con">
-    <ul class="camp_results">
-      <!--featured camp card li-->
-      <li class="camp_card" id="feat_camp">
-        <a href="CF_details.html" class="card-link">
-        <!--first half of camp card-->
-        <div class="camp_title-con">
-          <img class="feat_arrow" src="Assets\icons\feat_arrow.png" alt="FEATURED CAMP">
-          <img id="camp_pic--card" src="Assets\graphics\card_graphics\camp1_pic-card.png" alt="adventure camp">
-          <h1 id="card_title">Adventure Camp</h1>
-          <img class="camp_local-icon" src="Assets\icons\camp_location.svg" alt="location">
-          <h2 id="camp_local">Everytown, USA</h2>
-        </div>
-        <!--second half of camp card-->
-        <div class="camp_card-abt_con">
-          <span id="camp_host">Hosted by Youth camps USA</span>
-          <span id="camp_abt--card">This summer, kids will learn about xyz, and go on lots of adventures</span>
-          <span id="avail_dates--card">Next available dates: <br class="date_br">Jul. 7, 2021</span>
-          <img class="camp_cal-icon" src="Assets\icons\feat_calendar.svg" alt="">
-        </div>
-        </a>
-    </li>
-    <!--end of featured li-->
-    <li class="camp_card" id="feat_camp">
-      <a href="CF_details.html" class="card-link">
-      <!--first half of camp card-->
-      <div class="camp_title-con">
-        <!--featured arrow-->
-        <!--<img class="feat_arrow" src="Assets\icons\feat_arrow.png" alt="FEATURED CAMP">-->
-        <img id="camp_pic--card" src="Assets\graphics\card_graphics\camp2_pic-card.png" alt="adventure camp">
-        <h1 id="card_title">Adventure Camp</h1>
-        <img class="camp_local-icon" src="Assets\icons\camp_location.svg" alt="location">
-        <h2 id="camp_local">Everytown, USA</h2>
+    <!--date & zipcode inputs-->
+    <div class="date_input-con">
+      <div class="input-wrapper">
+      <div class="location_input input_box">
+          <input type="text" id="location_input" name="location" placeholder="Location">
       </div>
-      <!--second half of camp card-->
-      <div class="camp_card-abt_con">
-        <span id="camp_host">Hosted by Youth camps USA</span>
-        <span id="camp_abt--card">This summer, kids will learn about xyz, and go on lots of adventures</span>
-        <span id="avail_dates--card">Next available dates:<br class="date_br"> Jul. 7, 2021</span>
-        <img class="camp_cal-icon" src="Assets\icons\feat_calendar.svg" alt="">
+      <div class="in_date_input input_box">
+          <input type="date" id="in_date" name="in_date">
       </div>
-      </a>
-  </li>
-  <li class="camp_card" id="feat_camp">
-    <a href="CF_details.html" class="card-link">
-    <!--first half of camp card-->
-    <div class="camp_title-con">
-      <!--featured arrow-->
-      <!--<img class="feat_arrow" src="Assets\icons\feat_arrow.png" alt="FEATURED CAMP">-->
-      <img id="camp_pic--card" src="Assets\graphics\card_graphics\camp3_pic-card.png" alt="adventure camp">
-      <h1 id="card_title">Adventure Camp</h1>
-      <img class="camp_local-icon" src="Assets\icons\camp_location.svg" alt="location">
-      <h2 id="camp_local">Everytown, USA</h2>
+      <div class="out_date_input input_box">
+          <input type="date" id="out_date" name="out_date">
+      </div>
+      <div class="filter-btn">
+        Filter
+      </div>
+      </div>
     </div>
-    <!--second half of camp card-->
-    <div class="camp_card-abt_con">
-      <span id="camp_host">Hosted by Youth camps USA</span>
-      <span id="camp_abt--card">This summer, kids will learn about xyz, and go on lots of adventures</span>
-      <span id="avail_dates--card">Next available dates:<br class="date_br"> Jul. 7, 2021</span>
-      <img class="camp_cal-icon" src="Assets\icons\feat_calendar.svg" alt="">
+    
+
+
+
+    <!--filters container-->
+    <div class="applied_filters-con">
+      <div class="filter_card" id="applied_1">
+        <a href="#remove_filter" class="remove_filter-btn">
+        <span class="filter">Filter 1</span> <span class="close_icon"><svg xmlns="http://www.w3.org/2000/svg"
+            width="12" height="12" viewBox="0 0 12 12">
+            <g transform="translate(-95.086 -160.086)">
+              <line x2="9" y2="9" transform="translate(96.5 161.5)" fill="none" stroke="#39a9db" stroke-linecap="round"
+                stroke-width="2" />
+              <line x1="9" y2="9" transform="translate(96.5 161.5)" fill="none" stroke="#39a9db" stroke-linecap="round"
+                stroke-width="2" />
+            </g>
+          </svg></span>
+          </a>
+      </div>
+      <div class="filter_card" id="applied_2">
+        <a href="#remove_filter" class="remove_filter-btn">
+        <span class="filter">Filter 2</span><span class="close_icon"><svg xmlns="http://www.w3.org/2000/svg"
+            width="12" height="12" viewBox="0 0 12 12">
+            <g transform="translate(-95.086 -160.086)">
+              <line x2="9" y2="9" transform="translate(96.5 161.5)" fill="none" stroke="#39a9db" stroke-linecap="round"
+                stroke-width="2" />
+              <line x1="9" y2="9" transform="translate(96.5 161.5)" fill="none" stroke="#39a9db" stroke-linecap="round"
+                stroke-width="2" />
+            </g>
+          </svg></span>
+          </a>
+      </div>
+      <div class="filter_card" id="applied_3">
+        <a href="#remove_filter" class="remove_filter-btn">
+        <span class="filter">Filter 3</span><span class="close_icon"><svg xmlns="http://www.w3.org/2000/svg"
+            width="12" height="12" viewBox="0 0 12 12">
+            <g transform="translate(-95.086 -160.086)">
+              <line x2="9" y2="9" transform="translate(96.5 161.5)" fill="none" stroke="#39a9db" stroke-linecap="round"
+                stroke-width="2" />
+              <line x1="9" y2="9" transform="translate(96.5 161.5)" fill="none" stroke="#39a9db" stroke-linecap="round"
+                stroke-width="2" />
+            </g>
+          </svg></span>
+          </a>
+      </div>
+      <div class="filter_card" id="applied_4">
+        <a href="#remove_filter" class="remove_filter-btn">
+        <span class="filter">Filter 4</span><span class="close_icon"><svg xmlns="http://www.w3.org/2000/svg"
+            width="12" height="12" viewBox="0 0 12 12">
+            <g transform="translate(-95.086 -160.086)">
+              <line x2="9" y2="9" transform="translate(96.5 161.5)" fill="none" stroke="#39a9db" stroke-linecap="round"
+                stroke-width="2" />
+              <line x1="9" y2="9" transform="translate(96.5 161.5)" fill="none" stroke="#39a9db" stroke-linecap="round"
+                stroke-width="2" />
+            </g>
+          </svg></span>
+          </a>
+      </div>
+      <div class="filter_card" id="applied_5">
+        <a href="#remove_filter" class="remove_filter-btn">
+        <span class="filter">Filter 5</span><span class="close_icon"><svg xmlns="http://www.w3.org/2000/svg"
+            width="12" height="12" viewBox="0 0 12 12">
+            <g transform="translate(-95.086 -160.086)">
+              <line x2="9" y2="9" transform="translate(96.5 161.5)" fill="none" stroke="#39a9db" stroke-linecap="round"
+                stroke-width="2" />
+              <line x1="9" y2="9" transform="translate(96.5 161.5)" fill="none" stroke="#39a9db" stroke-linecap="round"
+                stroke-width="2" />
+            </g>
+          </svg></span>
+          </a>
+      </div>
+      <div class="filter_card" id="applied_6">
+        <a href="#remove_filter" class="remove_filter-btn">
+        <span class="filter">Filter 6</span><span class="close_icon"><svg xmlns="http://www.w3.org/2000/svg"
+            width="12" height="12" viewBox="0 0 12 12">
+            <g transform="translate(-95.086 -160.086)">
+              <line x2="9" y2="9" transform="translate(96.5 161.5)" fill="none" stroke="#39a9db" stroke-linecap="round"
+                stroke-width="2" />
+              <line x1="9" y2="9" transform="translate(96.5 161.5)" fill="none" stroke="#39a9db" stroke-linecap="round"
+                stroke-width="2" />
+            </g>
+          </svg></span>
+          </a>
+      </div>
+
     </div>
-    </a>
-</li>
-<li class="camp_card" id="feat_camp">
-  <a href="CF_details.html" class="card-link">
-  <!--first half of camp card-->
-  <div class="camp_title-con">
-    <!--featured arrow-->
-    <!--<img class="feat_arrow" src="Assets\icons\feat_arrow.png" alt="FEATURED CAMP">-->
-    <img id="camp_pic--card" src="Assets\graphics\card_graphics\camp4_pic-card.png" alt="adventure camp">
-    <h1 id="card_title">Adventure Camp</h1>
-    <img class="camp_local-icon" src="Assets\icons\camp_location.svg" alt="location">
-    <h2 id="camp_local">Everytown, USA</h2>
-  </div>
-  <!--second half of camp card-->
-  <div class="camp_card-abt_con">
-    <span id="camp_host">Hosted by Youth camps USA</span>
-    <span id="camp_abt--card">This summer, kids will learn about xyz, and go on lots of adventures</span>
-    <span id="avail_dates--card">Next available dates: <br class="date_br">Jul. 7, 2021</span>
-    <img class="camp_cal-icon" src="Assets\icons\feat_calendar.svg" alt="">
-  </div>
-  </a>
-</li>
-<li class="camp_card" id="feat_camp">
-  <a href="CF_details.html" class="card-link">
-  <!--first half of camp card-->
-  <div class="camp_title-con">
-    <!--featured arrow-->
-    <!--<img class="feat_arrow" src="Assets\icons\feat_arrow.png" alt="FEATURED CAMP">-->
-    <img id="camp_pic--card" src="Assets\graphics\card_graphics\camp5_pic-card.png" alt="adventure camp">
-    <h1 id="card_title">Adventure Camp</h1>
-    <img class="camp_local-icon" src="Assets\icons\camp_location.svg" alt="location">
-    <h2 id="camp_local">Everytown, USA</h2>
-  </div>
-  <!--second half of camp card-->
-  <div class="camp_card-abt_con">
-    <span id="camp_host">Hosted by Youth camps USA</span>
-    <span id="camp_abt--card">This summer, kids will learn about xyz, and go on lots of adventures</span>
-    <span id="avail_dates--card">Next available dates: <br class="date_br">Jul. 7, 2021</span>
-    <img class="camp_cal-icon" src="Assets\icons\feat_calendar.svg" alt="">
-  </div>
-  </a>
-</li>
-</ul>
-<!--end of camp list-->
-  </div>
-  <!--interactive map-->
-  <div class="search_map-con">
-    <iframe class="google_map-api" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d212854.00762677827!2d-86.9902205642447!3d33.53144475097121!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1611529605673!5m2!1sen!2sus"></iframe>
-  </div>
-</div>
-
-</div>
 
 
-
-<!--footer container-->
-<div id="footer">
-  <div id="footer_max_con">
-<div class="site_map-con">
-  <ul class="site_map">
-    <li class="site_map--item">
-      <a href="#aboutUs">About Us</a>
-    </li>
-    <li class="site_map--item">
-      <a href="#aboutUs">Host a Program</a>
-    </li>
-    <li class="site_map--item">
-      <a href="#aboutUs">COVID-19 Resources</a>
-    </li>
-    <li class="site_map--item">
-      <a href="#aboutUs">Privacy Policy</a>
-    </li>
-    <li class="site_map--item" id="social_media-con">
-      <ul class="social_media-list">
-        <li class="footer_icon"> <a target="_blank" href="https://www.facebook.com/"><img src="Assets\icons\footer-facebook.svg" alt=""></a> </li>
-        <li class="footer_icon"> <a target="_blank" href="https://www.instagram.com/?hl=en"><img src="Assets\icons\footer-instagram.svg" alt=""></a> </li>
-        <li class="footer_icon"> <a target="_blank" href="https://twitter.com/?lang=en"><img src="Assets\icons\footer-twitter.svg" alt=""></a> </li>
-        <li class="footer_icon"> <a target="_blank" href="https://www.tiktok.com/"><img src="Assets\icons\footer-tiktok.svg" alt=""></a> </li>
-      </ul>
-    </li>
-    <li class="site_map--item" id="footer_copyright">
-      Copyright ©<script>document.write(' ' + new Date().getFullYear() + ' ');</script>
-    </li>
-  </ul>
-
-</div>
-
-  <!--find a program-->
-  <div class="fap_cta-con">
-    <div class="brand_slogan">
-      <h1 class="fap_cta--brand">CampFinder</h1>
-      <h2 class="fap_cta--slogan">A Camp Experience Kids Will Love</h2>
+    <!--camp cards list-->
+    <div id="list_wrapper">
+      <div class="camp_list-con">
+        <ul class="camp_results">
+          <!--featured camp card li-->
+          <li class="camp_card" id="feat_camp">
+            <a href="CF_details.html" class="card-link">
+              <!--first half of camp card-->
+              <div class="camp_title-con">
+                <img class="feat_arrow" src="Assets\icons\feat_arrow.png" alt="FEATURED CAMP">
+                <img id="camp_pic--card" src="Assets\graphics\card_graphics\camp1_pic-card.png" alt="adventure camp">
+                <h1 id="card_title">Adventure Camp</h1>
+                <img class="camp_local-icon" src="Assets\icons\camp_location.svg" alt="location">
+                <h2 id="camp_local">Everytown, USA</h2>
+              </div>
+              <!--second half of camp card-->
+              <div class="camp_card-abt_con">
+                <span id="camp_host">Hosted by Youth camps USA</span>
+                <span id="camp_abt--card">This summer, kids will learn about xyz, and go on lots of adventures</span>
+                <span id="avail_dates--card">Next available dates: <br class="date_br">Jul. 7, 2021</span>
+                <img class="camp_cal-icon" src="Assets\icons\feat_calendar.svg" alt="">
+              </div>
+            </a>
+          </li>
+          <!--end of featured li-->
+          <li class="camp_card" id="feat_camp">
+            <a href="CF_details.html" class="card-link">
+              <!--first half of camp card-->
+              <div class="camp_title-con">
+                <!--featured arrow-->
+                <!--<img class="feat_arrow" src="Assets\icons\feat_arrow.png" alt="FEATURED CAMP">-->
+                <img id="camp_pic--card" src="Assets\graphics\card_graphics\camp2_pic-card.png" alt="adventure camp">
+                <h1 id="card_title">Adventure Camp</h1>
+                <img class="camp_local-icon" src="Assets\icons\camp_location.svg" alt="location">
+                <h2 id="camp_local">Everytown, USA</h2>
+              </div>
+              <!--second half of camp card-->
+              <div class="camp_card-abt_con">
+                <span id="camp_host">Hosted by Youth camps USA</span>
+                <span id="camp_abt--card">This summer, kids will learn about xyz, and go on lots of adventures</span>
+                <span id="avail_dates--card">Next available dates:<br class="date_br"> Jul. 7, 2021</span>
+                <img class="camp_cal-icon" src="Assets\icons\feat_calendar.svg" alt="">
+              </div>
+            </a>
+          </li>
+          <li class="camp_card" id="feat_camp">
+            <a href="CF_details.html" class="card-link">
+              <!--first half of camp card-->
+              <div class="camp_title-con">
+                <!--featured arrow-->
+                <!--<img class="feat_arrow" src="Assets\icons\feat_arrow.png" alt="FEATURED CAMP">-->
+                <img id="camp_pic--card" src="Assets\graphics\card_graphics\camp3_pic-card.png" alt="adventure camp">
+                <h1 id="card_title">Adventure Camp</h1>
+                <img class="camp_local-icon" src="Assets\icons\camp_location.svg" alt="location">
+                <h2 id="camp_local">Everytown, USA</h2>
+              </div>
+              <!--second half of camp card-->
+              <div class="camp_card-abt_con">
+                <span id="camp_host">Hosted by Youth camps USA</span>
+                <span id="camp_abt--card">This summer, kids will learn about xyz, and go on lots of adventures</span>
+                <span id="avail_dates--card">Next available dates:<br class="date_br"> Jul. 7, 2021</span>
+                <img class="camp_cal-icon" src="Assets\icons\feat_calendar.svg" alt="">
+              </div>
+            </a>
+          </li>
+          <li class="camp_card" id="feat_camp">
+            <a href="CF_details.html" class="card-link">
+              <!--first half of camp card-->
+              <div class="camp_title-con">
+                <!--featured arrow-->
+                <!--<img class="feat_arrow" src="Assets\icons\feat_arrow.png" alt="FEATURED CAMP">-->
+                <img id="camp_pic--card" src="Assets\graphics\card_graphics\camp4_pic-card.png" alt="adventure camp">
+                <h1 id="card_title">Adventure Camp</h1>
+                <img class="camp_local-icon" src="Assets\icons\camp_location.svg" alt="location">
+                <h2 id="camp_local">Everytown, USA</h2>
+              </div>
+              <!--second half of camp card-->
+              <div class="camp_card-abt_con">
+                <span id="camp_host">Hosted by Youth camps USA</span>
+                <span id="camp_abt--card">This summer, kids will learn about xyz, and go on lots of adventures</span>
+                <span id="avail_dates--card">Next available dates: <br class="date_br">Jul. 7, 2021</span>
+                <img class="camp_cal-icon" src="Assets\icons\feat_calendar.svg" alt="">
+              </div>
+            </a>
+          </li>
+          <li class="camp_card" id="feat_camp">
+            <a href="CF_details.html" class="card-link">
+              <!--first half of camp card-->
+              <div class="camp_title-con">
+                <!--featured arrow-->
+                <!--<img class="feat_arrow" src="Assets\icons\feat_arrow.png" alt="FEATURED CAMP">-->
+                <img id="camp_pic--card" src="Assets\graphics\card_graphics\camp5_pic-card.png" alt="adventure camp">
+                <h1 id="card_title">Adventure Camp</h1>
+                <img class="camp_local-icon" src="Assets\icons\camp_location.svg" alt="location">
+                <h2 id="camp_local">Everytown, USA</h2>
+              </div>
+              <!--second half of camp card-->
+              <div class="camp_card-abt_con">
+                <span id="camp_host">Hosted by Youth camps USA</span>
+                <span id="camp_abt--card">This summer, kids will learn about xyz, and go on lots of adventures</span>
+                <span id="avail_dates--card">Next available dates: <br class="date_br">Jul. 7, 2021</span>
+                <img class="camp_cal-icon" src="Assets\icons\feat_calendar.svg" alt="">
+              </div>
+            </a>
+          </li>
+        </ul>
+        <!--end of camp list-->
+      </div>
+      <!--interactive map-->
+      <div class="search_map-con">
+        <iframe class="google_map-api"
+          src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d212854.00762677827!2d-86.9902205642447!3d33.53144475097121!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1611529605673!5m2!1sen!2sus"></iframe>
+      </div>
     </div>
-    <div class="fap_btn-con">
-    <button type="button" class="fap_btn" id="fap-btn">
-    <a class="footer_btn--link" href="#findAProgram">
-      find a program
-      </a>
-    </button>
-    </div>
+
   </div>
 
-  <!--mailing list cta-->
-<div class="mail_cta-con">
-<h1 class="mail_title">Signup for our mailing list</h1>
-<div class="user_input">
-  <input type="text" name="email" placeholder="myemail@example.com">
-</div>
-<button type="button" class="mail_btn" id="mail-btn">
-<a class="footer_btn--link" href="#mailingListSignup">
-  signup
-  </a>
-</button>
 
-</div>
-</div>
-<!--end of footer container-->
-</div>
+
+  <!--footer container-->
+  <div id="footer">
+    <div id="footer_max_con">
+      <div class="site_map-con">
+        <ul class="site_map">
+          <li class="site_map--item">
+            <a href="#aboutUs">About Us</a>
+          </li>
+          <li class="site_map--item">
+            <a href="#aboutUs">Host a Program</a>
+          </li>
+          <li class="site_map--item">
+            <a href="#aboutUs">COVID-19 Resources</a>
+          </li>
+          <li class="site_map--item">
+            <a href="#aboutUs">Privacy Policy</a>
+          </li>
+          <li class="site_map--item" id="social_media-con">
+            <ul class="social_media-list">
+              <li class="footer_icon"> <a target="_blank" href="https://www.facebook.com/"><img
+                    src="Assets\icons\footer-facebook.svg" alt=""></a> </li>
+              <li class="footer_icon"> <a target="_blank" href="https://www.instagram.com/?hl=en"><img
+                    src="Assets\icons\footer-instagram.svg" alt=""></a> </li>
+              <li class="footer_icon"> <a target="_blank" href="https://twitter.com/?lang=en"><img
+                    src="Assets\icons\footer-twitter.svg" alt=""></a> </li>
+              <li class="footer_icon"> <a target="_blank" href="https://www.tiktok.com/"><img
+                    src="Assets\icons\footer-tiktok.svg" alt=""></a> </li>
+            </ul>
+          </li>
+          <li class="site_map--item" id="footer_copyright">
+            Copyright ©<script>
+              document.write(' ' + new Date().getFullYear() + ' ');
+            </script>
+          </li>
+        </ul>
+
+      </div>
+
+      <!--find a program-->
+      <div class="fap_cta-con">
+        <div class="brand_slogan">
+          <h1 class="fap_cta--brand">CampFinder</h1>
+          <h2 class="fap_cta--slogan">A Camp Experience Kids Will Love</h2>
+        </div>
+        <div class="fap_btn-con">
+          <button type="button" class="fap_btn" id="fap-btn">
+            <a class="footer_btn--link" href="#findAProgram">
+              find a program
+            </a>
+          </button>
+        </div>
+      </div>
+
+      <!--mailing list cta-->
+      <div class="mail_cta-con">
+        <h1 class="mail_title">Signup for our mailing list</h1>
+        <div class="user_input">
+          <input type="text" name="email" placeholder="myemail@example.com">
+        </div>
+        <button type="button" class="mail_btn" id="mail-btn">
+          <a class="footer_btn--link" href="#mailingListSignup">
+            signup
+          </a>
+        </button>
+
+      </div>
+    </div>
+    <!--end of footer container-->
+  </div>
 
 
 

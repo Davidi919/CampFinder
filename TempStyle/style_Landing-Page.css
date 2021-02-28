@@ -86,7 +86,7 @@ html {
   margin-top: 12px;
 }
 .account_btn--con {
-  display: inline-block;
+  display: block;
   float: right;
   margin: 10px 20px;
 
