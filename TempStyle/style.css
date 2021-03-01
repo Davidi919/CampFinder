@@ -16,6 +16,7 @@
   background-color: white;
   float: right;
 }
+
 .input-wrapper {
   display: flex;
   justify-content: center;
@@ -23,34 +24,32 @@
   width: 100%;
   height: 100%;
 }
+
 .date_input-con .input_box {
   width: 25%;
-  margin-left: 20px;
+  margin-left: 25px;
 }
+
 .date_input-con input {
   border: 2px solid #FF5500;
   border-radius: 5px;
   width: 100%;
   height: 40px;
 }
-.date_input-con input[type=text] {
+
+/* .date_input-con input[type=text] {
   padding: 0px;
+} */
+.date_input-con input[type=date],
+.date_input-con input[type=text],
+.date_input-con input[type=text]::placeholder {
+  padding: 0px 0px 0px 5px;
+  color: black;
+  font-size: 20px;
+  font-weight: 500;
 }
-.date_input-con input::-webkit-input-placeholder {
-  font-size: 16px;
-}
-.date_input-con input::-moz-placeholder {
-  font-size: 16px;
-}
-.date_input-con input:-ms-input-placeholder {
-  font-size: 16px;
-}
-.date_input-con input::-ms-input-placeholder {
-  font-size: 16px;
-}
-.date_input-con input::placeholder {
-  font-size: 16px;
-}
+
+/* filter button styling and dropdown styling */
 .filter-btn {
   border-radius: 5px;
   width: 100px;
@@ -59,6 +58,160 @@
   border: 2px solid #FF5500;
 }
 
+.filter-btn a {
+  text-decoration: none;
+  font-size: 1.5em;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.filter-btn a:visited {
+  color: inherit;
+}
+
+.filter-btn .toggle::after {
+  content: url("../Assets/icons/filter_icon.svg");
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+}
+
+.toggle-content {
+  display: none;
+  height: 0;
+  overflow: hidden;
+  transition: height 350ms ease-in-out;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-content.filter_is-visible {
+  display: flex;
+  justify-content: center;
+  height: 400px;
+  margin-top: 10px;
+  position: absolute;
+  z-index: 1000;
+  left: 375px;
+  width: calc(100% - 375px);
+  background-color: white;
+}
+
+.filters-con {
+  width: 75%;
+  border: 2px solid green;
+}
+
+.filters-con select {
+  width: 100%;
+  height: 100%;
+  border: none;
+  appearance: none;
+  background-image: url("../Assets/icons/filter_arrow.svg");
+  background-repeat: no-repeat;
+  background-position: 95%;
+  outline: none;
+  color: black;
+  font-weight: 500;
+  font-size: 20px;
+  padding-left: 8px;
+}
+
+.filters-con select:focus {
+  background-image: none;
+}
+
+.filters-con select option {
+  color: black;
+  border: none;
+}
+
+.filters-con .filter_input {
+  width: 45%;
+  height: 40px;
+  border: 2px solid #39A9DB;
+  border-radius: 5px;
+}
+
+/* sort by styling */
+
+
+/* range slider styling */
+.distance_slider {
+  width: 40%;
+}
+
+.distance_slider datalist {
+  display: initial;
+}
+
+.distance_slider datalist option {
+  color: red;
+  font-size: 12px;
+  display: inline-block;
+  position: relative;
+  top: -10px;
+}
+
+.distance_slider datalist option:first-child {
+  margin-left: -5px;
+}
+
+.distance_slider datalist option:last-child {
+  float: right;
+  margin-top: 5px;
+}
+
+.distance_slider datalist option:nth-child(4) {
+  margin-left: 22%;
+}
+
+.distance_slider input[type='range'] {
+  overflow: hidden;
+  height: 3px;
+  -webkit-appearance: none;
+  background-color: #9a905d;
+}
+
+.distance_slider input[type='range']::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  color: #13bba4;
+  margin-top: -1px;
+}
+
+.distance_slider input[type='range']::-webkit-slider-thumb {
+  width: 10px;
+  -webkit-appearance: none;
+  height: 40px;
+  cursor: pointer;
+  background: #434343;
+  box-shadow: -800px 0 0 800px #43e5f7;
+}
+
+}
+
+/** FF*/
+.distance_slider input[type="range"]::-moz-range-progress {
+  background-color: #43e5f7;
+}
+
+.distance_slider input[type="range"]::-moz-range-track {
+  background-color: #9a905d;
+}
+
+/* IE*/
+.distance_slider input[type="range"]::-ms-fill-lower {
+  background-color: #43e5f7;
+}
+
+.distance_slider input[type="range"]::-ms-fill-upper {
+  background-color: #9a905d;
+}
+
+
+/* applied filters container */
 .applied_filters-con {
   width: 375px;
   height: 75px;

@@ -189,7 +189,7 @@
     }
 
     .account_btn--con {
-      
+
       float: right;
       margin: 10px 20px;
 
@@ -234,7 +234,7 @@
       }
 
       .account_btn--con_mobile {
-        
+
         float: right;
         margin: 15px;
         margin-top: 10px;
@@ -272,7 +272,7 @@
 
       .account_btn--con_mobile .menu-icon {
         cursor: pointer;
-        
+
         float: right;
         margin: 22px 12px;
         position: relative;
@@ -562,8 +562,79 @@
       }
     }
   </style>
+  <!-- filter dropdown scripting -->
+  <script>
+    var show = function (elem) {
 
 
+      var getHeight = function () {
+        elem.style.display = 'block';
+        var height = elem.scrollHeight + 'px';
+        elem.style.display = '';
+        return height;
+      };
+
+      var height = getHeight();
+      elem.classList.add('filter_is-visible');
+      elem.style.height = height;
+
+
+      window.setTimeout(function () {
+        elem.style.height = '';
+      }, 350);
+
+    };
+
+
+    var hide = function (elem) {
+
+
+      elem.style.height = elem.scrollHeight + 'px';
+
+
+      window.setTimeout(function () {
+        elem.style.height = '0';
+      }, 1);
+
+
+      window.setTimeout(function () {
+        elem.classList.remove('filter_is-visible');
+      }, 350);
+
+    };
+
+
+    var toggle = function (elem, timing) {
+
+
+      if (elem.classList.contains('filter_is-visible')) {
+        hide(elem);
+        return;
+      }
+
+
+      show(elem);
+
+    };
+
+
+    document.addEventListener('click', function (event) {
+
+
+      if (!event.target.classList.contains('toggle')) return;
+
+
+      event.preventDefault();
+
+
+      var content = document.querySelector(event.target.hash);
+      if (!content) return;
+
+
+      toggle(content);
+
+    }, false);
+  </script>
 
 
 </head>
@@ -571,7 +642,7 @@
 <!-- begin body -->
 
 <body>
-  
+
   <!--header container-->
   <header id="header">
     <div id="header_max_con">
@@ -623,103 +694,126 @@
     <!--date & zipcode inputs-->
     <div class="date_input-con">
       <div class="input-wrapper">
-      <div class="location_input input_box">
+        <div class="location_input input_box">
           <input type="text" id="location_input" name="location" placeholder="Location">
-      </div>
-      <div class="in_date_input input_box">
+        </div>
+        <div class="in_date_input input_box">
           <input type="date" id="in_date" name="in_date">
-      </div>
-      <div class="out_date_input input_box">
+        </div>
+        <div class="out_date_input input_box">
           <input type="date" id="out_date" name="out_date">
-      </div>
-      <div class="filter-btn">
-        Filter
-      </div>
+        </div>
+        <div class="filter-btn">
+          <a href="#example" class="toggle">Filter </a>
+          <!-- hidden filter content -->
+          <div class="toggle-content" id="example">
+            <div class="filters-con">
+              <div class="sort_by-input filter_input">
+                <select id="sort_by">
+                  <option value="recommended">Recommended</option>
+                  <option value="high-low">Price (High to Low)</option>
+                  <option value="low-high">Price (Low to High)</option>
+                  <option value="distance">Distance</option>
+                </select>
+              </div>
+              <div class="distance_slider">
+                <label for="search_radius">Search Radius</label>
+                <input type="range" max="30" step="5" value="10">
+                <datalist id="tickmarks">
+                  <option value="5" label="5 miles"></option>
+                  <option value="10"></option>
+                  <option value="15"></option>
+                  <option value="20" label="20 miles"></option>
+                  <option value="25"></option>
+                  <option value="30" label="30+ miles" class="last_option"></option>
+                </datalist>
+              </div>
+
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    
-
-
 
     <!--filters container-->
     <div class="applied_filters-con">
       <div class="filter_card" id="applied_1">
         <a href="#remove_filter" class="remove_filter-btn">
-        <span class="filter">Filter 1</span> <span class="close_icon"><svg xmlns="http://www.w3.org/2000/svg"
-            width="12" height="12" viewBox="0 0 12 12">
-            <g transform="translate(-95.086 -160.086)">
-              <line x2="9" y2="9" transform="translate(96.5 161.5)" fill="none" stroke="#39a9db" stroke-linecap="round"
-                stroke-width="2" />
-              <line x1="9" y2="9" transform="translate(96.5 161.5)" fill="none" stroke="#39a9db" stroke-linecap="round"
-                stroke-width="2" />
-            </g>
-          </svg></span>
-          </a>
+          <span class="filter">Filter 1</span> <span class="close_icon"><svg xmlns="http://www.w3.org/2000/svg"
+              width="12" height="12" viewBox="0 0 12 12">
+              <g transform="translate(-95.086 -160.086)">
+                <line x2="9" y2="9" transform="translate(96.5 161.5)" fill="none" stroke="#39a9db"
+                  stroke-linecap="round" stroke-width="2" />
+                <line x1="9" y2="9" transform="translate(96.5 161.5)" fill="none" stroke="#39a9db"
+                  stroke-linecap="round" stroke-width="2" />
+              </g>
+            </svg></span>
+        </a>
       </div>
       <div class="filter_card" id="applied_2">
         <a href="#remove_filter" class="remove_filter-btn">
-        <span class="filter">Filter 2</span><span class="close_icon"><svg xmlns="http://www.w3.org/2000/svg"
-            width="12" height="12" viewBox="0 0 12 12">
-            <g transform="translate(-95.086 -160.086)">
-              <line x2="9" y2="9" transform="translate(96.5 161.5)" fill="none" stroke="#39a9db" stroke-linecap="round"
-                stroke-width="2" />
-              <line x1="9" y2="9" transform="translate(96.5 161.5)" fill="none" stroke="#39a9db" stroke-linecap="round"
-                stroke-width="2" />
-            </g>
-          </svg></span>
-          </a>
+          <span class="filter">Filter 2</span><span class="close_icon"><svg xmlns="http://www.w3.org/2000/svg"
+              width="12" height="12" viewBox="0 0 12 12">
+              <g transform="translate(-95.086 -160.086)">
+                <line x2="9" y2="9" transform="translate(96.5 161.5)" fill="none" stroke="#39a9db"
+                  stroke-linecap="round" stroke-width="2" />
+                <line x1="9" y2="9" transform="translate(96.5 161.5)" fill="none" stroke="#39a9db"
+                  stroke-linecap="round" stroke-width="2" />
+              </g>
+            </svg></span>
+        </a>
       </div>
       <div class="filter_card" id="applied_3">
         <a href="#remove_filter" class="remove_filter-btn">
-        <span class="filter">Filter 3</span><span class="close_icon"><svg xmlns="http://www.w3.org/2000/svg"
-            width="12" height="12" viewBox="0 0 12 12">
-            <g transform="translate(-95.086 -160.086)">
-              <line x2="9" y2="9" transform="translate(96.5 161.5)" fill="none" stroke="#39a9db" stroke-linecap="round"
-                stroke-width="2" />
-              <line x1="9" y2="9" transform="translate(96.5 161.5)" fill="none" stroke="#39a9db" stroke-linecap="round"
-                stroke-width="2" />
-            </g>
-          </svg></span>
-          </a>
+          <span class="filter">Filter 3</span><span class="close_icon"><svg xmlns="http://www.w3.org/2000/svg"
+              width="12" height="12" viewBox="0 0 12 12">
+              <g transform="translate(-95.086 -160.086)">
+                <line x2="9" y2="9" transform="translate(96.5 161.5)" fill="none" stroke="#39a9db"
+                  stroke-linecap="round" stroke-width="2" />
+                <line x1="9" y2="9" transform="translate(96.5 161.5)" fill="none" stroke="#39a9db"
+                  stroke-linecap="round" stroke-width="2" />
+              </g>
+            </svg></span>
+        </a>
       </div>
       <div class="filter_card" id="applied_4">
         <a href="#remove_filter" class="remove_filter-btn">
-        <span class="filter">Filter 4</span><span class="close_icon"><svg xmlns="http://www.w3.org/2000/svg"
-            width="12" height="12" viewBox="0 0 12 12">
-            <g transform="translate(-95.086 -160.086)">
-              <line x2="9" y2="9" transform="translate(96.5 161.5)" fill="none" stroke="#39a9db" stroke-linecap="round"
-                stroke-width="2" />
-              <line x1="9" y2="9" transform="translate(96.5 161.5)" fill="none" stroke="#39a9db" stroke-linecap="round"
-                stroke-width="2" />
-            </g>
-          </svg></span>
-          </a>
+          <span class="filter">Filter 4</span><span class="close_icon"><svg xmlns="http://www.w3.org/2000/svg"
+              width="12" height="12" viewBox="0 0 12 12">
+              <g transform="translate(-95.086 -160.086)">
+                <line x2="9" y2="9" transform="translate(96.5 161.5)" fill="none" stroke="#39a9db"
+                  stroke-linecap="round" stroke-width="2" />
+                <line x1="9" y2="9" transform="translate(96.5 161.5)" fill="none" stroke="#39a9db"
+                  stroke-linecap="round" stroke-width="2" />
+              </g>
+            </svg></span>
+        </a>
       </div>
       <div class="filter_card" id="applied_5">
         <a href="#remove_filter" class="remove_filter-btn">
-        <span class="filter">Filter 5</span><span class="close_icon"><svg xmlns="http://www.w3.org/2000/svg"
-            width="12" height="12" viewBox="0 0 12 12">
-            <g transform="translate(-95.086 -160.086)">
-              <line x2="9" y2="9" transform="translate(96.5 161.5)" fill="none" stroke="#39a9db" stroke-linecap="round"
-                stroke-width="2" />
-              <line x1="9" y2="9" transform="translate(96.5 161.5)" fill="none" stroke="#39a9db" stroke-linecap="round"
-                stroke-width="2" />
-            </g>
-          </svg></span>
-          </a>
+          <span class="filter">Filter 5</span><span class="close_icon"><svg xmlns="http://www.w3.org/2000/svg"
+              width="12" height="12" viewBox="0 0 12 12">
+              <g transform="translate(-95.086 -160.086)">
+                <line x2="9" y2="9" transform="translate(96.5 161.5)" fill="none" stroke="#39a9db"
+                  stroke-linecap="round" stroke-width="2" />
+                <line x1="9" y2="9" transform="translate(96.5 161.5)" fill="none" stroke="#39a9db"
+                  stroke-linecap="round" stroke-width="2" />
+              </g>
+            </svg></span>
+        </a>
       </div>
       <div class="filter_card" id="applied_6">
         <a href="#remove_filter" class="remove_filter-btn">
-        <span class="filter">Filter 6</span><span class="close_icon"><svg xmlns="http://www.w3.org/2000/svg"
-            width="12" height="12" viewBox="0 0 12 12">
-            <g transform="translate(-95.086 -160.086)">
-              <line x2="9" y2="9" transform="translate(96.5 161.5)" fill="none" stroke="#39a9db" stroke-linecap="round"
-                stroke-width="2" />
-              <line x1="9" y2="9" transform="translate(96.5 161.5)" fill="none" stroke="#39a9db" stroke-linecap="round"
-                stroke-width="2" />
-            </g>
-          </svg></span>
-          </a>
+          <span class="filter">Filter 6</span><span class="close_icon"><svg xmlns="http://www.w3.org/2000/svg"
+              width="12" height="12" viewBox="0 0 12 12">
+              <g transform="translate(-95.086 -160.086)">
+                <line x2="9" y2="9" transform="translate(96.5 161.5)" fill="none" stroke="#39a9db"
+                  stroke-linecap="round" stroke-width="2" />
+                <line x1="9" y2="9" transform="translate(96.5 161.5)" fill="none" stroke="#39a9db"
+                  stroke-linecap="round" stroke-width="2" />
+              </g>
+            </svg></span>
+        </a>
       </div>
 
     </div>
