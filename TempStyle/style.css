@@ -31,7 +31,7 @@
 }
 
 .date_input-con input {
-  border: 2px solid #FF5500;
+  border: 2px solid #ff5500;
   border-radius: 5px;
   width: 100%;
   height: 40px;
@@ -40,9 +40,9 @@
 /* .date_input-con input[type=text] {
   padding: 0px;
 } */
-.date_input-con input[type=date],
-.date_input-con input[type=text],
-.date_input-con input[type=text]::placeholder {
+.date_input-con input[type="date"],
+.date_input-con input[type="text"],
+.date_input-con input[type="text"]::placeholder {
   padding: 0px 0px 0px 5px;
   color: black;
   font-size: 20px;
@@ -55,7 +55,7 @@
   width: 100px;
   height: 40px;
   margin-left: 20px;
-  border: 2px solid #FF5500;
+  border: 2px solid #ff5500;
 }
 
 .filter-btn a {
@@ -66,10 +66,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  color: black;
 }
 
 .filter-btn a:visited {
-  color: inherit;
+  color: black;
 }
 
 .filter-btn .toggle::after {
@@ -86,11 +87,11 @@
   transition: height 350ms ease-in-out;
   box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
 }
-
+/* hidden content container styling */
 .toggle-content.filter_is-visible {
   display: flex;
   justify-content: center;
-  height: 400px;
+  height: 375px;
   margin-top: 10px;
   position: absolute;
   z-index: 1000;
@@ -98,10 +99,16 @@
   width: calc(100% - 375px);
   background-color: white;
 }
-
 .filters-con {
   width: 75%;
-  border: 2px solid green;
+}
+.filters-con form{
+  width: 100%;
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(4, 45px);
+  gap: 17px 35px;
 }
 
 .filters-con select {
@@ -114,6 +121,7 @@
   background-position: 95%;
   outline: none;
   color: black;
+  border-radius: 5px;
   font-weight: 500;
   font-size: 20px;
   padding-left: 8px;
@@ -129,68 +137,59 @@
 }
 
 .filters-con .filter_input {
-  width: 45%;
+  width: 100%;
   height: 40px;
-  border: 2px solid #39A9DB;
+  border: 2px solid #39a9db;
   border-radius: 5px;
 }
-
-/* sort by styling */
-
-
 /* range slider styling */
 .distance_slider {
-  width: 40%;
-}
-
-.distance_slider datalist {
-  display: initial;
-}
-
-.distance_slider datalist option {
-  color: red;
-  font-size: 12px;
-  display: inline-block;
-  position: relative;
-  top: -10px;
-}
-
-.distance_slider datalist option:first-child {
-  margin-left: -5px;
-}
-
-.distance_slider datalist option:last-child {
-  float: right;
+  width: 100%;
   margin-top: 5px;
 }
 
-.distance_slider datalist option:nth-child(4) {
-  margin-left: 22%;
+.distance_slider datalist {
+  display: flex;
+  justify-content: space-between;
 }
 
-.distance_slider input[type='range'] {
-  overflow: hidden;
+.distance_slider datalist option {
+  font-size: 12px;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+.distance_slider datalist option:first-child {
+  margin-left: -15px;
+}
+
+.distance_slider datalist option:last-child {
+  margin-right: -20px;
+}
+
+.distance_slider input[type="range"] {
+  overflow: visible;
   height: 3px;
   -webkit-appearance: none;
-  background-color: #9a905d;
+  background-color: #a2c9db;
+  border: none;
+  outline: none;
 }
 
-.distance_slider input[type='range']::-webkit-slider-runnable-track {
+.distance_slider input[type="range"]::-webkit-slider-runnable-track {
   -webkit-appearance: none;
   color: #13bba4;
-  margin-top: -1px;
+  margin-top: 0px;
 }
 
-.distance_slider input[type='range']::-webkit-slider-thumb {
-  width: 10px;
+.distance_slider input[type="range"]::-webkit-slider-thumb {
+  width: 15px;
+  border-radius: 10px;
   -webkit-appearance: none;
-  height: 40px;
+  height: 15px;
   cursor: pointer;
-  background: #434343;
-  box-shadow: -800px 0 0 800px #43e5f7;
+  background: #39a9db;
 }
-
-
 
 /** FF*/
 .distance_slider input[type="range"]::-moz-range-progress {
@@ -198,7 +197,7 @@
 }
 
 .distance_slider input[type="range"]::-moz-range-track {
-  background-color: #9a905d;
+  background-color: #a2c9db;
 }
 
 /* IE*/
@@ -207,9 +206,13 @@
 }
 
 .distance_slider input[type="range"]::-ms-fill-upper {
-  background-color: #9a905d;
+  background-color: #a2c9db;
 }
 
+.distance_slider .radius_label {
+  font-size: 14px;
+  font-weight: 500;
+}
 
 /* applied filters container */
 .applied_filters-con {
@@ -224,7 +227,6 @@
   background-color: white;
   box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
   overflow-y: auto;
-
 }
 
 /* applied filters scrollbar styling scrollbar styling */
@@ -237,25 +239,52 @@
 .applied_filters-con::-webkit-scrollbar-track {
   box-shadow: inset 0 0 6px rgba(100, 100, 100, 0.3);
   -webkit-box-shadow: inset 0 0 6px rgba(100, 100, 100, 0.3);
-
 }
 
 /* Handle */
 .applied_filters-con::-webkit-scrollbar-thumb {
-  background: rgba(57, 169, 219, .7);
+  background: rgba(57, 169, 219, 0.7);
   border-radius: 0px 4px 4px 0px;
 }
+
+.submit_btn-wrapper {
+  width: 300px;
+  position: absolute;
+  top: 300px;
+}
+#submit_btn {
+  display: inline-block;
+  font-size: 24px;
+  font-weight: 500;
+  height: 50px;
+  cursor: pointer;
+  color: white;
+  background-color: #39A9DB;
+  border: none;
+  box-shadow: 3px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  transition-duration: 0.3s;
+}
+#submit_btn:active {
+  outline: none;
+  box-shadow: none;
+  padding: 3px 3px inherit inherit;
+}
+#submit_btn:focus {
+  outline: none;
+}
+
+/* applied filters container styling */
 
 .filter_card {
   width: 100px;
   height: 25px;
   margin: 2px 8px;
   border-radius: 5px;
-  border: 2px solid #39A9DB;
+  border: 2px solid #39a9db;
   overflow: hidden;
   text-overflow: ellipsis;
   display: flex;
-
 }
 
 .remove_filter-btn,
@@ -270,7 +299,7 @@
 }
 
 .filter_card span {
-  color: #39A9DB;
+  color: #39a9db;
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 500;
@@ -301,7 +330,7 @@
   max-width: 375px;
   min-width: 275px;
   height: 84vh;
-  background-color: #FFEEE6;
+  background-color: #ffeee6;
   overflow-y: scroll;
   /*hiding scrollbar*/
   -ms-overflow-style: none;
@@ -320,7 +349,7 @@
 }
 
 #feat_camp .feat_arrow {
-  margin: 12px 0 10px -.75em;
+  margin: 12px 0 10px -0.75em;
   float: left;
   position: inherit;
   z-index: 900;
@@ -329,8 +358,8 @@
 .camp_results li {
   color: white;
   margin: 25px auto;
-  border: 2px solid #FF5500;
-  background-color: #FF5500;
+  border: 2px solid #ff5500;
+  background-color: #ff5500;
   width: 90%;
   height: 385px;
   border-radius: 20px;
@@ -352,7 +381,6 @@ li .camp_title-con {
   height: 50%;
   width: auto;
   position: relative;
-
 }
 
 #camp_pic--card {
@@ -433,7 +461,7 @@ li .camp_title-con {
   width: calc(100% - 30vw);
   height: 84vh;
   float: right;
-  background-color: #ECEAE4;
+  background-color: #eceae4;
 }
 
 .google_map-api {
@@ -441,11 +469,8 @@ li .camp_title-con {
   height: 100%;
 }
 
-
-
 /*mobile/responsive search results map styling*/
 @media only screen and (min-width: 1250px) {
-
   /*resizing search map container for large screens*/
   .search_map-con {
     width: calc(100% - 375px);
@@ -461,7 +486,6 @@ li .camp_title-con {
 
 /*resizing map container for tablet/min-width for list breakpoint*/
 @media only screen and (max-width: 915px) {
-
   .date_input-con {
     position: absolute;
     top: 70px;
@@ -479,7 +503,6 @@ li .camp_title-con {
     height: 75px;
     background-color: tan;
   }
-
 
   .search_map-con {
     top: 70px;

@@ -707,29 +707,93 @@
           <a href="#example" class="toggle">Filter </a>
           <!-- hidden filter content -->
           <div class="toggle-content" id="example">
+            <!-- filters container -->
             <div class="filters-con">
-              <div class="sort_by-input filter_input">
-                <select id="sort_by">
-                  <option value="recommended">Recommended</option>
-                  <option value="high-low">Price (High to Low)</option>
-                  <option value="low-high">Price (Low to High)</option>
-                  <option value="distance">Distance</option>
-                </select>
-              </div>
-              <div class="distance_slider">
-                <label for="search_radius">Search Radius</label>
-                <input type="range" max="30" step="5" value="10">
-                <datalist id="tickmarks">
-                  <option value="5" label="5 miles"></option>
-                  <option value="10"></option>
-                  <option value="15"></option>
-                  <option value="20" label="20 miles"></option>
-                  <option value="25"></option>
-                  <option value="30" label="30+ miles" class="last_option"></option>
-                </datalist>
-              </div>
-
+              <form action="CF_Map_Search.html">
+              <!-- sort by dropdown input -->
+                <div class="sort_by-input filter_input">
+                  <select id="sort_by">
+                    <option value="recommended">Recommended</option>
+                    <option value="duration">Duration</option>
+                    <option value="distance">Distance</option>
+                    <option value="start_date">Start Date</option>
+                  </select>
+                </div>
+                <!-- Price range dropdown input -->
+                <div class="sort_by-input filter_input">
+                  <select id="sort_by">
+                    <option value="low-high">Price (Low to High)</option>
+                    <option value="high-low">Price (High to Low)</option>
+                  </select>
+                </div>
+                <!-- search by radius slider input -->
+                <div class="distance_slider">
+                  <label class="radius_label" for="search_radius">Search Radius</label>
+                  <input type="range" min="5" max="30" step="5" value="10">
+                  <datalist id="tickmarks">
+                    <option value="5" label="5 miles"></option>
+                    <option value="10" label="10 miles"></option>
+                    <option value="15" label="15 miles"></option>
+                    <option value="20" label="20 miles"></option>
+                    <option value="25" label="25 miles"></option>
+                    <option value="30" label="30+ miles" class="last_option"></option>
+                  </datalist>
+                </div>
+                <!-- program category filter input -->
+                <div class="sort_by-input filter_input">
+                  <select id="sort_by">
+                    <option value="all_categories">All Categories (Arts, Sports, etc.)</option>
+                    <option value="arts">Arts</option>
+                    <option value="dance">Dance</option>
+                    <option value="music">Music</option>
+                    <option value="sports">Sports</option>
+                    <option value="computers">Computers</option>
+                    <option value="theatre">Theatre</option>
+                  </select>
+                </div>
+                <!-- gender filter input -->
+                <div class="sort_by-input filter_input">
+                  <select id="sort_by">
+                    <option value="coed">Coed</option>
+                    <option value="girls">Girls Only</option>
+                    <option value="boys">Boys Only</option>
+                    <option value="lgbt">LGBT+</option>
+                  </select>
+                </div>
+                <!-- stay terms filter input -->
+                <div class="sort_by-input filter_input">
+                  <select id="sort_by">
+                    <option value="day">Day Only</option>
+                    <option value="overnight">Overnight</option>
+                    <option value="weekends">Weekends</option>
+                    <option value="weekdays">Weekdays</option>
+                  </select>
+                </div>
+                <!-- age range filter input -->
+                <div class="sort_by-input filter_input">
+                  <select id="sort_by">
+                    <option value="3_19">Age: 3 - 19</option>
+                    <option value="3_9">Age: 3 - 9</option>
+                    <option value="10_13">Age: 10 - 13</option>
+                    <option value="14_19">Age: 14 - 19</option>
+                  </select>
+                </div>
+                <!-- amenities filter input -->
+                <div class="sort_by-input filter_input">
+                  <select id="sort_by">
+                    <option value="any_amenities">Any Amenities</option>
+                    <option value="pool">Pool</option>
+                    <option value="lake">Lake</option>
+                    <option value="outdoors">Outdoors</option>
+                    <option value="gym">Gym</option>
+                  </select>
+                </div>
+                <!-- apply filters button -->
             </div>
+            <div class="submit_btn-wrapper">
+              <input type="submit" value="APPLY FILTERS" class="submit_btn filter_btn" id="submit_btn"></input>
+            </div>
+            </form>
           </div>
         </div>
       </div>
