@@ -57,6 +57,7 @@
   width: 100px;
   height: 40px;
   margin-left: 20px;
+  background-color: white;
   border: 2px solid #ff5500;
 }
 
@@ -493,7 +494,9 @@ li .camp_title-con {
     display: block;
   }
 }
-@media only screen and (max-width: 920px) {
+
+/* tablet and smaller styling */
+@media only screen and (max-width: 915px) {
   #list_wrapper {
     /* list wrapper used to place cards at bottom of screen in mobile  */
     height: 100vh;
@@ -501,27 +504,89 @@ li .camp_title-con {
     position: relative;
     z-index: 0;
   }
-}
-/*resizing map container for tablet/min-width for list breakpoint*/
-@media only screen and (max-width: 915px) {
+  
   .date_input-con {
     position: absolute;
     top: 70px;
     z-index: 200;
     width: 100vw;
     height: 75px;
-    background-color: grey;
+  }
+  .date_input-con input[type="date"]::-webkit-calendar-picker-indicator  {
+    background-repeat: no-repeat;
+    margin: 0;
+    position: relative;
+    width: 15px;
+    height: 15px;
+    bottom: -11px;
+    right: -3px;
+    background-image: url("../Assets/icons/date_pencil-icon.svg") ;
+    background-size: 15px 15px;
+    
+  }
+  .date_input-con input[type="text"] {
+    background-repeat: no-repeat;
+    background-image: url("../Assets/icons/date_pencil-icon.svg") ;
+    background-size: 15px 15px;
+    background-position: 98% 95%;
+  }
+
+  .date_input-con .filter-btn {
+    position: absolute;
+    top: 68vh;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .filter-btn .filter_btn-text {
+    color: #ff5500;
+  }
+  .filter-btn .toggle::after {
+    content: url("../Assets/icons/filter_icon-mobile.svg");
   }
 
   .applied_filters-con {
     position: absolute;
-    z-index: 200;
+    z-index: 199;
     top: 145px;
     width: 100vw;
     height: 75px;
-    background-color: tan;
-  }
+    box-shadow: none;
+     }
+     .date_input-con .input_box {
+       margin: 0 auto;
+     }
+     .date_input-con input[type="date"], .date_input-con input[type="text"], .date_input-con input[type="text"]::placeholder {
+       padding: 0px;
+       text-align: center;
+       text-overflow: ellipsis;
+     }
 
+     .toggle-content.filter_is-visible {
+       display: block;
+      background-color:#ff5500;
+      height: 95vh;
+      margin: 0px;
+      z-index: 30000;
+      left: -39vw;
+      top: -70vh;
+      width: 100vw;
+     }
+     .filters-con {
+       margin: 50px auto 10px auto;
+       width: 90%;
+     }
+     .filters-con form {
+       display: initial;
+       
+     }
+     .filters-con .filter_input {
+       margin-top: 20px;
+     }
+     .submit_btn-wrapper {
+       width: 90%;
+       position: initial;
+       margin: 20px auto ;
+     }
   .search_map-con {
     top: 70px;
     left: 0;
@@ -534,7 +599,7 @@ li .camp_title-con {
     background-color: transparent;
     max-width: none;
     position: absolute;
-    bottom: 10em;
+    bottom: 5em;
     width: 100vw;
     height: 10em;
     overflow-y: hidden;
