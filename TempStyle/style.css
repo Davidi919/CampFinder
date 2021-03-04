@@ -535,6 +535,7 @@ li .camp_title-con {
     position: absolute;
     top: 68vh;
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 0px;
   }
 
   .filter-btn .filter_btn-text {
@@ -567,9 +568,10 @@ li .camp_title-con {
       height: 95vh;
       margin: 0px;
       z-index: 30000;
-      left: -39vw;
-      top: -70vh;
+      left: 50%;
+      top: -165px;
       width: 100vw;
+      transform: translate(-50%, -50%);
      }
      .filters-con {
        margin: 50px auto 10px auto;
