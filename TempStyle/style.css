@@ -533,7 +533,7 @@ li .camp_title-con {
 
   .date_input-con .filter-btn {
     position: absolute;
-    top: 68vh;
+    top: 67vh;
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
     margin: 0px;
   }
@@ -601,7 +601,7 @@ li .camp_title-con {
     background-color: transparent;
     max-width: none;
     position: absolute;
-    bottom: 5em;
+    bottom: 6em;
     width: 100vw;
     height: 10em;
     overflow-y: hidden;
