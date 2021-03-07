@@ -16,7 +16,7 @@
   background-color: white;
   float: right;
   margin-right: 1vw;
-  }
+}
 
 .input-wrapper {
   display: flex;
@@ -24,7 +24,6 @@
   align-items: center;
   width: 100%;
   height: 100%;
-  
 }
 
 .date_input-con .input_box {
@@ -47,6 +46,7 @@
 .date_input-con input[type="text"]::placeholder {
   padding: 0px 0px 0px 5px;
   color: black;
+  background-color: white;
   font-size: 20px;
   font-weight: 500;
 }
@@ -59,6 +59,9 @@
   margin-left: 20px;
   background-color: white;
   border: 2px solid #ff5500;
+}
+.filter_mobile-wrapper {
+  display: none;
 }
 
 .filter-btn a {
@@ -105,7 +108,7 @@
 .filters-con {
   width: 75%;
 }
-.filters-con form{
+.filters-con form {
   width: 100%;
   margin-top: 30px;
   display: grid;
@@ -124,6 +127,7 @@
   background-position: 95%;
   outline: none;
   color: black;
+  background-color: white;
   border-radius: 5px;
   font-weight: 500;
   font-size: 20px;
@@ -173,6 +177,7 @@
 .distance_slider input[type="range"] {
   overflow: visible;
   height: 3px;
+  width: 100%;
   -webkit-appearance: none;
   background-color: #a2c9db;
   border: none;
@@ -264,7 +269,7 @@
   height: 50px;
   cursor: pointer;
   color: white;
-  background-color: #39A9DB;
+  background-color: #39a9db;
   border: none;
   box-shadow: 3px 3px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
@@ -279,16 +284,14 @@
   outline: none;
 }
 
-
-
 /* applied filters container styling */
 
 .filter_card {
-  width: 100px;
+  width: 6em;
   height: 25px;
-  margin: 2px 8px;
+  margin: 5px;
   border-radius: 5px;
-  border: 2px solid #39a9db;
+  border: 1px solid #39a9db;
   overflow: hidden;
   text-overflow: ellipsis;
   display: flex;
@@ -347,7 +350,7 @@
   margin: 12px 0 10px -0.75em;
   float: left;
   position: inherit;
-  z-index: 900;
+  z-index: 1;
 }
 
 .camp_results li {
@@ -397,7 +400,7 @@ li .camp_title-con {
   margin-left: 10px;
   text-shadow: 3px 3px 6px rgba(0, 0, 0, 1);
   position: inherit;
-  z-index: 900;
+  z-index: 0;
 }
 
 .camp_title-con .camp_local-icon {
@@ -465,7 +468,7 @@ li .camp_title-con {
 }
 
 /*mobile/responsive search results map styling*/
-@media only screen and (min-width: 2100px ) {
+@media only screen and (min-width: 2100px) {
   .date_input-con {
     width: calc(100% - 375px);
     margin-right: unset;
@@ -502,9 +505,9 @@ li .camp_title-con {
     height: 100vh;
     width: 100%;
     position: relative;
-    z-index: 0;
+    z-index: 300;
   }
-  
+
   .date_input-con {
     position: absolute;
     top: 70px;
@@ -512,7 +515,7 @@ li .camp_title-con {
     width: 100vw;
     height: 75px;
   }
-  .date_input-con input[type="date"]::-webkit-calendar-picker-indicator  {
+  .date_input-con input[type="date"]::-webkit-calendar-picker-indicator {
     background-repeat: no-repeat;
     margin: 0;
     position: relative;
@@ -520,26 +523,85 @@ li .camp_title-con {
     height: 15px;
     bottom: -11px;
     right: -3px;
-    background-image: url("../Assets/icons/date_pencil-icon.svg") ;
+    background-image: url("../Assets/icons/date_pencil-icon.svg");
     background-size: 15px 15px;
-    
   }
   .date_input-con input[type="text"] {
     background-repeat: no-repeat;
-    background-image: url("../Assets/icons/date_pencil-icon.svg") ;
+    background-image: url("../Assets/icons/date_pencil-icon.svg");
     background-size: 15px 15px;
     background-position: 98% 95%;
   }
 
   .date_input-con .filter-btn {
+    display: none;
+  }
+  .filter_mobile-wrapper {
+    display: block;
+  }
+  #mobile_filter-btn {
+    margin: 0 auto;
+  }
+  #mobile_filter-btn .filter_btn-text::after {
+    content: url("../Assets/icons/filter_icon-mobile.svg");
+    width: 20px;
+    height: 20px;
+    color: red;
+  }
+  .filter_mobile-wrapper .overlay {
+    height: 0%;
+    width: 100%;
+    padding-top: 70px;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    background-color: #ff5500;
+    overflow-y: hidden;
+    transition: 0.5s;
+  }
+
+  .overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+  }
+  .overlay h1 {
+    color: white;
+    font-size: 2em;
+    line-height: 28pt;
+    text-transform: uppercase;
+    text-align: center;
+    width: 250px;
+    margin: 20px auto 0 auto;
+  }
+
+  .overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+
+  .overlay a:hover,
+  .overlay a:focus {
+    color: #f1f1f1;
+  }
+
+  .overlay .closebtn {
     position: absolute;
-    top: 67vh;
-    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
-    margin: 0px;
+    top: 300px;
+    right: 45px;
+    font-size: 60px;
   }
 
   .filter-btn .filter_btn-text {
     color: #ff5500;
+    display: flex;
   }
   .filter-btn .toggle::after {
     content: url("../Assets/icons/filter_icon-mobile.svg");
@@ -547,48 +609,56 @@ li .camp_title-con {
 
   .applied_filters-con {
     position: absolute;
-    z-index: 199;
+    z-index: 0;
     top: 145px;
     width: 100vw;
-    height: 75px;
+    height: auto;
+    max-width: unset;
+    justify-content: center;
+    align-items: center;
     box-shadow: none;
-     }
-     .date_input-con .input_box {
-       margin: 0 auto;
-     }
-     .date_input-con input[type="date"], .date_input-con input[type="text"], .date_input-con input[type="text"]::placeholder {
-       padding: 0px;
-       text-align: center;
-       text-overflow: ellipsis;
-     }
-
-     .toggle-content.filter_is-visible {
-       display: block;
-      background-color:#ff5500;
-      height: 95vh;
-      margin: 0px;
-      z-index: 30000;
-      left: 50%;
-      top: -165px;
-      width: 100vw;
-      transform: translate(-50%, -50%);
-     }
-     .filters-con {
-       margin: 50px auto 10px auto;
-       width: 90%;
-     }
-     .filters-con form {
-       display: initial;
-       
-     }
-     .filters-con .filter_input {
-       margin-top: 20px;
-     }
-     .submit_btn-wrapper {
-       width: 90%;
-       position: initial;
-       margin: 20px auto ;
-     }
+  }
+  .date_input-con .input_box {
+    margin: 0 auto;
+  }
+  .date_input-con input[type="date"],
+  .date_input-con input[type="text"],
+  .date_input-con input[type="text"]::placeholder {
+    padding: 0px;
+    text-align: center;
+    text-overflow: ellipsis;
+  }
+  .distance_slider {
+    color: white;
+  }
+  .toggle-content.filter_is-visible {
+    display: block;
+    background-color: #ff5500;
+    height: 95vh;
+    margin: 0px;
+    z-index: 30000;
+    left: 50%;
+    top: -165px;
+    width: 100vw;
+    transform: translate(-50%, -50%);
+  }
+  .filters-con {
+    margin: 0 auto;
+    width: 90%;
+  }
+  .filters-con form {
+    display: initial;
+  }
+  .filters-con .filter_input {
+    margin-top: 20px;
+  }
+  .submit_btn-wrapper {
+    width: 90%;
+    position: initial;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+  }
   .search_map-con {
     top: 70px;
     left: 0;
@@ -603,7 +673,7 @@ li .camp_title-con {
     position: absolute;
     bottom: 6em;
     width: 100vw;
-    height: 10em;
+    height: 13em;
     overflow-y: hidden;
   }
 

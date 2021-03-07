@@ -168,175 +168,187 @@
   <!--header styling-->
   <style>
     /*header styling */
-   
-#header {
-  width: 100%;
-  height: 70px;
-  position: fixed;
-  background-color: #FF5500;
-  box-shadow: 3px 0px 4px rgba(0, 0, 0, 0.2);
-  z-index: 5000;
-}
-#header_max_con {
-  width: 100%;
-  max-width: 2000px;
-  margin: 0 auto;
-}
-#header svg {
-  margin: 10px;
-  margin-top: 12px;
-}
-.account_btn--con {
-  display: block;
-  float: right;
-  margin: 10px 20px;
 
-}
-.account_btn--con_mobile {
-  display: none;
-}
-.header_btn {
-  display: inline-block;
-  font-size: 20px;
-  width: 150px;
-  height: 50px;
-  margin-left: 20px;
-  cursor: pointer;
-  background-color: #FFFFFF;
-  border: none;
-  box-shadow: 3px 3px rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
-   transition-duration: 0.4s;
-}
-.header_btn:active {
-  box-shadow: none;
-  padding: 3px 3px inherit inherit;
-}
-.header_btn a {
-  text-align: center;
-  text-transform: uppercase;
-  color: #FF5500;
-  text-decoration: none;
-  width: 150px;
-  font-weight: 700;
-}
-/*mobile header styling*/
-@media only screen and (max-width: 915px) {
-  .account_btn--con {
-    display: none;
-  }
-  .account_btn--con_mobile {
-    display: block;
-    float: right;
-    margin: 15px;
-    margin-top: 10px;
-    width: 50px;
-    height: 50px;
-    background-color: white;
-  }
-  .account_btn--con_mobile ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    overflow: hidden;
-  }
-  .account_btn--con_mobile li a {
-  display: block;
-  text-align: center;
-  font-size: 24px;
-  padding: 20px 20px;
-  border-bottom: 1px solid #FF5500;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: #FF5500;
+    #header {
+      width: 100%;
+      height: 70px;
+      position: fixed;
+      background-color: #FF5500;
+      box-shadow: 3px 0px 4px rgba(0, 0, 0, 0.2);
+      z-index: 5000;
     }
 
-  .account_btn--con_mobile .menu {
-    background-color: white;
-    clear: both;
-    max-height: 0;
-    transition: max-height .2s ease-out;
+    #header_max_con {
+      width: 100%;
+      max-width: 2000px;
+      margin: 0 auto;
+    }
 
-  }
-  .account_btn--con_mobile .menu-icon {
-  cursor: pointer;
-  float: right;
-  margin: 22px 12px;
-  position: relative;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
+    #header svg {
+      margin: 10px;
+      margin-top: 12px;
+    }
 
-.account_btn--con_mobile .menu-icon .navicon {
-  background: #FF5500;
-  display: block;
-  height: 3px;
-  position: relative;
-  transition: background .2s ease-out;
-  width: 27px;
-}
+    .account_btn--con {
+      display: block;
+      float: right;
+      margin: 10px 20px;
 
-.account_btn--con_mobile .menu-icon .navicon:before,
-.account_btn--con_mobile .menu-icon .navicon:after {
-  background: #FF5500;
-  content: '';
-  display: block;
-  height: 100%;
-  position: absolute;
-  transition: all .2s ease-out;
-  width: 100%;
+    }
 
-}
+    .account_btn--con_mobile {
+      display: none;
+    }
 
-.account_btn--con_mobile .menu-icon .navicon:before {
-  top: 10px;
-}
+    .header_btn {
+      display: inline-block;
+      font-size: 20px;
+      width: 150px;
+      height: 50px;
+      margin-left: 20px;
+      cursor: pointer;
+      background-color: #FFFFFF;
+      border: none;
+      box-shadow: 3px 3px rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
+      transition-duration: 0.4s;
+    }
 
-.account_btn--con_mobile .menu-icon .navicon:after {
-  top: -10px;
-}
+    .header_btn:active {
+      box-shadow: none;
+      padding: 3px 3px inherit inherit;
+    }
 
-.account_btn--con_mobile .menu-btn {
-  display: none;
-}
+    .header_btn a {
+      text-align: center;
+      text-transform: uppercase;
+      color: #FF5500;
+      text-decoration: none;
+      width: 150px;
+      font-weight: 700;
+    }
 
-.account_btn--con_mobile .menu-btn:checked ~ .menu {
-  max-height: 100vh;
-  width: 300px;
-  position: relative;
-  left: -238px;
-  top: 10px;
-  border: 2px solid #FF5500;
-  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.2);
+    /*mobile header styling*/
+    @media only screen and (max-width: 915px) {
+      .account_btn--con {
+        display: none;
+      }
 
-}
-#header_max_con > div.account_btn--con_mobile > ul {
-  height: 100vh;
-  box-shadow: 0 0 100vw rgba(0,0,0,0.8);
-}
+      .account_btn--con_mobile {
+        display: block;
+        float: right;
+        margin: 15px;
+        margin-top: 10px;
+        width: 50px;
+        height: 50px;
+        background-color: white;
+      }
 
-.account_btn--con_mobile .menu-btn:checked ~ .menu-icon .navicon {
-  background: transparent;
-}
+      .account_btn--con_mobile ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        overflow: hidden;
+      }
 
-.account_btn--con_mobile .menu-btn:checked ~ .menu-icon .navicon:before {
-  transform: rotate(-45deg);
-}
+      .account_btn--con_mobile li a {
+        display: block;
+        text-align: center;
+        font-size: 24px;
+        padding: 20px 20px;
+        border-bottom: 1px solid #FF5500;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: #FF5500;
+      }
 
-.account_btn--con_mobile .menu-btn:checked ~ .menu-icon .navicon:after {
-  transform: rotate(45deg);
-}
+      .account_btn--con_mobile .menu {
+        background-color: white;
+        clear: both;
+        max-height: 0;
+        transition: max-height .2s ease-out;
 
-.account_btn--con_mobile .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
-.account_btn--con_mobile .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
-  top: 0;
-}
+      }
 
-  }
+      .account_btn--con_mobile .menu-icon {
+        cursor: pointer;
+        float: right;
+        margin: 22px 12px;
+        position: relative;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
 
+      .account_btn--con_mobile .menu-icon .navicon {
+        background: #FF5500;
+        display: block;
+        height: 3px;
+        position: relative;
+        transition: background .2s ease-out;
+        width: 27px;
+      }
+
+      .account_btn--con_mobile .menu-icon .navicon:before,
+      .account_btn--con_mobile .menu-icon .navicon:after {
+        background: #FF5500;
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        transition: all .2s ease-out;
+        width: 100%;
+
+      }
+
+      .account_btn--con_mobile .menu-icon .navicon:before {
+        top: 10px;
+      }
+
+      .account_btn--con_mobile .menu-icon .navicon:after {
+        top: -10px;
+      }
+
+      .account_btn--con_mobile .menu-btn {
+        display: none;
+      }
+
+      .account_btn--con_mobile .menu-btn:checked~.menu {
+        max-height: 100vh;
+        width: 300px;
+        position: relative;
+        left: -238px;
+        top: 10px;
+        border: 2px solid #FF5500;
+        box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.2);
+
+      }
+
+      #header_max_con>div.account_btn--con_mobile>ul {
+        height: 100vh;
+        box-shadow: 0 0 100vw rgba(0, 0, 0, 0.8);
+      }
+
+      .account_btn--con_mobile .menu-btn:checked~.menu-icon .navicon {
+        background: transparent;
+      }
+
+      .account_btn--con_mobile .menu-btn:checked~.menu-icon .navicon:before {
+        transform: rotate(-45deg);
+      }
+
+      .account_btn--con_mobile .menu-btn:checked~.menu-icon .navicon:after {
+        transform: rotate(45deg);
+      }
+
+      .account_btn--con_mobile .menu-btn:checked~.menu-icon:not(.steps) .navicon:before,
+      .account_btn--con_mobile .menu-btn:checked~.menu-icon:not(.steps) .navicon:after {
+        top: 0;
+      }
+
+    }
   </style>
   <!--end of header styling-->
 
@@ -678,6 +690,7 @@
 
   <!--main conent beginning -->
   <div id="main_max_con">
+    
 
     <!--date & zipcode inputs-->
     <div class="date_input-con">
@@ -691,6 +704,7 @@
         <div class="out_date_input input_box">
           <input type="date" id="out_date" name="out_date">
         </div>
+        <!-- desktop/large screen filter button -->
         <div class="filter-btn">
           <a href="#example" class="toggle"><span class="filter_btn-text">Filter</span> </a>
           <!-- hidden filter content -->
@@ -698,7 +712,7 @@
             <!-- filters container -->
             <div class="filters-con">
               <form action="CF_Map_Search.html">
-              <!-- sort by dropdown input -->
+                <!-- sort by dropdown input -->
                 <div class="sort_by-input filter_input">
                   <select class="sort_by filter_first">
                     <option value="recommended">Recommended</option>
@@ -786,6 +800,8 @@
         </div>
       </div>
     </div>
+    <!-- end of desktop filter button -->
+
 
     <!--filters container-->
     <div class="applied_filters-con">
@@ -874,6 +890,113 @@
     <!--camp cards list-->
     <div id="list_wrapper">
       <div class="camp_list-con">
+        <!-- begin mobile filter button -->
+        <div class="filter_mobile-wrapper">
+          <div class="filter-btn" id="mobile_filter-btn">
+            <a href="javascript:void(0)" onclick="openNav()" class="mobile_toggle"><span
+                class="filter_btn-text">Filter</span> </a>
+            <!-- hidden filter content -->
+            <div class="overlay" id="mobile_toggle-con">
+              <h1 class="mobile_filter-title">Narrow down your search</h1>
+              <!-- filters container -->
+              <div class="filters-con">
+                <form action="CF_Map_Search.html">
+                  <!-- sort by dropdown input -->
+                  <div class="sort_by-input filter_input">
+                    <select class="sort_by filter_first">
+                      <option value="recommended">Recommended</option>
+                      <option value="duration">Duration</option>
+                      <option value="distance">Distance</option>
+                      <option value="start_date">Start Date</option>
+                    </select>
+                  </div>
+                  <!-- Price range dropdown input -->
+                  <div class="sort_by-input filter_input">
+                    <select class="sort_by filter_price">
+                      <option value="low-high">Price (Low to High)</option>
+                      <option value="high-low">Price (High to Low)</option>
+                    </select>
+                  </div>
+                  <!-- search by radius slider input -->
+                  <div class="distance_slider">
+                    <label class="radius_label" for="search_radius">Search Radius</label>
+                    <input type="range" min="5" max="30" step="5" value="10">
+                    <datalist id="tickmarks">
+                      <option value="5" label="5 miles"></option>
+                      <option value="10" label="10 miles"></option>
+                      <option value="15" label="15 miles"></option>
+                      <option value="20" label="20 miles"></option>
+                      <option value="25" label="25 miles"></option>
+                      <option value="30" label="30+ miles" class="last_option"></option>
+                    </datalist>
+                  </div>
+                  <!-- program category filter input -->
+                  <div class="sort_by-input filter_input">
+                    <select class="sort_by filter_categories">
+                      <option value="all_categories">All Categories</option>
+                      <option value="arts">Arts</option>
+                      <option value="dance">Dance</option>
+                      <option value="music">Music</option>
+                      <option value="sports">Sports</option>
+                      <option value="computers">Computers</option>
+                      <option value="theatre">Theatre</option>
+                    </select>
+                  </div>
+                  <!-- gender filter input -->
+                  <div class="sort_by-input filter_input">
+                    <select class="sort_by filter_gender">
+                      <option value="coed">Coed</option>
+                      <option value="girls">Girls Only</option>
+                      <option value="boys">Boys Only</option>
+                      <option value="lgbt">LGBT+</option>
+                    </select>
+                  </div>
+                  <!-- stay terms filter input -->
+                  <div class="sort_by-input filter_input">
+                    <select class="sort_by filter_stay">
+                      <option value="day">Day Only</option>
+                      <option value="overnight">Overnight</option>
+                      <option value="weekends">Weekends</option>
+                      <option value="weekdays">Weekdays</option>
+                    </select>
+                  </div>
+                  <!-- age range filter input -->
+                  <div class="sort_by-input filter_input">
+                    <select class="sort_by filter_age">
+                      <option value="3_19">Age: 3 - 19</option>
+                      <option value="3_9">Age: 3 - 9</option>
+                      <option value="10_13">Age: 10 - 13</option>
+                      <option value="14_19">Age: 14 - 19</option>
+                    </select>
+                  </div>
+                  <!-- amenities filter input -->
+                  <div class="sort_by-input filter_input">
+                    <select class="sort_by filter_amenities">
+                      <option value="any_amenities">Any Amenities</option>
+                      <option value="pool">Pool</option>
+                      <option value="lake">Lake</option>
+                      <option value="outdoors">Outdoors</option>
+                      <option value="gym">Gym</option>
+                    </select>
+                  </div>
+                  <!-- apply filters button -->
+              </div>
+              <div class="submit_btn-wrapper">
+                <input type="submit" value="APPLY FILTERS" class="submit_btn filter_btn" id="submit_btn"></input>
+              </div>
+              </form>
+            </div>
+          </div>
+          <script>
+            function openNav() {
+              document.getElementById("mobile_toggle-con").style.height = "100%";
+            }
+
+            function closeNav() {
+              document.getElementById("mobile_toggle-con").style.height = "0%";
+            }
+          </script>
+        </div>
         <ul class="camp_results">
           <!--featured camp card li-->
           <li class="camp_card" id="feat_camp">
