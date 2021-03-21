@@ -16,15 +16,11 @@
   <meta name="robots" content="index,follow"><!-- All Search Engines -->
   <meta name="googlebot" content="index,follow"><!-- Google Specific -->
 
-
-
-
-
 </head>
 
 <!-- begin body -->
 
-<body>
+<body id="mobile_scroll-lock">
   <!--header container-->
   <header id="header">
     <div id="header_max_con">
@@ -57,14 +53,39 @@
         </button>
       </div>
       <!--mobile dropdown menu-->
-      <div class="account_btn--con_mobile">
-        <input class="menu-btn" type="checkbox" id="menu-btn" />
-        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-        <ul class="menu">
-          <li><a href="#login">Login</a></li>
-          <li><a href="#register">Register</a></li>
-        </ul>
+      <div class="account_btn--con_mobile" id="headerMobileBtn">
+        <!-- begin hidden mobile menu content -->
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="mobile_overlay-con">
+          <ul class="menu">
+            <li><a href="#login">Login</a></li>
+            <li><a href="#register">Register</a></li>
+          </ul>
+          <div class="brand_slogan">
+            <h1 class="fap_cta--brand">CampFinder</h1>
+            <h2 class="fap_cta--slogan">A Camp Experience Kids Will Love</h2>
+          </div>
+        </div>
+        <!-- mobile button script -->
+        <script>
+          /* Open mobile menu */
+          function openNav() {
+            document.getElementById("headerMobileBtn").style.width = "100%";
+            document.getElementById("mobile_btn-open").style.display = "none";
+            document.getElementById("mobile_scroll-lock").style.overflow = "hidden";
+            
+          }
+          
+          /* Close mobile menu*/
+          function closeNav() {
+            document.getElementById("headerMobileBtn").style.width = "0%";
+            document.getElementById("mobile_btn-open").style.display = "block";
+            document.getElementById("mobile_scroll-lock").style.overflow = "visible";
+          }
+          </script>
       </div>
+      <!-- mobile button -->
+      <span id="mobile_btn-open" onclick="openNav()">&#9776; </span>
       <!--end of header container-->
   </header>
   </div>
@@ -328,7 +349,8 @@
             </ul>
           </li>
           <li class="site_map--item" id="footer_copyright">
-            Copyright ©<script>
+            Copyright ©
+            <script>
               document.write(' ' + new Date().getFullYear() + ' ');
             </script>
           </li>

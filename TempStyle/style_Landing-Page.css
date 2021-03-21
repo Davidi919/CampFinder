@@ -64,6 +64,10 @@ html {
   margin: 0;
   height: 100%;
 }
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
 
 /*begin styling */
@@ -91,8 +95,9 @@ html {
   margin: 10px 20px;
 
 }
-.account_btn--con_mobile {
+.account_btn--con_mobile, #mobile_btn-open {
   display: none;
+
 }
 .header_btn {
   display: inline-block;
@@ -126,114 +131,82 @@ html {
   }
   .account_btn--con_mobile {
     display: block;
-    float: right;
-    margin: 15px;
-    margin-top: 10px;
-    width: 50px;
-    height: 50px;
-    background-color: white;
+    width: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    background: /* top, transparent black, faked with gradient */ 
+    linear-gradient(
+      rgba(255, 80, 0, 0.2), 
+      rgba(255, 80, 0, 0.7)
+    ),
+    /* bottom, image */
+    url(../Assets/graphics/splash_graphics/mobile_menu_bg_pattern.svg);
+    color: white;
+    transition: all .3s;
+  }
+  .account_btn--con_mobile ul, .account_btn--con_mobile li {
+    width: 100%;
+    
   }
   .account_btn--con_mobile ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    overflow: hidden;
+    margin-top: 70px;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    box-shadow: 0px 3px 8px rgb(100 100 100 / 50%);
   }
-  .account_btn--con_mobile li a {
-  display: block;
-  text-align: center;
-  font-size: 24px;
-  padding: 20px 20px;
-  border-bottom: 1px solid #FF5500;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: #FF5500;
-    }
-
-  .account_btn--con_mobile .menu {
+  .account_btn--con_mobile li {
+    cursor: pointer;
+    height: 45px;
+    text-align: center;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: 1px solid white;
+    background-color: #FF5500;
+    transition: .2s;
+  }
+  .account_btn--con_mobile li:active {
     background-color: white;
-    clear: both;
-    max-height: 0;
-    transition: max-height .2s ease-out;
-
+    color: #FF5500;
   }
-  .account_btn--con_mobile .menu-icon {
-  cursor: pointer;
-  display: block;
-  float: right;
-  margin: 22px 12px;
-  position: relative;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-
-.account_btn--con_mobile .menu-icon .navicon {
-  background: #FF5500;
-  display: block;
-  height: 3px;
-  position: relative;
-  transition: background .2s ease-out;
-  width: 27px;
-}
-
-.account_btn--con_mobile .menu-icon .navicon:before,
-.account_btn--con_mobile .menu-icon .navicon:after {
-  background: #FF5500;
-  content: '';
-  display: block;
-  height: 100%;
-  position: absolute;
-  transition: all .2s ease-out;
-  width: 100%;
-
-}
-
-.account_btn--con_mobile .menu-icon .navicon:before {
-  top: 10px;
-}
-
-.account_btn--con_mobile .menu-icon .navicon:after {
-  top: -10px;
-}
-
-.account_btn--con_mobile .menu-btn {
-  display: none;
-}
-
-.account_btn--con_mobile .menu-btn:checked ~ .menu {
-  max-height: 100vh;
-  width: 300px;
-  position: relative;
-  left: -238px;
-  top: 10px;
-  border: 2px solid #FF5500;
-  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.2);
-
-}
-#header_max_con > div.account_btn--con_mobile > ul {
-  height: 100vh;
-  box-shadow: 0 0 100vw rgba(0,0,0,0.8);
-}
-
-.account_btn--con_mobile .menu-btn:checked ~ .menu-icon .navicon {
-  background: transparent;
-}
-
-.account_btn--con_mobile .menu-btn:checked ~ .menu-icon .navicon:before {
-  transform: rotate(-45deg);
-}
-
-.account_btn--con_mobile .menu-btn:checked ~ .menu-icon .navicon:after {
-  transform: rotate(45deg);
-}
-
-.account_btn--con_mobile .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
-.account_btn--con_mobile .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
-  top: 0;
-}
+  .account_btn--con_mobile .brand_slogan {
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    margin-left: -125px;
+    text-align: center;
+   
+  }
+  .account_btn--con_mobile .brand_slogan h1 {
+    font-size: 32px;
+    font-weight: 800;
+    margin: 5px auto;
+  }
+  .account_btn--con_mobile .brand_slogan h2 {
+    font-size: 26px;
+    font-weight: 400;
+    margin: 0 auto;
+  }
+  #mobile_btn-open {
+    color: white;
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    font-size: 40px;
+    top: 15px;
+    right: 20px;
+  }
+  .account_btn--con_mobile .closebtn {
+    font-size: 60px;
+    position: absolute;
+    right: 20px;
+  }
 
   }
 
