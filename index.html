@@ -15,6 +15,528 @@
   <meta name="theme-color" content="#FF5500">
   <meta name="robots" content="index,follow"><!-- All Search Engines -->
   <meta name="googlebot" content="index,follow"><!-- Google Specific -->
+  <!-- General styling rules -->
+  <style>
+    /* type face import */
+
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,800;0,900;1,300&display=swap');
+
+
+    /* Lemon reset */
+    body,
+    div,
+    span,
+    applet,
+    object,
+    iframe,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    blockquote,
+    pre,
+    a,
+    abbr,
+    acronym,
+    address,
+    big,
+    cite,
+    code,
+    del,
+    dfn,
+    em,
+    img,
+    ins,
+    kbd,
+    q,
+    s,
+    samp,
+    small,
+    strike,
+    strong,
+    sub,
+    sup,
+    tt,
+    var,
+    b,
+    u,
+    i,
+    center,
+    dl,
+    dt,
+    dd,
+    ol,
+    ul,
+    li,
+    fieldset,
+    form,
+    label,
+    legend,
+    table,
+    caption,
+    tbody,
+    tfoot,
+    thead,
+    tr,
+    th,
+    td,
+    article,
+    aside,
+    canvas,
+    details,
+    embed,
+    figure,
+    figcaption,
+    footer,
+    header,
+    hgroup,
+    menu,
+    nav,
+    output,
+    ruby,
+    section,
+    summary,
+    time,
+    mark,
+    audio,
+    video {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font-size: 100%;
+      font-family: "Roboto", sans-serif;
+      vertical-align: baseline;
+    }
+
+    /* HTML5 display-role reset for older browsers */
+    article,
+    aside,
+    details,
+    figcaption,
+    figure,
+    footer,
+    header,
+    hgroup,
+    menu,
+    nav,
+    section {
+      display: block;
+    }
+
+    body {
+      line-height: 1;
+      background-color: white;
+      position: relative;
+      min-height: 100%;
+
+    }
+
+    ol,
+    ul {
+      list-style: none;
+    }
+
+    blockquote,
+    q {
+      quotes: none;
+    }
+
+    blockquote:before,
+    blockquote:after,
+    q:before,
+    q:after {
+      content: "";
+      content: none;
+    }
+
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    /* global rules */
+    html {
+      font-size: 14px;
+      font-family: "Roboto", sans-serif;
+      margin: 0;
+      height: 100%;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  </style>
+  <!-- header styling rules -->
+  <style>
+    #header {
+      width: 100%;
+      height: 70px;
+      position: fixed;
+      background-color: #FF5500;
+      box-shadow: 3px 0px 4px rgba(0, 0, 0, 0.2);
+      z-index: 5000;
+    }
+
+    #header_max_con {
+      width: 100%;
+      max-width: 2000px;
+      margin: 0 auto;
+    }
+
+    #header svg {
+      margin: 10px;
+      margin-top: 12px;
+    }
+
+    .account_btn--con {
+      display: block;
+      float: right;
+      margin: 10px 20px;
+
+    }
+
+    .account_btn--con_mobile,
+    #mobile_btn-open {
+      display: none;
+
+    }
+
+    .header_btn {
+      display: inline-block;
+      font-size: 20px;
+      width: 150px;
+      height: 50px;
+      margin-left: 20px;
+      cursor: pointer;
+      background-color: #FFFFFF;
+      border: none;
+      box-shadow: 3px 3px rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
+      transition-duration: 0.4s;
+    }
+
+    .header_btn:active {
+      box-shadow: none;
+      padding: 3px 3px inherit inherit;
+    }
+
+    .header_btn a {
+      text-align: center;
+      text-transform: uppercase;
+      color: #FF5500;
+      text-decoration: none;
+      width: 150px;
+      font-weight: 700;
+    }
+
+    /*mobile header styling*/
+    @media only screen and (max-width: 600px) {
+      .account_btn--con {
+        display: none;
+      }
+
+      .account_btn--con_mobile {
+        display: block;
+        width: 0;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        height: 100vh;
+        background:
+          /* top, transparent black, faked with gradient */
+          linear-gradient(rgba(255, 80, 0, 0.2),
+            rgba(255, 80, 0, 0.7)),
+          /* bottom, image */
+          url(../Assets/graphics/splash_graphics/mobile_menu_bg_pattern.svg);
+        color: white;
+        transition: all .3s;
+      }
+
+      .account_btn--con_mobile ul,
+      .account_btn--con_mobile li {
+        width: 100%;
+
+      }
+
+      .account_btn--con_mobile ul {
+        margin-top: 70px;
+        border-top: 2px solid white;
+        border-bottom: 2px solid white;
+        box-shadow: 0px 3px 8px rgb(100 100 100 / 50%);
+      }
+
+      .account_btn--con_mobile li {
+        cursor: pointer;
+        height: 45px;
+        text-align: center;
+        font-size: 1.5em;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        outline: 1px solid white;
+        background-color: #FF5500;
+        transition: .2s;
+      }
+
+      .account_btn--con_mobile li:active {
+        background-color: white;
+        color: #FF5500;
+      }
+
+      .account_btn--con_mobile .brand_slogan {
+        width: 250px;
+        height: 100px;
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        margin-left: -125px;
+        text-align: center;
+
+      }
+
+      .account_btn--con_mobile .brand_slogan h1 {
+        font-size: 32px;
+        font-weight: 800;
+        margin: 5px auto;
+      }
+
+      .account_btn--con_mobile .brand_slogan h2 {
+        font-size: 26px;
+        font-weight: 400;
+        margin: 0 auto;
+      }
+
+      #mobile_btn-open {
+        color: white;
+        cursor: pointer;
+        display: block;
+        position: absolute;
+        font-size: 40px;
+        top: 15px;
+        right: 20px;
+      }
+
+      .account_btn--con_mobile .closebtn {
+        font-size: 60px;
+        position: absolute;
+        right: 20px;
+      }
+
+    }
+  </style>
+  <!-- footer styling -->
+  <style>
+    /*footer styling*/
+    #footer {
+      position: relative;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 350px;
+      margin-bottom: -350px;
+      background-color: #FF5500;
+      color: white;
+    }
+
+    #footer_max_con {
+      display: flex;
+      align-self: center;
+      width: 100%;
+      max-width: 1440px;
+      margin: 0 auto;
+      padding-top: 2em;
+    }
+
+    /*site map sytling*/
+    .site_map-con {
+      margin-left: 30px;
+      display: inline-block;
+      width: 235px;
+    }
+
+    .site_map-con ul {
+      font-size: 18px;
+      text-align: center;
+      width: inherit;
+    }
+
+    .site_map--item {
+      margin-bottom: 15px;
+    }
+
+    .site_map-con ul a {
+      text-decoration: none;
+      color: white;
+    }
+
+    #social_media-con {
+      margin-top: -5px;
+      width: 235px;
+      height: 30px;
+    }
+
+    #social_media-con ul {
+      margin: 10px auto;
+      margin-left: 20px;
+    }
+
+    #social_media-con li img {
+      float: left;
+      width: 25px;
+      height: 30px;
+      margin-left: 20px;
+    }
+
+    #footer_copyright {
+      clear: both;
+    }
+
+    /*find a program styling*/
+
+    .fap_cta-con {
+      width: 300px;
+      margin: 0 auto;
+    }
+
+    .fap_cta-con h1 {
+      font-size: 32px;
+      font-weight: 800;
+      text-align: center;
+      padding-bottom: 10px;
+    }
+
+    .fap_cta-con h2 {
+      font-size: 26px;
+      font-weight: 400;
+      text-align: center;
+      width: 255px;
+      margin: 0 auto;
+    }
+
+    .fap_btn-con button {
+      font-size: 20px;
+      width: 270px;
+      height: 45px;
+      margin: 20px;
+      cursor: pointer;
+      background-color: #39A9DB;
+      border: none;
+      box-shadow: 3px 3px rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
+      transition-duration: 0.2s;
+    }
+
+    .fap_btn-con button:active {
+      box-shadow: none;
+      padding: 3px 3px inherit inherit;
+    }
+
+    .fap_btn-con a {
+      text-align: center;
+      text-transform: uppercase;
+      color: #FFF;
+      text-decoration: none;
+      width: 150px;
+      font-weight: 500;
+    }
+
+
+    /*mailing list signup*/
+    .mail_cta-con {
+      margin-right: 30px;
+    }
+
+    .mail_title {
+      text-align: center;
+      font-weight: 400;
+      margin-bottom: 20px;
+      text-transform: capitalize;
+    }
+
+    .mail_cta-con h1 {
+      font-size: 26px;
+      font-weight: 700;
+    }
+
+    .mail_btn {
+      display: block;
+      font-size: 20px;
+      width: 225px;
+      height: 45px;
+      margin: 20px auto;
+      cursor: pointer;
+      background-color: #FFF;
+      border: none;
+      box-shadow: 3px 3px rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
+      transition-duration: 0.2s
+    }
+
+    .mail_btn:active {
+      box-shadow: none;
+      padding: 3px 3px inherit inherit;
+    }
+
+    .mail_btn a {
+      color: #FF5500;
+      font-weight: 700;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    #footer .mail_cta-con input {
+      font-size: 18px;
+      font-style: italic;
+      width: 330px;
+      height: 45px;
+      border: 1px solid grey;
+    }
+
+    /*footer responsive styling*/
+
+    /*tablet/mobile phone styling*/
+    @media only screen and (max-width: 915px) {
+      #footer {
+        height: 750px;
+      }
+
+      #footer_max_con {
+        display: block;
+        align-self: unset;
+        width: 98%;
+        text-align: center;
+      }
+
+      .site_map-con,
+      .fap_cta-con,
+      .mail_cta-con {
+        margin: 30px auto 0 auto;
+      }
+
+    }
+
+    /*tablet styling*/
+    @media only screen and (max-width: 1024px) {
+
+      #footer_max_con .site_map-con {
+        margin-left: auto;
+      }
+
+      #footer_max_con .mail_cta-con input {
+        width: 16em;
+      }
+
+      #footer_max_con .mail_title {
+        font-size: 1.75em;
+      }
+    }
+  </style>
 
 </head>
 
@@ -73,16 +595,16 @@
             document.getElementById("headerMobileBtn").style.width = "100%";
             document.getElementById("mobile_btn-open").style.display = "none";
             document.getElementById("mobile_scroll-lock").style.overflow = "hidden";
-            
+
           }
-          
+
           /* Close mobile menu*/
           function closeNav() {
             document.getElementById("headerMobileBtn").style.width = "0%";
             document.getElementById("mobile_btn-open").style.display = "block";
             document.getElementById("mobile_scroll-lock").style.overflow = "visible";
           }
-          </script>
+        </script>
       </div>
       <!-- mobile button -->
       <span id="mobile_btn-open" onclick="openNav()">&#9776; </span>

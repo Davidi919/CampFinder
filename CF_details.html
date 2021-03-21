@@ -6,13 +6,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title> CampFinder | Find A Camp
 	</title>
+	<!-- css link -->
+	<link href="./TempStyle/details_style.css" type="text/css" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="author" content="CampFinder">
 	<meta name="subject" content="Find a camp experience your kids will love">
-	<meta name="description" content="Look through the variety of camps and find the one that fits your child perfectly.">
+	<meta name="description"
+		content="Look through the variety of camps and find the one that fits your child perfectly.">
 	<meta name="theme-color" content="#FF5500">
 	<meta name="robots" content="index,follow"><!-- All Search Engines -->
 	<meta name="googlebot" content="index,follow"><!-- Google Specific -->
+
 	<!-- camp gallery script -->
 	<script>
 		var slideIndex = 1;
@@ -47,14 +51,13 @@
 		}
 	</script>
 	<!-- camp details available dates dropdown script -->
-
-	<!--header styling-->
-	<style>
+	 <!-- General styling rules -->
+	 <style>
 		/* type face import */
-
-		@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
-
+	
+		@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,800;0,900;1,300&display=swap');
+	
+	
 		/* Lemon reset */
 		body,
 		div,
@@ -136,14 +139,14 @@
 		mark,
 		audio,
 		video {
-			margin: 0;
-			padding: 0;
-			border: 0;
-			font-size: 100%;
-			font-family: "Roboto", sans-serif;
-			vertical-align: baseline;
+		  margin: 0;
+		  padding: 0;
+		  border: 0;
+		  font-size: 100%;
+		  font-family: "Roboto", sans-serif;
+		  vertical-align: baseline;
 		}
-
+	
 		/* HTML5 display-role reset for older browsers */
 		article,
 		aside,
@@ -156,59 +159,67 @@
 		menu,
 		nav,
 		section {
-			display: block;
+		  display: block;
 		}
-
+	
 		body {
-			line-height: 1;
-			background-color: #FFFFFF;
+		  line-height: 1;
+		  background-color: white;
+		  position: relative;
+		  min-height: 100%;
+	
 		}
-
+	
 		ol,
 		ul {
-			list-style: none;
+		  list-style: none;
 		}
-
+	
 		blockquote,
 		q {
-			quotes: none;
+		  quotes: none;
 		}
-
+	
 		blockquote:before,
 		blockquote:after,
 		q:before,
 		q:after {
-			content: "";
-			content: none;
+		  content: "";
+		  content: none;
 		}
-
+	
 		table {
-			border-collapse: collapse;
-			border-spacing: 0;
+		  border-collapse: collapse;
+		  border-spacing: 0;
 		}
-
+	
 		/* global rules */
 		html {
-			font-size: 14px;
-			font-family: "Roboto", sans-serif;
-			margin: 0;
+		  font-size: 14px;
+		  font-family: "Roboto", sans-serif;
+		  margin: 0;
+		  height: 100%;
 		}
-
-
-		/*begin header styling */
-
+	
+		a {
+		  text-decoration: none;
+		  color: inherit;
+		}
+	  </style>
+	<!--header styling-->
+	<style>
 		#header {
 			width: 100%;
 			height: 70px;
 			position: fixed;
 			background-color: #FF5500;
 			box-shadow: 3px 0px 4px rgba(0, 0, 0, 0.2);
-			z-index: 1000;
+			z-index: 5000;
 		}
 
 		#header_max_con {
 			width: 100%;
-			max-width: 1440px;
+			max-width: 2000px;
 			margin: 0 auto;
 		}
 
@@ -218,14 +229,16 @@
 		}
 
 		.account_btn--con {
-			display: inline;
+			display: block;
 			float: right;
 			margin: 10px 20px;
 
 		}
 
-		.account_btn--con_mobile {
+		.account_btn--con_mobile,
+		#mobile_btn-open {
 			display: none;
+
 		}
 
 		.header_btn {
@@ -263,886 +276,95 @@
 			}
 
 			.account_btn--con_mobile {
-				display: inline;
-				float: right;
-				margin: 15px;
-				margin-top: 10px;
-				width: 50px;
-				height: 50px;
-				background-color: white;
+				display: block;
+				width: 0;
+				overflow: hidden;
+				position: absolute;
+				top: 0;
+				height: 100vh;
+				background:
+					/* top, transparent black, faked with gradient */
+					linear-gradient(rgba(255, 80, 0, 0.2),
+						rgba(255, 80, 0, 0.7)),
+					/* bottom, image */
+					url(../Assets/graphics/splash_graphics/mobile_menu_bg_pattern.svg);
+				color: white;
+				transition: all .3s;
+			}
+
+			.account_btn--con_mobile ul,
+			.account_btn--con_mobile li {
+				width: 100%;
+
 			}
 
 			.account_btn--con_mobile ul {
-
-				margin: 0;
-				padding: 0;
-				list-style: none;
-				overflow: hidden;
+				margin-top: 70px;
+				border-top: 2px solid white;
+				border-bottom: 2px solid white;
+				box-shadow: 0px 3px 8px rgb(100 100 100 / 50%);
 			}
 
-			.account_btn--con_mobile li a {
-				display: block;
+			.account_btn--con_mobile li {
+				cursor: pointer;
+				height: 45px;
 				text-align: center;
-				font-size: 24px;
-				padding: 20px 20px;
-				border-bottom: 1px solid #FF5500;
-				text-decoration: none;
+				font-size: 1.5em;
 				text-transform: uppercase;
-				font-weight: 700;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				outline: 1px solid white;
+				background-color: #FF5500;
+				transition: .2s;
+			}
+
+			.account_btn--con_mobile li:active {
+				background-color: white;
 				color: #FF5500;
 			}
 
-			.account_btn--con_mobile .menu {
-				background-color: white;
-				clear: both;
-				max-height: 0;
-				transition: max-height .2s ease-out;
-
-			}
-
-			.account_btn--con_mobile .menu-icon {
-				cursor: pointer;
-				display: inline;
-				float: right;
-				margin: 22px 12px;
-				position: relative;
-				-webkit-user-select: none;
-				-moz-user-select: none;
-				-ms-user-select: none;
-				user-select: none;
-			}
-
-			.account_btn--con_mobile .menu-icon .navicon {
-				background: #FF5500;
-				display: block;
-				height: 3px;
-				position: relative;
-				transition: background .2s ease-out;
-				width: 27px;
-			}
-
-			.account_btn--con_mobile .menu-icon .navicon:before,
-			.account_btn--con_mobile .menu-icon .navicon:after {
-				background: #FF5500;
-				content: '';
-				display: block;
-				height: 100%;
+			.account_btn--con_mobile .brand_slogan {
+				width: 250px;
+				height: 100px;
 				position: absolute;
-				transition: all .2s ease-out;
-				width: 100%;
+				bottom: 20px;
+				left: 50%;
+				margin-left: -125px;
+				text-align: center;
 
 			}
 
-			.account_btn--con_mobile .menu-icon .navicon:before {
-				top: 10px;
-			}
-
-			.account_btn--con_mobile .menu-icon .navicon:after {
-				top: -10px;
-			}
-
-			.account_btn--con_mobile .menu-btn {
-				display: none;
-			}
-
-			.account_btn--con_mobile .menu-btn:checked~.menu {
-				max-height: 300px;
-				width: 300px;
-				position: relative;
-				left: -238px;
-				top: 10px;
-				border: 2px solid #FF5500;
-				box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.2);
-
-			}
-
-			.account_btn--con_mobile .menu-btn:checked~.menu-icon .navicon {
-				background: transparent;
-			}
-
-			.account_btn--con_mobile .menu-btn:checked~.menu-icon .navicon:before {
-				transform: rotate(-45deg);
-			}
-
-			.account_btn--con_mobile .menu-btn:checked~.menu-icon .navicon:after {
-				transform: rotate(45deg);
-			}
-
-			.account_btn--con_mobile .menu-btn:checked~.menu-icon:not(.steps) .navicon:before,
-			.account_btn--con_mobile .menu-btn:checked~.menu-icon:not(.steps) .navicon:after {
-				top: 0;
-			}
-
-		}
-	</style>
-
-	<!--camp details main content-->
-	<style>
-		/*camp details header styling*/
-		.heading_con {
-			display: block;
-			width: 100%;
-			height: auto;
-			padding-top: 70px;
-			text-align: center;
-		}
-
-		#camp_name-header {
-			text-transform: capitalize;
-			font-size: 34px;
-			font-weight: 700;
-			margin: 40px auto 30px auto;
-		}
-
-		.bts-con p {
-			display: inline;
-			font-size: 23px;
-		}
-
-		.bts-con {
-			position: absolute;
-			top: 80px;
-			left: 20px;
-			text-align: left;
-			width: 200px;
-			height: 18px;
-		}
-
-		.bts-con svg {
-			margin-bottom: -1px;
-			margin-right: 10px;
-		}
-
-		.bts-con a {
-			text-decoration: none;
-			color: #707070;
-		}
-
-		.camp_local {
-			margin-left: 4%;
-			margin-bottom: 5px;
-		}
-
-		.camp_local-icon {
-			float: left;
-			margin-right: 5px;
-			height: 18px;
-			width: auto;
-		}
-
-		#camp_local {
-			font-size: 18px;
-			font-weight: 400;
-			font-style: italic;
-			color: #707070;
-		}
-
-		/*camp gallery styling */
-		.campSlides {
-			display: none;
-		}
-
-		#landing_img--slideshow {
-			display: block;
-		}
-
-		.camp_gallery img {
-			vertical-align: middle;
-			object-fit: cover;
-			width: 100%;
-			height: 500px;
-			border-radius: 2.5px;
-		}
-
-		.camp_gallery {
-			box-sizing: border-box;
-		}
-
-		/* Slideshow container */
-		.slideshow-con {
-			border: 2px solid #FF5500;
-			border-radius: 5px;
-			width: 92vw;
-			max-width: 1440px;
-			height: 500px;
-			position: relative;
-			margin: auto;
-		}
-
-		/* Next & previous buttons */
-		.prev,
-		.next {
-			cursor: pointer;
-			position: absolute;
-			top: 50%;
-			width: 36px;
-			height: 32px;
-			padding: 2px;
-			margin-top: -22px;
-			color: #FF5500;
-			background-color: rgba(250, 250, 250, .5);
-			box-shadow: 3px 3px 6px rgba(0, 0, 0, .2);
-			font-weight: bold;
-			font-size: 18px;
-			transition: 0.6s ease;
-			border-radius: 10px;
-			user-select: none;
-		}
-
-		.prev {
-			left: 40px;
-			box-shadow: 3px 3px 6px rgba(0, 0, 0, .2);
-		}
-
-		.next {
-			right: 40px;
-			box-shadow: -3px 3px 6px rgba(0, 0, 0, .2);
-		}
-
-		.prev svg,
-		.next svg {
-			display: block;
-			margin: 6px auto;
-		}
-
-		.prev:hover,
-		.next:hover {
-			background-color: rgba(250, 250, 250, 0.8);
-		}
-
-		/* img number text (1/3 etc) */
-		.numbertext {
-			text-align: center;
-			line-height: 2rem;
-			width: 4rem;
-			height: 2rem;
-			color: white;
-			background-color: #FF5500;
-			border-radius: 5px;
-			box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.15);
-			font-size: 18px;
-			font-weight: 500;
-			position: absolute;
-			bottom: 20px;
-			left: calc(50% - 2rem);
-		}
-
-		/* responsive gallery styling */
-		@media only screen and (min-width: 1530px) {
-			.camp_local {
-				max-width: 1440px;
+			.account_btn--con_mobile .brand_slogan h1 {
+				font-size: 32px;
+				font-weight: 800;
 				margin: 5px auto;
 			}
-		}
 
-		/*end gallery styling*/
-
-		/* grid styling */
-		.camp_details-con {
-			margin: 0 auto;
-			max-width: 1440px;
-			width: 100%;
-
-		}
-
-		.grid-container {
-			display: grid;
-			width: 92%;
-			height: auto;
-			margin: 30px auto;
-			grid-template-columns: 1fr 1fr;
-			grid-template-rows: 1fr 500px;
-			grid-gap: 90px 60px;
-		}
-
-
-
-
-		#camp_overview-con {
-			box-shadow: none;
-		}
-
-		.categories_con {
-			display: flex;
-			flex-wrap: wrap;
-			margin: auto 15px;
-		}
-
-		.categories {
-			display: flex;
-			width: 100px;
-			height: 35px;
-			margin: 5px;
-			border: 2px solid #FF5500;
-			border-radius: 5px;
-			font-size: 16px;
-			font-weight: 500;
-			justify-content: center;
-			align-items: center;
-		}
-
-		.camp_overview {
-			text-align: left;
-			margin: 25px 20px;
-			font-size: 30px;
-			font-weight: 500;
-		}
-
-		#abt_camp {
-			text-align: left;
-			margin-top: 10px;
-			font-size: 16px;
-			line-height: 1.75rem;
-			font-weight: 400;
-		}
-
-
-
-		#booking-con {
-			border: 2px solid #39A9DB;
-			border-radius: 5px;
-			box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.15);
-			min-width: 285px;
-			max-width: 1366px;
-		}
-
-		.date_picker {
-			display: flex;
-			width: 85%;
-			height: 90px;
-			margin: 18px auto;
-			border: 2px solid #39A9DB;
-			border-radius: 5px;
-			background-color: #E1F2FA;
-			font-size: 30px;
-			font-weight: 700;
-		}
-
-		.start_date,
-		.end_date {
-			width: 100%;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-		}
-
-		.end_date {
-			border-left: 2px solid #39A9DB;
-		}
-
-		.cost_book-con {
-			width: 85%;
-			margin: 10px auto;
-			display: flex;
-			justify-content: space-between;
-		}
-
-		.cost_book-con .cost-con {
-			text-align: center;
-			display: block;
-			width: 50%;
-			height: 45px;
-			margin-top: 7px;
-		}
-
-		.cost-con #camp_cost {
-			font-size: 28px;
-			font-weight: 700;
-		}
-
-		.cost-con sub {
-			font-weight: 600;
-			font-size: 12px;
-		}
-
-		.reserve_btn {
-			width: 50%;
-			height: 45px;
-			background-color: #39A9DB;
-			border-radius: 5px;
-			box-shadow: 3px 3px rgba(0, 0, 0, 0.2);
-			transition: .4s;
-		}
-
-		.reserve_btn a {
-			text-decoration: none;
-		}
-
-		.reserve_btn:active {
-			box-shadow: none;
-			padding: 3px 3px inherit inherit;
-		}
-
-		.reserve_btn span {
-			display: block;
-			font-size: 1.5em;
-			font-weight: 500;
-			color: white;
-			text-align: center;
-			margin: 10.5px auto;
-			text-transform: uppercase;
-		}
-
-		.spot_icon-con {
-			float: left;
-			margin-right: 5px;
-		}
-
-		.spot_remaining-con {
-			clear: both;
-			display: block;
-			font-size: 26px;
-			line-height: 30px;
-			margin: 30px auto 15px 2em;
-		}
-
-		.avail_dates-icon {
-			float: left;
-			margin-right: 5px;
-		}
-
-		.avail_dates-con {
-			clear: both;
-			display: block;
-			font-size: 26px;
-			line-height: 30px;
-			margin: 30px auto 15px 2em;
-		}
-
-
-		#camp_requirements_card-con {
-			box-shadow: none;
-		}
-
-		/* requirements container styling */
-		#requirements_card-con {
-			height: 30%;
-			border-radius: 5px;
-			background: #FF5500;
-			color: white;
-			box-shadow: 4px 4px 8px rgba(0, 0, 0, .2);
-		}
-		@media only screen and (max-width: 1024px) {
-			#requirements_card-con {
-				padding-bottom: 30px;
-			}
-		}
-		.req-title {
-			text-align: center;
-			padding-top: 10px;
-			font-size: 30px;
-			font-weight: 500;
-		}
-
-		.camp_req {
-			margin: 10px 30px;
-			font-size: 24px;
-			font-weight: 500;
-		}
-
-		/* camp availability container styling */
-		.availability_section {
-			height: 63%;
-			margin-top: 31px;
-			border-radius: 5px;
-			border: 2px solid #FF5500;
-			box-shadow: 4px 4px 8px rgba(0, 0, 0, .2);
-			overflow-y: overlay;
-		}
-
-		/* available dates scrollbar styling */
-		.availability_section::-webkit-scrollbar {
-			position: absolute;
-			width: 5px;
-		}
-
-		/* Track */
-		.availability_section::-webkit-scrollbar-track {
-			box-shadow: inset 0 0 6px rgba(100, 100, 100, 0.3);
-			-webkit-box-shadow: inset 0 0 6px rgba(100, 100, 100, 0.3);
-
-		}
-
-		/* Handle */
-		.availability_section::-webkit-scrollbar-thumb {
-			background: rgba(57, 169, 219, .7);
-			border-radius: 0px 4px 4px 0px;
-		}
-
-		.avail_title-con {
-			font-size: 2rem;
-			font-weight: 500;
-			text-align: center;
-			margin: 15px auto 10px auto;
-		}
-
-		.date_card {
-			display: block;
-			border: 1.5px solid black;
-			border-radius: 5px;
-			width: 600px;
-			margin: 10px auto;
-			position: relative;
-		}
-
-		/* button for hidden date content styling */
-		.dateCollapsible {
-			background-color: #FFF;
-			color: black;
-			cursor: pointer;
-			width: 100%;
-			height: 45px;
-			border-radius: 5px;
-			border: none;
-			outline: none;
-			font-size: 1.25rem;
-			font-weight: 500;			
-		}
-		.label-wrapper {
-			display: inline-block;
-			width: 92%;
-			height: 100%;
-		}
-		.label-wrapper span {
-			line-height: 1.25rem;
-			margin-top: 1rem;
-		}
-		.avail_dates-label {
-			float: left;
-		}
-		.avail_cost-label {
-			float: right;
-		}
-
-		.dateCollapsible:hover {
-			background-color: #ff55001e;
-		}
-
-		.dateCollapsible:after {
-			content: url(/Assets/icons/date_dropdown-icon.svg);
-			width: 20px;
-			height: 20px;
-			color: white;
-			font-weight: bold;
-			float: right;
-			margin-left: 5px;
-			margin-top: 1rem;
-			transition: .2s ease-in-out;
-		}
-
-
-
-		.active:after {
-			transform: rotate(45deg);
-		}
-		
-		.date-wrapper {
-			width: 90%;
-			margin: 10px auto 10px auto;
-			border: 1.5px solid black;
-			border-radius: 5px;
-			overflow: hidden;
-		}
-
-		/* hidden date content styling */
-		.content {
-			width: 100%;
-			margin: 0px auto;
-			padding: 0px 10px;
-			max-height: 0;
-			overflow: hidden;
-			transition: max-height 0.2s ease-out;
-			background-color: white;
-		}
-
-		.date-wrapper .reserve_btn {
-			height: 40px;
-			width: 40%;
-			float: right;
-			margin: 6px 25px 0px 0px;
-		}
-
-		#avail_date-spot_remaining {
-			display: inline-flex;
-			justify-content: center;
-			align-items: center;
-			height: 55px;
-			font-size: 1.5rem;
-			width: 50%;
-			text-align: center;
-
-		}
-		@media only screen and (max-width: 1024px) {
-			.availability_section .dates-con {
-				padding-bottom: 40px;
-			}
-			.availability_section {
-				margin-bottom: -40px;
-			}
-		}
-
-		/* camp info container styling */
-		.camp_info-title {
-			text-align: center;
-			font-size: 28px;
-			font-weight: 700;
-			margin: 20px auto 30px auto;
-		}
-
-		.map-con {
-			max-width: 420px;
-			height: 120px;
-			margin: 10px auto;
-			border: 2px solid #FF5500;
-			border-radius: 5px;
-			overflow: hidden;
-		}
-
-		.camp_address-con {
-			text-align: center;
-
-		}
-
-		.camp_address-con h1 {
-			font-size: 24px;
-			font-weight: 500;
-			font-style: initial;
-			margin-top: 30px;
-		}
-
-		.camp_address-wrapper span {
-			font-style: initial;
-			display: inline-block;
-			font-size: 24px;
-		}
-
-		#camp_address {
-			line-height: 1.25em;
-			margin: 20px auto;
-		}
-
-		#camp_telephone_number {
-			margin: 20px auto;
-		}
-
-		#camp_telephone_number a {
-			text-decoration: none;
-			color: black;
-		}
-
-		#camp_email {
-			margin: 0 auto 30px auto;
-		}
-
-		#camp_contact-con {
-			border-radius: 5px;
-			border: 2px solid #FF5500;
-			box-shadow: 4px 4px 8px rgba(0, 0, 0, .2);
-		}
-
-		/* responsive grid styling */
-		@media only screen and (max-width:1024px) {
-			.grid-container {
-				display: flex;
-				flex-flow: column;
-				width: 100%;
-			}
-
-			.grid-item {
-				width: 92%;
-				margin: 0 auto;
-			}
-
-			#booking-con {
-				order: -1;
-			}
-		}
-
-		@media only screen and (max-width:600px) {
-			.bts-con {
-				left: 10px;
-			}
-
-			.bts-con p {
-				font-size: 1.25rem;
-			}
-
-			.bts-con svg {
-				margin-bottom: -2px;
-				margin-right: 5px;
-			}
-
-			#camp_name-header {
-				margin-top: 60px;
-			}
-
-			.categories_con {
-				margin: 0 auto;
-			}
-
-			.categories {
-				height: 2rem;
-				margin: 8px 10px;
-			}
-
-			.camp_overview {
-				margin: 25px auto;
-			}
-
-			.cost_book-con {
-				display: block;
-				margin: 0 auto;
-			}
-
-			.cost-con {
-				margin: 2.5px auto;
-			}
-
-			.reserve_btn {
-				width: 100%;
-				margin: 10px auto;
-			}
-
-			.reserve_btn span {
-				font-size: 1.6rem;
+			.account_btn--con_mobile .brand_slogan h2 {
+				font-size: 26px;
 				font-weight: 400;
-				padding-top: .6em;
 				margin: 0 auto;
 			}
 
-			.date_picker {
-				height: 5rem;
-				font-size: 1.5em;
+			#mobile_btn-open {
+				color: white;
+				cursor: pointer;
+				display: block;
+				position: absolute;
+				font-size: 40px;
+				top: 15px;
+				right: 20px;
 			}
 
-			#booking-con {
-				margin-bottom: -20px;
-				order: -1;
+			.account_btn--con_mobile .closebtn {
+				font-size: 60px;
+				position: absolute;
+				right: 20px;
 			}
 
-			.spot_remaining-con {
-				margin: 30px auto 20px auto;
-				height: auto;
-				width: 80%;
-				font-size: 1.5rem;
-			}
-
-			.avail_dates-con {
-				margin: 0 auto 30px auto;
-				width: 80%;
-				font-size: 1.5rem;
-			}
-
-			#camp_requirements_card-con {
-				margin-top: -40px;
-				width: 100%;
-			}
-
-			#requirements_card-con {
-				border-radius: 0;
-				height: auto;
-				padding-bottom: 20px;
-			}
-
-			.req-title {
-				padding: 30px 0px 20px 0px;
-			}
-
-			.camp_req {
-				margin: 30px;
-			}
-
-			.availability_section {
-				width: 92%;
-				margin: 40px auto -20px auto;
-			}
-			.dateCollapsible:after {
-				display: none;
-			}
-			.dates-con .reserve_btn span {
-				font-size: 1rem;
-				font-weight: 500;
-				padding-top: 1rem;
-			}.dates-con #avail_date-spot_remaining {
-				font-size: 1rem;
-			}
-			.map-con {
-				width: 80%;
-				height: 125px;
-			}
-
-			#camp_email {
-				font-size: 1.5rem;
-			}
-		}
-
-		/* end of grid responsive stlying */
-		/* frequently asked questions container responsive styling */
-		.faq-con {
-			max-width: 830px;
-			min-width: 300px;
-			height: 450px;
-			margin: 60px auto;
-			border: 2px solid #FF5500;
-			border-radius: 5px;
-			box-shadow: 4px 4px 6px rgb(0 0 0 / 20%);
-			font-size: 24px;
-		}
-
-		.faq_title {
-			font-size: 30px;
-			font-weight: 800;
-			text-align: center;
-			margin: 20px auto 10px auto;
-		}
-
-		.q-a_con {
-			text-align: left;
-			width: 95%;
-			margin: 0 auto;
-		}
-
-		.faq_question {
-			font-style: italic;
-			font-weight: 600;
-			font-size: 28px;
-			display: block;
-			margin: 30px auto 0px auto;
-		}
-
-		.q-a_con strong {
-			font-size: 28px;
-			font-weight: 600;
-		}
-
-		.faq_answer {
-			font-weight: 400;
-			font-size: 28px;
-			display: block;
-			margin: 10px auto 40px auto;
-		}
-
-		/*faq responsive styling */
-		@media only screen and (max-width:1024px) {
-			.faq-con {
-				width: 92vw;
-				height: auto;
-				margin: 60px auto;
-			}
-
-			.faq-con .faq_question,
-			.faq-con .faq_answer {
-				font-size: 1.5rem;
-			}
-
-			.faq-con strong {
-				font-size: 1.5rem;
-			}
 		}
 	</style>
-
-
-
 	<!--footer styling-->
 	<style>
 		/*begin footer styling*/
@@ -1355,7 +577,7 @@
 
 <!-- begin body -->
 
-<body>
+<body id="mobile_scroll-lock">
 	<!--header container-->
 	<header id="header">
 		<div id="header_max_con">
@@ -1388,17 +610,40 @@
 				</button>
 			</div>
 			<!--mobile dropdown menu-->
-			<div class="account_btn--con_mobile">
-				<input class="menu-btn" type="checkbox" id="menu-btn" />
-				<label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-				<ul class="menu">
-					<li><a href="#login">Login</a></li>
-					<li><a href="#register">Register</a></li>
-				</ul>
-			</div>
-			<!--end of header container-->
-		</div>
+			<div class="account_btn--con_mobile" id="headerMobileBtn">
+				<!-- begin hidden mobile menu content -->
+				<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+				<div class="mobile_overlay-con">
+					<ul class="menu">
+						<li><a href="#login">Login</a></li>
+						<li><a href="#register">Register</a></li>
+					</ul>
+					<div class="brand_slogan">
+						<h1 class="fap_cta--brand">CampFinder</h1>
+						<h2 class="fap_cta--slogan">A Camp Experience Kids Will Love</h2>
+					</div>
+				</div>
+				<!-- mobile button script -->
+				<script>
+					/* Open mobile menu */
+					function openNav() {
+						document.getElementById("headerMobileBtn").style.width = "100%";
+						document.getElementById("mobile_btn-open").style.display = "none";
+						document.getElementById("mobile_scroll-lock").style.overflow = "hidden";
 
+					}
+
+					/* Close mobile menu*/
+					function closeNav() {
+						document.getElementById("headerMobileBtn").style.width = "0%";
+						document.getElementById("mobile_btn-open").style.display = "block";
+						document.getElementById("mobile_scroll-lock").style.overflow = "visible";
+					}
+				</script>
+			</div>
+			<!-- mobile button -->
+			<span id="mobile_btn-open" onclick="openNav()">&#9776; </span>
+			<!--end of header container-->
 	</header>
 
 	<!--start of main body content-->
@@ -1481,11 +726,16 @@
 					<div class="camp_overview">
 						<h2 class="overview_title">Camp Overview:</h2>
 						<div id="abt_camp">
-							<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-								labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et
-								earebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
-								dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
-								magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+							<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+								invidunt ut
+								labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+								duo dolores et
+								earebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+								amet. Lorem ipsum
+								dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+								labore et dolore
+								magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et
+								ea rebum. Stet
 								clita kasd gubergren</p>
 						</div>
 					</div>
@@ -1548,8 +798,12 @@
 						<h2 class="avail_title-con">Availability</h2>
 						<div class="dates-con">
 							<div class="date-wrapper">
-								<button class="dateCollapsible"><div class="label-wrapper"><span class="avail_dates-label" id="avail_dates1">Jul 14 - Jun 14,
-										2021</span><span class="avail_cost-label" id="avail_date_cost">$550</span></div></button>
+								<button class="dateCollapsible">
+									<div class="label-wrapper"><span class="avail_dates-label" id="avail_dates1">Jul 14
+											- Jun 14,
+											2021</span><span class="avail_cost-label" id="avail_date_cost">$550</span>
+									</div>
+								</button>
 								<div class="content">
 									<div id="avail_date-spot_remaining"><span id="date_dropdown-spots">4 Spots
 											Remaining</span></div>
@@ -1559,8 +813,12 @@
 								</div>
 							</div>
 							<div class="date-wrapper">
-								<button class="dateCollapsible"><div class="label-wrapper"><span class="avail_dates-label" id="avail_dates1">Jul 14 - Jun 14,
-										2021</span><span class="avail_cost-label" id="avail_date_cost">$550</span></div></button>
+								<button class="dateCollapsible">
+									<div class="label-wrapper"><span class="avail_dates-label" id="avail_dates1">Jul 14
+											- Jun 14,
+											2021</span><span class="avail_cost-label" id="avail_date_cost">$550</span>
+									</div>
+								</button>
 								<div class="content">
 									<div id="avail_date-spot_remaining"><span id="date_dropdown-spots">4 Spots
 											Remaining</span></div>
@@ -1570,8 +828,12 @@
 								</div>
 							</div>
 							<div class="date-wrapper">
-								<button class="dateCollapsible"><div class="label-wrapper"><span class="avail_dates-label" id="avail_dates1">Jul 14 - Jun 14,
-										2021</span><span class="avail_cost-label" id="avail_date_cost">$550</span></div></button>
+								<button class="dateCollapsible">
+									<div class="label-wrapper"><span class="avail_dates-label" id="avail_dates1">Jul 14
+											- Jun 14,
+											2021</span><span class="avail_cost-label" id="avail_date_cost">$550</span>
+									</div>
+								</button>
 								<div class="content">
 									<div id="avail_date-spot_remaining"><span id="date_dropdown-spots">4 Spots
 											Remaining</span></div>
@@ -1581,8 +843,12 @@
 								</div>
 							</div>
 							<div class="date-wrapper">
-								<button class="dateCollapsible"><div class="label-wrapper"><span class="avail_dates-label" id="avail_dates1">Jul 14 - Jun 14,
-										2021</span><span class="avail_cost-label" id="avail_date_cost">$550</span></div></button>
+								<button class="dateCollapsible">
+									<div class="label-wrapper"><span class="avail_dates-label" id="avail_dates1">Jul 14
+											- Jun 14,
+											2021</span><span class="avail_cost-label" id="avail_date_cost">$550</span>
+									</div>
+								</button>
 								<div class="content">
 									<div id="avail_date-spot_remaining"><span id="date_dropdown-spots">4 Spots
 											Remaining</span></div>
@@ -1591,10 +857,10 @@
 									</div>
 								</div>
 							</div>
-							
-							
-							
-							
+
+
+
+
 							<script>
 								var coll = document.getElementsByClassName("dateCollapsible");
 								var i;
@@ -1634,7 +900,8 @@
 							<span id="camp_address">123 Adventure Way<br>
 								YourTown, AL 12345</span><br>
 							<span id="camp_telephone_number"><a href="tel:+15555555555">(555) 555-5555</a></span><br>
-							<span id="camp_email"><a href="mailto:AdventureCamp@camp.com">AdventureCamp@camp.com</a></span><br>
+							<span id="camp_email"><a
+									href="mailto:AdventureCamp@camp.com">AdventureCamp@camp.com</a></span><br>
 						</address>
 					</div>
 				</div>
@@ -1645,17 +912,22 @@
 				<h1 class="faq_title">Frequently Asked Questions</h1>
 				<div class="q-a_con">
 					<span class="faq_question"><i><strong>Q:</strong> Will my kids leave the campground?</span></i>
-					<span class="faq_answer"><strong>A:</strong> No, the camp ground has everything your child will need</span>
+					<span class="faq_answer"><strong>A:</strong> No, the camp ground has everything your child will
+						need</span>
 
-					<span class="faq_question"><i><strong>Q:</strong> My kids have dietary restrictions, can your camp accommodate
+					<span class="faq_question"><i><strong>Q:</strong> My kids have dietary restrictions, can your camp
+							accommodate
 							that?</span></i>
 
-					<span class="faq_answer"><strong>A:</strong> Yes, we have a great chef and cooking staff that will help with
+					<span class="faq_answer"><strong>A:</strong> Yes, we have a great chef and cooking staff that will
+						help with
 						your child’s needs</span>
 
-					<span class="faq_question"><i><strong>Q:</strong> Does your camp have team building exercises?</span></i>
+					<span class="faq_question"><i><strong>Q:</strong> Does your camp have team building
+							exercises?</span></i>
 
-					<span class="faq_answer"><strong>A:</strong> No, the camp ground has everything your child will need.</span>
+					<span class="faq_answer"><strong>A:</strong> No, the camp ground has everything your child will
+						need.</span>
 				</div>
 
 
@@ -1696,7 +968,8 @@
 						</ul>
 					</li>
 					<li class="site_map--item" id="footer_copyright">
-						Copyright ©<script>
+						Copyright ©
+						<script>
 							document.write(' ' + new Date().getFullYear() + ' ');
 						</script>
 					</li>
