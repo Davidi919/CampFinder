@@ -15,320 +15,321 @@
   <meta name="theme-color" content="#FF5500">
   <meta name="robots" content="index,follow"><!-- All Search Engines -->
   <meta name="googlebot" content="index,follow"><!-- Google Specific -->
- <!-- General styling rules -->
- <style>
-  /* type face import */
+  <!-- General styling rules -->
+  <style>
+    /* type face import */
 
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,800;0,900;1,300&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,800;0,900;1,300&display=swap');
 
 
-  /* Lemon reset */
-  body,
-  div,
-  span,
-  applet,
-  object,
-  iframe,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p,
-  blockquote,
-  pre,
-  a,
-  abbr,
-  acronym,
-  address,
-  big,
-  cite,
-  code,
-  del,
-  dfn,
-  em,
-  img,
-  ins,
-  kbd,
-  q,
-  s,
-  samp,
-  small,
-  strike,
-  strong,
-  sub,
-  sup,
-  tt,
-  var,
-  b,
-  u,
-  i,
-  center,
-  dl,
-  dt,
-  dd,
-  ol,
-  ul,
-  li,
-  fieldset,
-  form,
-  label,
-  legend,
-  table,
-  caption,
-  tbody,
-  tfoot,
-  thead,
-  tr,
-  th,
-  td,
-  article,
-  aside,
-  canvas,
-  details,
-  embed,
-  figure,
-  figcaption,
-  footer,
-  header,
-  hgroup,
-  menu,
-  nav,
-  output,
-  ruby,
-  section,
-  summary,
-  time,
-  mark,
-  audio,
-  video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font-family: "Roboto", sans-serif;
-    vertical-align: baseline;
-  }
-
-  /* HTML5 display-role reset for older browsers */
-  article,
-  aside,
-  details,
-  figcaption,
-  figure,
-  footer,
-  header,
-  hgroup,
-  menu,
-  nav,
-  section {
-    display: block;
-  }
-
-  body {
-    line-height: 1;
-    background-color: white;
-    position: relative;
-    min-height: 100%;
-
-  }
-
-  ol,
-  ul {
-    list-style: none;
-  }
-
-  blockquote,
-  q {
-    quotes: none;
-  }
-
-  blockquote:before,
-  blockquote:after,
-  q:before,
-  q:after {
-    content: "";
-    content: none;
-  }
-
-  table {
-    border-collapse: collapse;
-    border-spacing: 0;
-  }
-
-  /* global rules */
-  html {
-    font-size: 14px;
-    font-family: "Roboto", sans-serif;
-    margin: 0;
-    height: 100%;
-  }
-
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-</style>
-<!-- header styling rules -->
-<style>
-  #header {
-    width: 100%;
-    height: 70px;
-    position: fixed;
-    background-color: #FF5500;
-    box-shadow: 3px 0px 4px rgba(0, 0, 0, 0.2);
-    z-index: 5000;
-  }
-
-  #header_max_con {
-    width: 100%;
-    max-width: 2000px;
-    margin: 0 auto;
-  }
-
-  #header svg {
-    margin: 10px;
-    margin-top: 12px;
-  }
-
-  .account_btn--con {
-    display: block;
-    float: right;
-    margin: 10px 20px;
-
-  }
-
-  .account_btn--con_mobile,
-  #mobile_btn-open {
-    display: none;
-
-  }
-
-  .header_btn {
-    display: inline-block;
-    font-size: 20px;
-    width: 150px;
-    height: 50px;
-    margin-left: 20px;
-    cursor: pointer;
-    background-color: #FFFFFF;
-    border: none;
-    box-shadow: 3px 3px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    transition-duration: 0.4s;
-  }
-
-  .header_btn:active {
-    box-shadow: none;
-    padding: 3px 3px inherit inherit;
-  }
-
-  .header_btn a {
-    text-align: center;
-    text-transform: uppercase;
-    color: #FF5500;
-    text-decoration: none;
-    width: 150px;
-    font-weight: 700;
-  }
-
-  /*mobile header styling*/
-  @media only screen and (max-width: 600px) {
-    .account_btn--con {
-      display: none;
+    /* Lemon reset */
+    body,
+    div,
+    span,
+    applet,
+    object,
+    iframe,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    blockquote,
+    pre,
+    a,
+    abbr,
+    acronym,
+    address,
+    big,
+    cite,
+    code,
+    del,
+    dfn,
+    em,
+    img,
+    ins,
+    kbd,
+    q,
+    s,
+    samp,
+    small,
+    strike,
+    strong,
+    sub,
+    sup,
+    tt,
+    var,
+    b,
+    u,
+    i,
+    center,
+    dl,
+    dt,
+    dd,
+    ol,
+    ul,
+    li,
+    fieldset,
+    form,
+    label,
+    legend,
+    table,
+    caption,
+    tbody,
+    tfoot,
+    thead,
+    tr,
+    th,
+    td,
+    article,
+    aside,
+    canvas,
+    details,
+    embed,
+    figure,
+    figcaption,
+    footer,
+    header,
+    hgroup,
+    menu,
+    nav,
+    output,
+    ruby,
+    section,
+    summary,
+    time,
+    mark,
+    audio,
+    video {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font-size: 100%;
+      font-family: "Roboto", sans-serif;
+      vertical-align: baseline;
     }
 
-    .account_btn--con_mobile {
+    /* HTML5 display-role reset for older browsers */
+    article,
+    aside,
+    details,
+    figcaption,
+    figure,
+    footer,
+    header,
+    hgroup,
+    menu,
+    nav,
+    section {
       display: block;
-      width: 0;
-      overflow: hidden;
-      position: absolute;
-      top: 0;
-      height: 100vh;
-      background:
-        /* top, transparent black, faked with gradient */
-        linear-gradient(rgba(255, 80, 0, 0.2),
-          rgba(255, 80, 0, 0.7)),
-        /* bottom, image */
-        url(Assets/graphics/splash_graphics/mobile_menu_bg_pattern.svg);
-      color: white;
-      transition: all .3s;
     }
 
-    .account_btn--con_mobile ul,
-    .account_btn--con_mobile li {
-      width: 100%;
-
-    }
-
-    .account_btn--con_mobile ul {
-      margin-top: 70px;
-      border-top: 2px solid white;
-      border-bottom: 2px solid white;
-      box-shadow: 0px 3px 8px rgb(100 100 100 / 50%);
-    }
-
-    .account_btn--con_mobile li {
-      cursor: pointer;
-      height: 45px;
-      text-align: center;
-      font-size: 1.5em;
-      text-transform: uppercase;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      outline: 1px solid white;
-      background-color: #FF5500;
-      transition: .2s;
-    }
-
-    .account_btn--con_mobile li:active {
+    body {
+      line-height: 1;
       background-color: white;
-      color: #FF5500;
-    }
-
-    .account_btn--con_mobile .brand_slogan {
-      width: 250px;
-      height: 100px;
-      position: absolute;
-      bottom: 20px;
-      left: 50%;
-      margin-left: -125px;
-      text-align: center;
+      position: relative;
+      min-height: 100%;
 
     }
 
-    .account_btn--con_mobile .brand_slogan h1 {
-      font-size: 32px;
-      font-weight: 800;
-      margin: 5px auto;
+    ol,
+    ul {
+      list-style: none;
     }
 
-    .account_btn--con_mobile .brand_slogan h2 {
-      font-size: 26px;
-      font-weight: 400;
+    blockquote,
+    q {
+      quotes: none;
+    }
+
+    blockquote:before,
+    blockquote:after,
+    q:before,
+    q:after {
+      content: "";
+      content: none;
+    }
+
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    /* global rules */
+    html {
+      font-size: 14px;
+      font-family: "Roboto", sans-serif;
+      margin: 0;
+      height: 100%;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  </style>
+  <!-- header styling rules -->
+  <style>
+    #header {
+      width: 100%;
+      height: 70px;
+      position: fixed;
+      background-color: #FF5500;
+      box-shadow: 3px 0px 4px rgba(0, 0, 0, 0.2);
+      z-index: 5000;
+    }
+
+    #header_max_con {
+      width: 100%;
+      max-width: 2000px;
       margin: 0 auto;
     }
 
-    #mobile_btn-open {
-      color: white;
-      cursor: pointer;
+    #header svg {
+      margin: 10px;
+      margin-top: 12px;
+    }
+
+    .account_btn--con {
       display: block;
-      position: absolute;
-      font-size: 40px;
-      top: 10px;
-      right: 20px;
+      float: right;
+      margin: 10px 20px;
+
     }
 
-    .account_btn--con_mobile .closebtn {
-      font-size: 60px;
-      position: absolute;
-      right: 20px;
+    .account_btn--con_mobile,
+    #mobile_btn-open {
+      display: none;
+
     }
 
-  }
-</style>
+    .header_btn {
+      display: inline-block;
+      font-size: 20px;
+      width: 150px;
+      height: 50px;
+      margin-left: 20px;
+      cursor: pointer;
+      background-color: #FFFFFF;
+      border: none;
+      box-shadow: 3px 3px rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
+      transition-duration: 0.4s;
+    }
+
+    .header_btn:active {
+      box-shadow: none;
+      padding: 3px 3px inherit inherit;
+    }
+
+    .header_btn a {
+      text-align: center;
+      text-transform: uppercase;
+      color: #FF5500;
+      text-decoration: none;
+      width: 150px;
+      font-weight: 700;
+    }
+
+    /*mobile header styling*/
+    @media only screen and (max-width: 600px) {
+      .account_btn--con {
+        display: none;
+      }
+
+      .account_btn--con_mobile {
+        display: block;
+        width: 0;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        height: 100vh;
+        background:
+          /* top, transparent black, faked with gradient */
+          linear-gradient(rgba(255, 80, 0, 0.2),
+            rgba(255, 80, 0, 0.7)),
+          /* bottom, image */
+          url(Assets/graphics/splash_graphics/mobile_menu_bg_pattern.svg);
+        background-repeat: repeat;
+        color: white;
+        transition: all .3s;
+      }
+
+      .account_btn--con_mobile ul,
+      .account_btn--con_mobile li {
+        width: 100%;
+
+      }
+
+      .account_btn--con_mobile ul {
+        margin-top: 70px;
+        border-top: 2px solid white;
+        border-bottom: 2px solid white;
+        box-shadow: 0px 3px 8px rgb(100 100 100 / 50%);
+      }
+
+      .account_btn--con_mobile li {
+        cursor: pointer;
+        height: 45px;
+        text-align: center;
+        font-size: 1.5em;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        outline: 1px solid white;
+        background-color: #FF5500;
+        transition: .2s;
+      }
+
+      .account_btn--con_mobile li:active {
+        background-color: white;
+        color: #FF5500;
+      }
+
+      .account_btn--con_mobile .brand_slogan {
+        width: 250px;
+        height: 100px;
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        margin-left: -125px;
+        text-align: center;
+
+      }
+
+      .account_btn--con_mobile .brand_slogan h1 {
+        font-size: 32px;
+        font-weight: 800;
+        margin: 5px auto;
+      }
+
+      .account_btn--con_mobile .brand_slogan h2 {
+        font-size: 26px;
+        font-weight: 400;
+        margin: 0 auto;
+      }
+
+      #mobile_btn-open {
+        color: white;
+        cursor: pointer;
+        display: block;
+        position: absolute;
+        font-size: 40px;
+        top: 10px;
+        right: 20px;
+      }
+
+      .account_btn--con_mobile .closebtn {
+        font-size: 60px;
+        position: absolute;
+        right: 20px;
+      }
+
+    }
+  </style>
   <!--footer styling-->
   <style>
     /*footer styling*/
@@ -703,7 +704,7 @@
 
   <!--main conent beginning -->
   <div id="main_max_con">
-    
+
 
     <!--date & zipcode inputs-->
     <div class="date_input-con">
@@ -902,224 +903,224 @@
 
     <!--camp cards list-->
     <!-- <div id="list_wrapper"> -->
-      <div class="camp_list-con">
-        <!-- begin mobile filter button -->
-        <div class="filter_mobile-wrapper">
-          <div class="filter-btn" id="mobile_filter-btn">
-            <a href="javascript:void(0)" onclick="openFilter()" class="mobile_toggle"><span
-                class="filter_btn-text">Filter</span> </a>
-            <!-- hidden filter content -->
-            <div class="overlay" id="mobile_toggle-con">
-              <h1 class="mobile_filter-title">Narrow down your search</h1>
-              <!-- filters container -->
-              <div class="filters-con">
-                <form action="CF_Map_Search.html">
-                  <!-- sort by dropdown input -->
-                  <div class="sort_by-input filter_input">
-                    <select class="sort_by filter_first">
-                      <option value="recommended">Recommended</option>
-                      <option value="duration">Duration</option>
-                      <option value="distance">Distance</option>
-                      <option value="start_date">Start Date</option>
-                    </select>
-                  </div>
-                  <!-- Price range dropdown input -->
-                  <div class="sort_by-input filter_input">
-                    <select class="sort_by filter_price">
-                      <option value="low-high">Price (Low to High)</option>
-                      <option value="high-low">Price (High to Low)</option>
-                    </select>
-                  </div>
-                  <!-- search by radius slider input -->
-                  <div class="distance_slider">
-                    <label class="radius_label" for="search_radius">Search Radius</label>
-                    <input type="range" min="5" max="30" step="5" value="10">
-                    <datalist id="tickmarks">
-                      <option value="5" label="5 miles"></option>
-                      <option value="10" label="10 miles"></option>
-                      <option value="15" label="15 miles"></option>
-                      <option value="20" label="20 miles"></option>
-                      <option value="25" label="25 miles"></option>
-                      <option value="30" label="30+ miles" class="last_option"></option>
-                    </datalist>
-                  </div>
-                  <!-- program category filter input -->
-                  <div class="sort_by-input filter_input">
-                    <select class="sort_by filter_categories">
-                      <option value="all_categories">All Categories</option>
-                      <option value="arts">Arts</option>
-                      <option value="dance">Dance</option>
-                      <option value="music">Music</option>
-                      <option value="sports">Sports</option>
-                      <option value="computers">Computers</option>
-                      <option value="theatre">Theatre</option>
-                    </select>
-                  </div>
-                  <!-- gender filter input -->
-                  <div class="sort_by-input filter_input">
-                    <select class="sort_by filter_gender">
-                      <option value="coed">Coed</option>
-                      <option value="girls">Girls Only</option>
-                      <option value="boys">Boys Only</option>
-                      <option value="lgbt">LGBT+</option>
-                    </select>
-                  </div>
-                  <!-- stay terms filter input -->
-                  <div class="sort_by-input filter_input">
-                    <select class="sort_by filter_stay">
-                      <option value="day">Day Only</option>
-                      <option value="overnight">Overnight</option>
-                      <option value="weekends">Weekends</option>
-                      <option value="weekdays">Weekdays</option>
-                    </select>
-                  </div>
-                  <!-- age range filter input -->
-                  <div class="sort_by-input filter_input">
-                    <select class="sort_by filter_age">
-                      <option value="3_19">Age: 3 - 19</option>
-                      <option value="3_9">Age: 3 - 9</option>
-                      <option value="10_13">Age: 10 - 13</option>
-                      <option value="14_19">Age: 14 - 19</option>
-                    </select>
-                  </div>
-                  <!-- amenities filter input -->
-                  <div class="sort_by-input filter_input">
-                    <select class="sort_by filter_amenities">
-                      <option value="any_amenities">Any Amenities</option>
-                      <option value="pool">Pool</option>
-                      <option value="lake">Lake</option>
-                      <option value="outdoors">Outdoors</option>
-                      <option value="gym">Gym</option>
-                    </select>
-                  </div>
-                  <!-- apply filters button -->
-              </div>
-              <div class="submit_btn-wrapper">
-                <input type="submit" value="APPLY FILTERS" class="submit_btn filter_btn mobile" id="submit_btn"></input>
-              </div>
-              </form>
+    <div class="camp_list-con">
+      <!-- begin mobile filter button -->
+      <div class="filter_mobile-wrapper">
+        <div class="filter-btn" id="mobile_filter-btn">
+          <a href="javascript:void(0)" onclick="openFilter()" class="mobile_toggle"><span
+              class="filter_btn-text">Filter</span> </a>
+          <!-- hidden filter content -->
+          <div class="overlay" id="mobile_toggle-con">
+            <h1 class="mobile_filter-title">Narrow down your search</h1>
+            <!-- filters container -->
+            <div class="filters-con">
+              <form action="CF_Map_Search.html">
+                <!-- sort by dropdown input -->
+                <div class="sort_by-input filter_input">
+                  <select class="sort_by filter_first">
+                    <option value="recommended">Recommended</option>
+                    <option value="duration">Duration</option>
+                    <option value="distance">Distance</option>
+                    <option value="start_date">Start Date</option>
+                  </select>
+                </div>
+                <!-- Price range dropdown input -->
+                <div class="sort_by-input filter_input">
+                  <select class="sort_by filter_price">
+                    <option value="low-high">Price (Low to High)</option>
+                    <option value="high-low">Price (High to Low)</option>
+                  </select>
+                </div>
+                <!-- search by radius slider input -->
+                <div class="distance_slider">
+                  <label class="radius_label" for="search_radius">Search Radius</label>
+                  <input type="range" min="5" max="30" step="5" value="10">
+                  <datalist id="tickmarks">
+                    <option value="5" label="5 miles"></option>
+                    <option value="10" label="10 miles"></option>
+                    <option value="15" label="15 miles"></option>
+                    <option value="20" label="20 miles"></option>
+                    <option value="25" label="25 miles"></option>
+                    <option value="30" label="30+ miles" class="last_option"></option>
+                  </datalist>
+                </div>
+                <!-- program category filter input -->
+                <div class="sort_by-input filter_input">
+                  <select class="sort_by filter_categories">
+                    <option value="all_categories">All Categories</option>
+                    <option value="arts">Arts</option>
+                    <option value="dance">Dance</option>
+                    <option value="music">Music</option>
+                    <option value="sports">Sports</option>
+                    <option value="computers">Computers</option>
+                    <option value="theatre">Theatre</option>
+                  </select>
+                </div>
+                <!-- gender filter input -->
+                <div class="sort_by-input filter_input">
+                  <select class="sort_by filter_gender">
+                    <option value="coed">Coed</option>
+                    <option value="girls">Girls Only</option>
+                    <option value="boys">Boys Only</option>
+                    <option value="lgbt">LGBT+</option>
+                  </select>
+                </div>
+                <!-- stay terms filter input -->
+                <div class="sort_by-input filter_input">
+                  <select class="sort_by filter_stay">
+                    <option value="day">Day Only</option>
+                    <option value="overnight">Overnight</option>
+                    <option value="weekends">Weekends</option>
+                    <option value="weekdays">Weekdays</option>
+                  </select>
+                </div>
+                <!-- age range filter input -->
+                <div class="sort_by-input filter_input">
+                  <select class="sort_by filter_age">
+                    <option value="3_19">Age: 3 - 19</option>
+                    <option value="3_9">Age: 3 - 9</option>
+                    <option value="10_13">Age: 10 - 13</option>
+                    <option value="14_19">Age: 14 - 19</option>
+                  </select>
+                </div>
+                <!-- amenities filter input -->
+                <div class="sort_by-input filter_input">
+                  <select class="sort_by filter_amenities">
+                    <option value="any_amenities">Any Amenities</option>
+                    <option value="pool">Pool</option>
+                    <option value="lake">Lake</option>
+                    <option value="outdoors">Outdoors</option>
+                    <option value="gym">Gym</option>
+                  </select>
+                </div>
+                <!-- apply filters button -->
             </div>
+            <div class="submit_btn-wrapper">
+              <input type="submit" value="APPLY FILTERS" class="submit_btn filter_btn mobile" id="submit_btn"></input>
+            </div>
+            </form>
           </div>
-          <script>
-            function openFilter() {
-              document.getElementById("mobile_toggle-con").style.height = "100%";
-            }
-
-            function closeFilter() {
-              document.getElementById("mobile_toggle-con").style.height = "0%";
-            }
-          </script>
         </div>
-        <ul class="camp_results">
-          <!--featured camp card li-->
-          <li class="camp_card" id="feat_camp">
-            <a href="CF_details.html" class="card-link">
-              <!--first half of camp card-->
-              <div class="camp_title-con">
-                <img class="feat_arrow" src="Assets\icons\feat_arrow.png" alt="FEATURED CAMP">
-                <img id="camp_pic--card" src="Assets\graphics\card_graphics\camp1_pic-card.png" alt="adventure camp">
-                <h1 id="card_title">Adventure Camp</h1>
-                <img class="camp_local-icon" src="Assets\icons\camp_location.svg" alt="location">
-                <h2 id="camp_local">Everytown, USA</h2>
-              </div>
-              <!--second half of camp card-->
-              <div class="camp_card-abt_con">
-                <span id="camp_host">Hosted by Youth camps USA</span>
-                <span id="camp_abt--card">This summer, kids will learn about xyz, and go on lots of adventures</span>
-                <span id="avail_dates--card">Next available dates: <br class="date_br">Jul. 7, 2021</span>
-                <img class="camp_cal-icon" src="Assets\icons\feat_calendar.svg" alt="">
-              </div>
-            </a>
-          </li>
-          <!--end of featured li-->
-          <li class="camp_card" id="feat_camp">
-            <a href="CF_details.html" class="card-link">
-              <!--first half of camp card-->
-              <div class="camp_title-con">
-                <!--featured arrow-->
-                <!--<img class="feat_arrow" src="Assets\icons\feat_arrow.png" alt="FEATURED CAMP">-->
-                <img id="camp_pic--card" src="Assets\graphics\card_graphics\camp2_pic-card.png" alt="adventure camp">
-                <h1 id="card_title">Adventure Camp</h1>
-                <img class="camp_local-icon" src="Assets\icons\camp_location.svg" alt="location">
-                <h2 id="camp_local">Everytown, USA</h2>
-              </div>
-              <!--second half of camp card-->
-              <div class="camp_card-abt_con">
-                <span id="camp_host">Hosted by Youth camps USA</span>
-                <span id="camp_abt--card">This summer, kids will learn about xyz, and go on lots of adventures</span>
-                <span id="avail_dates--card">Next available dates:<br class="date_br"> Jul. 7, 2021</span>
-                <img class="camp_cal-icon" src="Assets\icons\feat_calendar.svg" alt="">
-              </div>
-            </a>
-          </li>
-          <li class="camp_card" id="feat_camp">
-            <a href="CF_details.html" class="card-link">
-              <!--first half of camp card-->
-              <div class="camp_title-con">
-                <!--featured arrow-->
-                <!--<img class="feat_arrow" src="Assets\icons\feat_arrow.png" alt="FEATURED CAMP">-->
-                <img id="camp_pic--card" src="Assets\graphics\card_graphics\camp3_pic-card.png" alt="adventure camp">
-                <h1 id="card_title">Adventure Camp</h1>
-                <img class="camp_local-icon" src="Assets\icons\camp_location.svg" alt="location">
-                <h2 id="camp_local">Everytown, USA</h2>
-              </div>
-              <!--second half of camp card-->
-              <div class="camp_card-abt_con">
-                <span id="camp_host">Hosted by Youth camps USA</span>
-                <span id="camp_abt--card">This summer, kids will learn about xyz, and go on lots of adventures</span>
-                <span id="avail_dates--card">Next available dates:<br class="date_br"> Jul. 7, 2021</span>
-                <img class="camp_cal-icon" src="Assets\icons\feat_calendar.svg" alt="">
-              </div>
-            </a>
-          </li>
-          <li class="camp_card" id="feat_camp">
-            <a href="CF_details.html" class="card-link">
-              <!--first half of camp card-->
-              <div class="camp_title-con">
-                <!--featured arrow-->
-                <!--<img class="feat_arrow" src="Assets\icons\feat_arrow.png" alt="FEATURED CAMP">-->
-                <img id="camp_pic--card" src="Assets\graphics\card_graphics\camp4_pic-card.png" alt="adventure camp">
-                <h1 id="card_title">Adventure Camp</h1>
-                <img class="camp_local-icon" src="Assets\icons\camp_location.svg" alt="location">
-                <h2 id="camp_local">Everytown, USA</h2>
-              </div>
-              <!--second half of camp card-->
-              <div class="camp_card-abt_con">
-                <span id="camp_host">Hosted by Youth camps USA</span>
-                <span id="camp_abt--card">This summer, kids will learn about xyz, and go on lots of adventures</span>
-                <span id="avail_dates--card">Next available dates: <br class="date_br">Jul. 7, 2021</span>
-                <img class="camp_cal-icon" src="Assets\icons\feat_calendar.svg" alt="">
-              </div>
-            </a>
-          </li>
-          <li class="camp_card" id="feat_camp">
-            <a href="CF_details.html" class="card-link">
-              <!--first half of camp card-->
-              <div class="camp_title-con">
-                <!--featured arrow-->
-                <!--<img class="feat_arrow" src="Assets\icons\feat_arrow.png" alt="FEATURED CAMP">-->
-                <img id="camp_pic--card" src="Assets\graphics\card_graphics\camp5_pic-card.png" alt="adventure camp">
-                <h1 id="card_title">Adventure Camp</h1>
-                <img class="camp_local-icon" src="Assets\icons\camp_location.svg" alt="location">
-                <h2 id="camp_local">Everytown, USA</h2>
-              </div>
-              <!--second half of camp card-->
-              <div class="camp_card-abt_con">
-                <span id="camp_host">Hosted by Youth camps USA</span>
-                <span id="camp_abt--card">This summer, kids will learn about xyz, and go on lots of adventures</span>
-                <span id="avail_dates--card">Next available dates: <br class="date_br">Jul. 7, 2021</span>
-                <img class="camp_cal-icon" src="Assets\icons\feat_calendar.svg" alt="">
-              </div>
-            </a>
-          </li>
-        </ul>
-        <!--end of camp list-->
+        <script>
+          function openFilter() {
+            document.getElementById("mobile_toggle-con").style.height = "100%";
+          }
+
+          function closeFilter() {
+            document.getElementById("mobile_toggle-con").style.height = "0%";
+          }
+        </script>
       </div>
-      <!--interactive map-->
-      <div class="search_map-con">
-        <iframe class="google_map-api"
-          src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d212854.00762677827!2d-86.9902205642447!3d33.53144475097121!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1611529605673!5m2!1sen!2sus"></iframe>
-      </div>
+      <ul class="camp_results">
+        <!--featured camp card li-->
+        <li class="camp_card" id="feat_camp">
+          <a href="CF_details.html" class="card-link">
+            <!--first half of camp card-->
+            <div class="camp_title-con">
+              <img class="feat_arrow" src="Assets\icons\feat_arrow.png" alt="FEATURED CAMP">
+              <img id="camp_pic--card" src="Assets\graphics\card_graphics\camp1_pic-card.png" alt="adventure camp">
+              <h1 id="card_title">Adventure Camp</h1>
+              <img class="camp_local-icon" src="Assets\icons\camp_location.svg" alt="location">
+              <h2 id="camp_local">Everytown, USA</h2>
+            </div>
+            <!--second half of camp card-->
+            <div class="camp_card-abt_con">
+              <span id="camp_host">Hosted by Youth camps USA</span>
+              <span id="camp_abt--card">This summer, kids will learn about xyz, and go on lots of adventures</span>
+              <span id="avail_dates--card">Next available dates: <br class="date_br">Jul. 7, 2021</span>
+              <img class="camp_cal-icon" src="Assets\icons\feat_calendar.svg" alt="">
+            </div>
+          </a>
+        </li>
+        <!--end of featured li-->
+        <li class="camp_card" id="feat_camp">
+          <a href="CF_details.html" class="card-link">
+            <!--first half of camp card-->
+            <div class="camp_title-con">
+              <!--featured arrow-->
+              <!--<img class="feat_arrow" src="Assets\icons\feat_arrow.png" alt="FEATURED CAMP">-->
+              <img id="camp_pic--card" src="Assets\graphics\card_graphics\camp2_pic-card.png" alt="adventure camp">
+              <h1 id="card_title">Adventure Camp</h1>
+              <img class="camp_local-icon" src="Assets\icons\camp_location.svg" alt="location">
+              <h2 id="camp_local">Everytown, USA</h2>
+            </div>
+            <!--second half of camp card-->
+            <div class="camp_card-abt_con">
+              <span id="camp_host">Hosted by Youth camps USA</span>
+              <span id="camp_abt--card">This summer, kids will learn about xyz, and go on lots of adventures</span>
+              <span id="avail_dates--card">Next available dates:<br class="date_br"> Jul. 7, 2021</span>
+              <img class="camp_cal-icon" src="Assets\icons\feat_calendar.svg" alt="">
+            </div>
+          </a>
+        </li>
+        <li class="camp_card" id="feat_camp">
+          <a href="CF_details.html" class="card-link">
+            <!--first half of camp card-->
+            <div class="camp_title-con">
+              <!--featured arrow-->
+              <!--<img class="feat_arrow" src="Assets\icons\feat_arrow.png" alt="FEATURED CAMP">-->
+              <img id="camp_pic--card" src="Assets\graphics\card_graphics\camp3_pic-card.png" alt="adventure camp">
+              <h1 id="card_title">Adventure Camp</h1>
+              <img class="camp_local-icon" src="Assets\icons\camp_location.svg" alt="location">
+              <h2 id="camp_local">Everytown, USA</h2>
+            </div>
+            <!--second half of camp card-->
+            <div class="camp_card-abt_con">
+              <span id="camp_host">Hosted by Youth camps USA</span>
+              <span id="camp_abt--card">This summer, kids will learn about xyz, and go on lots of adventures</span>
+              <span id="avail_dates--card">Next available dates:<br class="date_br"> Jul. 7, 2021</span>
+              <img class="camp_cal-icon" src="Assets\icons\feat_calendar.svg" alt="">
+            </div>
+          </a>
+        </li>
+        <li class="camp_card" id="feat_camp">
+          <a href="CF_details.html" class="card-link">
+            <!--first half of camp card-->
+            <div class="camp_title-con">
+              <!--featured arrow-->
+              <!--<img class="feat_arrow" src="Assets\icons\feat_arrow.png" alt="FEATURED CAMP">-->
+              <img id="camp_pic--card" src="Assets\graphics\card_graphics\camp4_pic-card.png" alt="adventure camp">
+              <h1 id="card_title">Adventure Camp</h1>
+              <img class="camp_local-icon" src="Assets\icons\camp_location.svg" alt="location">
+              <h2 id="camp_local">Everytown, USA</h2>
+            </div>
+            <!--second half of camp card-->
+            <div class="camp_card-abt_con">
+              <span id="camp_host">Hosted by Youth camps USA</span>
+              <span id="camp_abt--card">This summer, kids will learn about xyz, and go on lots of adventures</span>
+              <span id="avail_dates--card">Next available dates: <br class="date_br">Jul. 7, 2021</span>
+              <img class="camp_cal-icon" src="Assets\icons\feat_calendar.svg" alt="">
+            </div>
+          </a>
+        </li>
+        <li class="camp_card" id="feat_camp">
+          <a href="CF_details.html" class="card-link">
+            <!--first half of camp card-->
+            <div class="camp_title-con">
+              <!--featured arrow-->
+              <!--<img class="feat_arrow" src="Assets\icons\feat_arrow.png" alt="FEATURED CAMP">-->
+              <img id="camp_pic--card" src="Assets\graphics\card_graphics\camp5_pic-card.png" alt="adventure camp">
+              <h1 id="card_title">Adventure Camp</h1>
+              <img class="camp_local-icon" src="Assets\icons\camp_location.svg" alt="location">
+              <h2 id="camp_local">Everytown, USA</h2>
+            </div>
+            <!--second half of camp card-->
+            <div class="camp_card-abt_con">
+              <span id="camp_host">Hosted by Youth camps USA</span>
+              <span id="camp_abt--card">This summer, kids will learn about xyz, and go on lots of adventures</span>
+              <span id="avail_dates--card">Next available dates: <br class="date_br">Jul. 7, 2021</span>
+              <img class="camp_cal-icon" src="Assets\icons\feat_calendar.svg" alt="">
+            </div>
+          </a>
+        </li>
+      </ul>
+      <!--end of camp list-->
+    </div>
+    <!--interactive map-->
+    <div class="search_map-con">
+      <iframe class="google_map-api"
+        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d212854.00762677827!2d-86.9902205642447!3d33.53144475097121!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1611529605673!5m2!1sen!2sus"></iframe>
+    </div>
     <!-- </div> -->
 
   </div>
@@ -1156,7 +1157,8 @@
             </ul>
           </li>
           <li class="site_map--item" id="footer_copyright">
-            Copyright ©<script>
+            Copyright ©
+            <script>
               document.write(' ' + new Date().getFullYear() + ' ');
             </script>
           </li>
